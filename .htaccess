@@ -1,0 +1,31 @@
+RewriteOptions inherit
+RewriteEngine On
+
+
+# Redirect root URL to /home
+RewriteCond %{HTTP_HOST} ^(m\.katabenterprises\.com)$ [NC]
+RewriteCond %{REQUEST_URI} ^/$
+RewriteRule ^$ /home [R=302,L]
+
+# Redirect all requests to the Node.js app
+RewriteRule ^(.*)$ http://localhost:4000/$1 [P,L]
+
+# Disable caching for all requests forwarded to Node.js
+<IfModule mod_headers.c>
+    Header set Cache-Control "no-store, no-cache, must-revalidate, proxy-revalidate"
+    Header set Pragma "no-cache"
+    Header set Expires "0"
+    Header set Surrogate-Control "no-store"
+</IfModule>
+
+# Ensure requests to specific domains go to the correct port
+RewriteCond %{HTTP_HOST} ^m\.katabenterprises\.com$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.m\.katabenterprises\.com$
+RewriteRule ^servers\/ComingSoon\-Landing$ "http\:\/\/127\.0\.0\.1\:4000\/" [R=301,L]
+
+# php -- BEGIN cPanel-generated handler, do not edit
+# Set the “ea-php81” package as the default “PHP” programming language.
+<IfModule mime_module>
+  AddHandler application/x-httpd-ea-php81 .php .php8 .phtml
+</IfModule>
+# php -- END cPanel-generated handler, do not edit

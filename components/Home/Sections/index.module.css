@@ -1,0 +1,147 @@
+.background {
+  background-image: url('../../../public/assets/sections/map-bg.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 240px;
+  width: 100%;
+}
+
+.background2 {
+  background-image: url('../../../public/assets/sections/map.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100%;
+  width: 100%;
+}
+
+.background_3 {
+  background-image: url('../../../public/assets/sections/map-bg.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  /* min-height: 920px; */
+  width: 100%;
+}
+
+.wallpaper {
+  background-image: url('../../../public/assets/sections/BG.png');
+  /* filter: brightness(75%); */
+  background-size: cover, cover; /* Adjust size for both images */
+  background-position: bottom; /* Position both images */
+  background-repeat: no-repeat, no-repeat; /* Ensure no repetition */
+  background-blend-mode: soft-light; /* Blend mode (e.g., overlay, multiply, etc.) */
+  width: 100%;
+  /* min-height: 920px; */
+}
+
+.wallpaperReverse {
+  background-image: url('../../../public/assets/sections/ReverseBG.png');
+  /* filter: brightness(75%); */
+  background-size: 100% 100%; /* Adjust size for both images */
+  background-repeat: no-repeat; /* Ensure no repetition */
+  background-blend-mode: soft-light; /* Blend mode (e.g., overlay, multiply, etc.) */
+  width: 100%;
+  /* min-height: 920px; */
+}
+
+.wallpaperReverse1 {
+  background-image: url('../../../public/assets/sections/services.jpeg');
+  /* filter: brightness(75%); */
+  background-size: 100% 100%; /* Adjust size for both images */
+  background-repeat: no-repeat; /* Ensure no repetition */
+  background-blend-mode: soft-light; /* Blend mode (e.g., overlay, multiply, etc.) */
+  width: 100%;
+  /* min-height: 920px; */
+}
+.carWallpaper {
+  background-image: url('../../../public/assets/sections/Cars.png');
+  /* filter: brightness(75%); */
+  @apply bg-[length:100%_100%]; /* Adjust size for both images */
+  background-repeat: no-repeat; /* Ensure no repetition */
+  width: 100%;
+  /* min-height: 920px; */
+}
+
+.carWallpaperMobile {
+  background-image: url('../../../public/assets/sections/Cars.png');
+  /* filter: brightness(75%); */
+  @apply bg-contain; /* Adjust size for both images */
+  background-repeat: no-repeat; /* Ensure no repetition */
+  width: 100%;
+  /* min-height: 920px; */
+}
+
+.slide-in-right {
+  animation: slideInFromRight 1s forwards;
+}
+
+.slide-out-left {
+  animation: slideOutToLeft 1s forwards;
+}
+
+.slide-in-left {
+  animation: slideInFromLeft 1s forwards;
+}
+
+.slide-out-right {
+  animation: slideOutToRight 1s forwards;
+}
+
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOutToLeft {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOutToRight {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 1s ease-in forwards;
+}
