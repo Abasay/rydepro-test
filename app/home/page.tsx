@@ -27,15 +27,15 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <div className={``}>
-        <main className='w-full flex flex-col overflow-x-hidden overflow-y-hidden'>
+      <main className={``}>
+        <section className='w-full flex flex-col overflow-x-hidden overflow-y-hidden'>
           <Section1 />
           <Services />
           <Section2 />
           <CarsSection />
           <Features />
-        </main>
-      </div>
+        </section>
+      </main>
     </>
   );
 }
