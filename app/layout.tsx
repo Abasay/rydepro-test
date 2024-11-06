@@ -13,7 +13,8 @@ export const metadata: Metadata = {
   title: {
     default:
       'RydePro - Global Rideshare & Chauffeur Services & Airport Transfer & On-Demand Transportation',
-    template: '%s | RydePro',
+    template:
+      '%s - Global Rideshare & Chauffeur Services & Airport Transfer & On-Demand Transportation',
   },
   description:
     'Experience premium to luxury with our on-demand chauffeur services, seamless airport transfers, and worldwide rideshare options.',

@@ -5,7 +5,7 @@ import { Metadata } from 'next';
 // app/about/page.tsx
 
 export const metadata = {
-  title: 'About Us - RydePro',
+  title: 'About Us | RydePro',
   description:
     'Learn more about RydePro, our mission to provide reliable and flexible ride options, and our commitment to quality service.',
   openGraph: {
@@ -41,7 +41,7 @@ export const metadata = {
 const AboutPage = () => {
   return (
     <>
-      <script
+      {/* <script
         type='application/ld+json'
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
@@ -64,7 +64,7 @@ const AboutPage = () => {
             },
           }),
         }}
-      />
+      /> */}
 
       <About />
     </>

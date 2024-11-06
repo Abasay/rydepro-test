@@ -156,7 +156,7 @@ const Footer = () => {
               </Link>
             </div>
             <div className='  border-[1px] h-[85%] border-[#3C3C3C]'></div>
-            <div className='flex flex-col gap-2'>
+            <div className='flex flex-col gap-2  items-end'>
               <Link href='#' className='pb-2 px-2'>
                 Promotions
               </Link>

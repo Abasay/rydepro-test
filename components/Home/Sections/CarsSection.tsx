@@ -597,7 +597,7 @@ const CarsSection = () => {
               >
                 {/**car details */}
                 <div
-                  className={` mt-[150px] md:hidden max-md:mt-2 min-h-[300px] transition duration-500 `}
+                  className={` mt-[150px] md:hidden max-md:mt-2 min-h-[300px] `}
                 >
                   {' '}
                   <Image
@@ -609,7 +609,7 @@ const CarsSection = () => {
                     alt=''
                     width={335}
                     height={400}
-                    className={`cursor-pointer max-md:max-w-[420px] max-md:w-[420px] max-md:max-h-[400px] max-[400px]:max-w-[350px] max-[350px]:max-w-[280px]  transition duration-500 ${styles[animateClass]}`}
+                    className={`cursor-pointer max-md:max-w-[420px] max-md:w-[420px] max-md:max-h-[400px] max-[400px]:max-w-[350px] max-[350px]:max-w-[280px]   ${styles[animateClass]}`}
                   />
                 </div>
 
@@ -759,9 +759,7 @@ const CarsSection = () => {
 
                   {/** ${styles.carWallpaper} */}
                 </div>
-                <div
-                  className={` mt-[80px] md:flex max-md:hidden  transition duration-500 `}
-                >
+                <div className={` mt-[80px] md:flex max-md:hidden   `}>
                   {' '}
                   <Image
                     title='Click on to focus'
@@ -772,7 +770,7 @@ const CarsSection = () => {
                     alt=''
                     width={550}
                     height={400}
-                    className={`cursor-pointer max-w-[854.69px] max-[985px]:hidden  max-h-[465.62px] md:h-[initial] transition duration-500 ${styles[animateClass]}`}
+                    className={`cursor-pointer max-w-[854.69px] max-[985px]:hidden  max-h-[465.62px] md:h-[initial]  ${styles[animateClass]}`}
                   />
                   <Image
                     title='Click on to focus'
@@ -783,7 +781,7 @@ const CarsSection = () => {
                     alt=''
                     width={400}
                     height={300}
-                    className={`cursor-pointer max-[985px]:max-w-[600px] min-[985px]:hidden  max-h-[465.62px] md:h-[initial] transition duration-500 ${styles[animateClass]}`}
+                    className={`cursor-pointer max-[985px]:max-w-[600px] min-[985px]:hidden  max-h-[465.62px] md:h-[initial]  ${styles[animateClass]}`}
                   />
                 </div>
                 <div className='flex max-md:hidden min-w-[170px] min-h-[250px]   flex-col  transition-all delay-0 duration-400 md:text-right justify-center items-center md:items-end '>
