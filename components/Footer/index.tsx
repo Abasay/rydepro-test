@@ -8,9 +8,11 @@ const Footer = () => {
   return (
     <footer
       // style={footerStyling}
-      className={'w-full max-h-[700px] py-12 pb-8 bg-[#070707]'}
+      className={
+        'w-full max-h-[700px] px-5 md:px-4 lg:px-20 py-12 pb-8 bg-[#070707]'
+      }
     >
-      <section className=' px-8 xl:px-24 max-md:px-4 flex flex-col gap-6'>
+      <section className='container mx-auto  max-md:px-4 flex flex-col gap-6'>
         <div className='flex w-full justify-between md:flex-row flex-col gap-6'>
           <p className='text-[#F7F7F7] flex flex-col gap-5 font-light text-md leading-6 max-w-[600px] max-lg:max-w-[407px] tracking-wider'>
             <span>

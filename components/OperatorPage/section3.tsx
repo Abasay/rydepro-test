@@ -27,7 +27,7 @@ const Section3 = () => {
       <div className='lg:container flex max-md:flex-col-reverse flex-row justify-between min-h-[300px] mt-6 md:mt-0 gap-20 md:gap-10 lg:gap-14'>
         <div
           // style={section3Image}
-          className='h-[400px] max-md:max-w-[700px]  max-sm:min-w-[400px] max-[450px]:min-w-[200px] max-[350px]:max-h-[300px] rounded-3xl lg:w-[600px] md:w-full max-md:w-full w-[335px] mx-auto mb-10 lg:mb-0'
+          className='min-h-[400px] max-md:max-w-[700px] max-md:min-h-[450px] max-md:max-h-[600px] max-[490px]:min-h-[350px] max-[490px]:max-h-[400px]  max-sm:min-w-[400px] max-[450px]:min-w-[200px] max-[350px]:max-h-[300px] rounded-3xl lg:w-[600px] md:w-full max-md:w-full w-[335px] mx-auto mb-10 lg:mb-0'
         >
           <Image
             src={img}

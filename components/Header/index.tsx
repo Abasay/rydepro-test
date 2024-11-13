@@ -2,7 +2,7 @@
 import Image from 'next/image';
 import React, { useEffect, useState } from 'react';
 import arrowDownIcon from '@/public/assets/svgs/arrowDown.svg';
-import logo from '@/public/assets/svgs/logo.svg';
+import logo from '@/public/assets/svgs/logo_black.svg';
 import Link from 'next/link';
 import { headerdata } from './headerdata';
 // import Button from '@/Components/AboutUs/button';

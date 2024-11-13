@@ -88,7 +88,7 @@ const Section1 = () => {
           </div>
           <div
             // style={section1Image}
-            className={`lg:min-w-[530px] max-[840px]:max-w-[420px] max-[805px]:max-w-[400px] max-[785px]:max-w-[500px] max-[785px]:mb-6 max-sm:mb-2 max-lg:min-w-[400px] max-lg:max-w-[450px]  lg:max-w-[530px] max-sm:w-full max-[480px]:min-w-[250px] max-[480px]:max-w-[400px] max-[480px]:min-h-[250px] max-[480px]:max-h-[370px] max-[375px]:max-w-[335px] max-[375px]:max-h-[320px] max-lg:min-h-[550px] min-h-[600px] max-h-[752px] mx-auto h-[320px] md:h-[inherit] rounded-3xl bg-gray-400 transition-opacity duration-500 `}
+            className={`lg:min-w-[530px] max-[840px]:max-w-[420px] max-[805px]:max-w-[400px] max-[785px]:max-w-[500px] max-[785px]:mb-6 max-sm:mb-2 max-lg:min-w-[400px] max-lg:max-w-[450px]  lg:max-w-[530px] max-sm:w-full max-[480px]:min-w-[250px] max-[480px]:max-w-[400px] max-[480px]:min-h-[250px] max-[480px]:max-h-[370px] max-[375px]:max-w-[335px] max-[375px]:max-h-[320px] max-lg:min-h-[550px] min-h-[600px] max-h-[752px] mx-auto h-[320px] md:h-[inherit] rounded-3xl bg-gray-400 transition-opacity duration-500 max-[545px]:max-h-[450px] max-[545px]:min-h-[300px] max-md:max-w-[550px]`}
           >
             <Image
               src={img}
