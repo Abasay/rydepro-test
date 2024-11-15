@@ -38,7 +38,7 @@ const Hero = () => {
             <h2 className='font-bold text-[#F7F7F7] text-2xl md:text-3xl lg:text-4xl xl:text-[32px] leading-6 md:leading-8 xl:leading-10 min-h-[64px] max-w-[834px]'>
               Who We Are – Evolving a New Era of On-Demand Transportation
             </h2>
-            <span className='text-[#F5F5F5] text-sm md:text-base lg:text-lg xl:text-2xl font-light leading-5 md:leading-6 lg:leading-7 xl:leading-8 min-h-[32px] w-auto max-w-[1024px]'>
+            <span className='text-[#F5F5F5] text-sm md:text-base lg:text-lg xl:text-2xl font-[400] leading-5 md:leading-6 lg:leading-7 xl:leading-8 min-h-[32px] w-auto max-w-[1024px]'>
               At RYDEPRO Inc., we&apos;re changing the way you think about
               on-demand transportation.
             </span>

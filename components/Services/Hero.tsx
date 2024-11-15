@@ -36,9 +36,9 @@ const Hero = () => {
             <h2 className='font-medium flex flex-col items-start gap-2 text-[#FCFCFC] max-md:text-[20px] max-md:leading-8 text-[32px] leading-10 '>
               <span>
                 RYDEPRO:{' '}
-                <span className=' font-light'>Expanding Our Horizons</span>
+                <span className=' font-[400]'>Expanding Our Horizons</span>
               </span>
-              <span className='min-w-[200px] max-md:text-sm font-light max-w-[978px] text-[16px] leading-6 text-[#F5F5F5] tracking-wider'>
+              <span className='min-w-[200px] max-md:text-sm font-[400] max-w-[978px] text-[16px] leading-6 text-[#F5F5F5] tracking-wider'>
                 We are excited to announce that RYDEPRO, your premier choice for
                 premium to luxury passenger transportation, is expanding its
                 services to new and exciting destinations.
