@@ -5,7 +5,7 @@ import arrowDownIcon from '@/public/assets/svgs/arrowDown.svg';
 import logo from '@/public/assets/svgs/logo_black.svg';
 import Link from 'next/link';
 import { headerdata } from './headerdata';
-// import Button from '@/Components/AboutUs/button';
+// import Button from '@/components/AboutUs/button';
 import Button from '../Common/Button';
 import PageButton from '../Common/PageButton';
 import { Hamburger, CancelIcon } from '@/components/icons/icons';

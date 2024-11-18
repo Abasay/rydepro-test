@@ -1,3 +1,5 @@
+/** @format */
+
 export interface AuthTypes {
   isClicked: boolean;
   isPageContrast: boolean;
@@ -25,7 +27,7 @@ export interface AuthTypes {
       emailAddress: string;
       phoneNumber: string | any;
     };
-    isPinCodePageActive: any;
+    isPinCodePageActive;
     secureAccount: {
       passPhrase: string;
       pin: number | string | null | any;

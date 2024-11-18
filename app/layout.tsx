@@ -4,6 +4,9 @@ import './globals.css';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { PageContext } from '@/contexts/PageContext';
+import ConditionalFooter from '@/components/ConditionalFooter';
+import ConditionalHeader from '@/components/ConditionalHeader';
+import { GeneralWebProvider } from '@/contexts/GeneralContext';
 
 // const inter = Inter({ subsets: ['latin'] });
 
@@ -54,40 +57,62 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // return (
+
+  //   <html lang='en'>
+  //     {/* <script type='application/ld+json'>
+  //       {JSON.stringify({
+  //         '@context': 'http://schema.org',
+  //         '@type': 'WebSite',
+  //         name: 'RydePro',
+  //         url: 'https://m.katabenterprises.com',
+  //         description:
+  //           'Experience premium to luxury with our on-demand chauffeur services, seamless airport transfers, and worldwide rideshare options.',
+  //         potentialAction: {
+  //           '@type': 'SearchAction',
+  //           target:
+  //             'https://m.katabenterprises.com/search?q={search_term_string}',
+  //           'query-input': 'required name=search_term_string',
+  //         },
+  //         inLanguage: 'en-US',
+  //       })}
+  //     </script> */}
+
+  //     <body className={`font-satoshi overflow-x-hidden text-zinc-800 bg-white`}>
+  //       <PageContext>
+  //         <Header />
+
+  //         {children}
+
+  //         <div className=' mx-auto bg-[#070707] flex justify-center items-center w-full m'>
+  //           <Footer />
+  //         </div>
+  //       </PageContext>
+
+  //       {/* <Toaster /> */}
+  //     </body>
+  //     {/* <ConsentCookies /> */}
+  //   </html>
+  // );
+
   return (
-    <html lang='en'>
-      {/* <script type='application/ld+json'>
-        {JSON.stringify({
-          '@context': 'http://schema.org',
-          '@type': 'WebSite',
-          name: 'RydePro',
-          url: 'https://m.katabenterprises.com',
-          description:
-            'Experience premium to luxury with our on-demand chauffeur services, seamless airport transfers, and worldwide rideshare options.',
-          potentialAction: {
-            '@type': 'SearchAction',
-            target:
-              'https://m.katabenterprises.com/search?q={search_term_string}',
-            'query-input': 'required name=search_term_string',
-          },
-          inLanguage: 'en-US',
-        })}
-      </script> */}
+    <GeneralWebProvider>
+      <PageContext>
+        <html lang='en'>
+          <body
+            className={`font-satoshi overflow-x-hidden text-zinc-800 bg-white`}
+          >
+            <ConditionalHeader />
+            {children}
+            <div className=' mx-auto bg-[#070707]  flex justify-center items-center w-full m'>
+              <ConditionalFooter />
+            </div>
 
-      <body className={`font-satoshi overflow-x-hidden text-zinc-800 bg-white`}>
-        <PageContext>
-          <Header />
-
-          {children}
-
-          <div className=' mx-auto bg-[#070707] flex justify-center items-center w-full m'>
-            <Footer />
-          </div>
-        </PageContext>
-
-        {/* <Toaster /> */}
-      </body>
-      {/* <ConsentCookies /> */}
-    </html>
+            {/* <Toaster /> */}
+          </body>
+          {/* <ConsentCookies /> */}
+        </html>
+      </PageContext>
+    </GeneralWebProvider>
   );
 }

@@ -2,11 +2,11 @@
 
 'use client';
 import React, { useEffect, useRef, useState } from 'react';
-import styles from '@/Components/OperatorPage/style.module.css';
+import styles from '@/components/OperatorPage/style.module.css';
 import Button from '@/components/Common/Button';
 import Image from 'next/image';
 import bg from '@/public/assets/OperatorWebPage/heroImg.jpeg';
-// import Button from '@/Components/AboutUs/button';
+// import Button from '@/components/AboutUs/button';
 // import
 
 const Hero = () => {

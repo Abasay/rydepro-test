@@ -1,3 +1,5 @@
+/** @format */
+
 'use client';
 import React, {
   useState,
@@ -11,7 +13,7 @@ import { DefaultGlobalTypes } from '@/types/types';
 import { AuthTypes } from '@/types/Auth/CreateAccountTypes/auth';
 import { WebMenuTypes } from '@/types/WebMenu/webMenu';
 import reducer from '@/components/About/reducer';
-import { sidebarData } from '@/components/About/SideBarData';
+import { sidebarData } from '@/components/About/mainobj';
 
 const PageContextAPI = createContext<DefaultGlobalTypes | undefined>(undefined);
 
