@@ -1,4 +1,5 @@
 import Banner from "./components/common/Banner";
+import Footer from "./components/common/Footer";
 import Header from "./components/common/Header";
 import Services from "./components/common/Service";
 
@@ -9,6 +10,7 @@ export default function Home() {
       <Header/>
       <Banner/>
       <Services/>
+      <Footer/>
     </div>
   );
 }
