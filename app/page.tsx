@@ -9,7 +9,9 @@ export default function Home() {
     <div className="">
       <Header/>
       <Banner/>
+      <div>
       <Services/>
+      </div>
       <Footer/>
     </div>
   );
