@@ -16,7 +16,7 @@ const Header: React.FC = () => {
 
   // Determine if the device is tablet
   const handleResize = () => {
-    if (window.innerWidth >= 768 && window.innerWidth < 1024) {
+    if (window.innerWidth >= 768 && window.innerWidth < 1440) {
       setIsTablet(true);
     } else {
       setIsTablet(false);
@@ -145,14 +145,14 @@ const Header: React.FC = () => {
 
       {/* Tablet View Modal Navigation */}
       {isMenuOpen && isTablet && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
-          <div className="bg-white rounded-lg w-4/5 p-6 shadow-md">
-            <button
+        <div className=" flex justify-center items-center z-50">
+          <div className="bg-white rounded-lg w-3/5 p-6">
+            {/* <button
               className="absolute top-4 right-4 text-gray-600"
               onClick={() => setIsMenuOpen(false)}
             >
               Close ✕
-            </button>
+            </button> */}
             <ul className="flex flex-col gap-4 text-center">
               {[
                 { label: "Home", path: "/" },

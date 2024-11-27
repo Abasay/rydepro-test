@@ -63,10 +63,8 @@ body {
 @media (max-width: 974px) {
   .servicesInnerNotes{
     justify-content: center;
-    align-items: center;
   }
 }
 .servicesNote{
-  width: 400px;
   justify-content: space-between;
 }
