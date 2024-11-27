@@ -24,7 +24,7 @@ const Why: React.FC = () => {
           </p>
         </div>
 
-        <div className="flex items-center justify-center  relative df:visible">
+        <div className="flex items-center justify-center lg:hidden  relative df:visible">
         <Image
           src={qwe}
           alt="Why Choose Us"
