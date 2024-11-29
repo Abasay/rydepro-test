@@ -23,7 +23,7 @@ const InnovativeFeatures: React.FC = () => {
   ];
 
   return (
-    <section className="flex flex-col items-center">
+    <section className="flex flex-col items-center pt-10">
       {/* Features Section */}
         <h2 className="text-sm uppercase tracking-widest">Features</h2>
         <h1 className="text-[2.5rem]">Innovative Features</h1>

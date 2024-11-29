@@ -5,7 +5,7 @@ import bg from "../../../public/Gradient.png";
 
 const Why: React.FC = () => {
   return (
-    <div className="flex justify-around items-end text-gray-300 pb-20 border"
+    <div className="flex items-center text-gray-300 p-10 border"
     style={{
       backgroundImage: `url(${bg.src})`,
       backgroundSize: "cover",

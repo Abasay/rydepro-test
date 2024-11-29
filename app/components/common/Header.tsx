@@ -49,8 +49,8 @@ const Header: React.FC = () => {
             {[
               { label: "Home", path: "/" },
               { label: "About Us", path: "/about" },
-              { label: "Promotions", path: "/promotions" },
-              { label: "Service Area", path: "/service-area" },
+              { label: "Promotions", path: "/promotion" },
+              { label: "Service Area", path: "/serviceArea" },
               { label: "Contact Us", path: "/contact" },
             ].map((item) => (
               <li key={item.path}>
@@ -146,7 +146,7 @@ const Header: React.FC = () => {
       {/* Tablet View Modal Navigation */}
       {isMenuOpen && isTablet && (
         <div className=" flex justify-center items-center z-50">
-          <div className=" rounded-lg w-[100px] p-6">
+          <div className="bg-white rounded-lg w-3/5 p-6">
             {/* <button
               className="absolute top-4 right-4 text-gray-600"
               onClick={() => setIsMenuOpen(false)}
