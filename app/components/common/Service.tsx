@@ -1,15 +1,16 @@
 import React from "react";
 import Image from "next/image"; // Next.js Image for optimization
 import rectangle from "../../../public/3.png";
-import bg from "../../../public/multiple.png";
+import bg from "../../../public/multiple.webp";
 import world from "../../../public/world.png";
 import Why from "./Why";
 import InnovativeFeatures from "./InnovativeFeatures";
+import Fleet from "./Fleet";
 
 const Services: React.FC = () => {
   return (
     <section
-      className="services flex flex-col gap-28 text-white"
+      className="services flex flex-col text-white"
       style={{
         backgroundImage: `url(${bg.src})`,
         backgroundSize: "cover",
@@ -115,6 +116,8 @@ const Services: React.FC = () => {
       {/* Why Section */}
       <Why />
 
+      {/* the fleet section  */}
+      <Fleet/>
       {/* innovation Features Section  */}
       <InnovativeFeatures/>
     </section>

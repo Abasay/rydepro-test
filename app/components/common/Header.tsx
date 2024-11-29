@@ -68,7 +68,7 @@ const Header: React.FC = () => {
           </ul>
         </nav>
 
-        <div className="flex items-center gap-10">
+        <div className="flex items-center gap-5">
           {/* Language Selector */}
           <div className="flex items-center gap-2">
             <Image
@@ -77,7 +77,7 @@ const Header: React.FC = () => {
               width={20}
               height={20}
             />
-            <span>EN</span>
+            <span className="text-gray-900">EN</span>
           </div>
 
           {/* Tablet View Buttons */}
@@ -96,7 +96,7 @@ const Header: React.FC = () => {
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             <span className="sr-only">Open Menu</span>
-            <div className="flex flex-col gap-1">
+            <div className="flex flex-col gap-1 rounded border border-black-900 p-2">
               <span className="w-6 h-0.5 bg-gray-900"></span>
               <span className="w-6 h-0.5 bg-gray-900"></span>
               <span className="w-6 h-0.5 bg-gray-900"></span>
@@ -146,7 +146,7 @@ const Header: React.FC = () => {
       {/* Tablet View Modal Navigation */}
       {isMenuOpen && isTablet && (
         <div className=" flex justify-center items-center z-50">
-          <div className="bg-white rounded-lg w-3/5 p-6">
+          <div className=" rounded-lg w-[100px] p-6">
             {/* <button
               className="absolute top-4 right-4 text-gray-600"
               onClick={() => setIsMenuOpen(false)}

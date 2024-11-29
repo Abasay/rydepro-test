@@ -7,14 +7,16 @@ const Banner: React.FC = () => {
   return (
     <section className="relative flex items-center justify-center text-center text-white h-full px-4 pb-20 sm:px-8 ">
       {/* Background Video */}
-      <video
-        className="absolute top-0 left-0 w-full h-full object-cover z-[-1]"
-        src="/text.mp4"
-        loop
-        autoPlay
-        muted
-        playsInline
-      />
+        <video
+          className="absolute top-0 left-0 w-full h-full object-cover z-[-1]"
+          loop
+          autoPlay
+          muted
+          playsInline
+          >
+        <source src="/text.webm" type="video/webm" />
+        Your browser does not support the video tag.
+    </video>
 
       {/* Content */}
       <div className="relative z-10 flex flex-col items-center gap-8 pt-10">
