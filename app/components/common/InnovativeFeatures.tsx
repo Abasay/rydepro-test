@@ -3,7 +3,7 @@ import { useState } from "react";
 import Image from "next/image";
 
 const InnovativeFeatures: React.FC = () => {
-  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const [activeIndex, setActiveIndex] = useState<number | null>(0);
 
   const features = [
     {
@@ -28,7 +28,7 @@ const InnovativeFeatures: React.FC = () => {
         <h2 className="text-sm uppercase tracking-widest">Features</h2>
         <h1 className="text-[2.5rem]">Innovative Features</h1>
 
-        <div className="flex ms:flex-wrap lg:flex-row items-center justify-between w-full text-white px-8 py-16 gap-8">
+        <div className="flex ms:flex-wrap items-center justify-between w-full text-white px-16 py-16 gap-8">
             <div className="flex flex-col gap-8 w-full lg:w-1/2">
 
                 <div className="flex flex-col gap-6">

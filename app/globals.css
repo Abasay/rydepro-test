@@ -68,3 +68,50 @@ body {
 .servicesNote{
   justify-content: space-between;
 }
+.vehicle-image-wrapper {
+  position: relative;
+  width: 400px; /* Fixed width */
+  height: 300px; /* Fixed height */
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation-duration: 500ms;
+  animation-fill-mode: forwards;
+}
+
+.vehicle-image-wrapper.slide-in {
+  animation-name: slide-in;
+}
+
+.vehicle-image-wrapper.slide-out {
+  animation-name: slide-out;
+}
+
+.fixed-dimensions {
+  width: 100%; /* Ensure image fits the container */
+  height: 100%; /* Maintain fixed height */
+  object-fit: contain; /* Ensure proper aspect ratio */
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-out {
+  from {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
