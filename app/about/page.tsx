@@ -2,7 +2,7 @@ import { FC } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
-const AboutPage: FC = () => {
+const about: FC = () => {
   return (
     <div className="min-h-screen bg-gray-100">
       {/* Header Section */}
@@ -10,7 +10,7 @@ const AboutPage: FC = () => {
         <div className="absolute inset-0 bg-opacity-50 bg-cover bg-center" style={{ backgroundImage: 'url(/path-to-your-background-image.jpg)' }}>
           <div className="flex flex-col items-center justify-center h-full space-y-4">
             <h1 className="text-2xl md:text-4xl font-semibold">Who We Are - Evolving a New Era of On-Demand Transportation</h1>
-            <p className="text-md md:text-lg">At RYDEPRO Inc., we're changing the way you think about on-demand transportation</p>
+            <p className="text-md md:text-lg">At RYDEPRO Inc., were changing the way you think about on-demand transportation</p>
           </div>
         </div>
       </header>
@@ -106,4 +106,4 @@ const AboutPage: FC = () => {
   );
 };
 
-export default AboutPage;
+export default about;

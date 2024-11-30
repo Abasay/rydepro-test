@@ -113,8 +113,8 @@ const Header: React.FC = () => {
               {[
                 { label: "Home", path: "/" },
                 { label: "About Us", path: "/about" },
-                { label: "Promotions", path: "/promotions" },
-                { label: "Service Area", path: "/service-area" },
+                { label: "Promotions", path: "/promotion" },
+                { label: "Service Area", path: "/serviceArea" },
                 { label: "Contact Us", path: "/contact" },
               ].map((item) => (
                 <li key={item.path}>
