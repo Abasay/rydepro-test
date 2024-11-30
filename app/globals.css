@@ -78,7 +78,6 @@ body {
   animation-duration: 500ms;
   animation-fill-mode: forwards;
 }
-
 .vehicle-image-wrapper.slide-in {
   animation-name: slide-in;
 }
@@ -112,5 +111,33 @@ body {
   to {
     transform: translateX(100%);
     opacity: 0;
+  }
+}
+@media (max-width: 710px) {
+  .nows{
+    display: none;
+  }
+  .newers{
+    display: block;
+    display: flex;
+    justify-content: center;
+  }
+  .whyHolder{
+    padding: 2rem 1rem;
+    justify-content: center;
+  }
+  .servicesInnerNotes{
+    flex-wrap: wrap;
+  }
+  .imgs{
+    width: 200px;
+  }
+}
+@media (max-width: 500px){
+  .whyHolder{
+    padding: 2rem 0;
+  }
+  .feat{
+    padding: 1rem;
   }
 }

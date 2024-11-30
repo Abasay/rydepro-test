@@ -8,11 +8,11 @@ import email from "../../../public/email.png";
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-black text-white py-12 px-16 flex flex-col gap-8 fd:px-4 fd:py-4">
+    <footer className="bg-black text-white py-12 px-16 cx:px-4 flex flex-col gap-8 fd:px-4 fd:py-4">
       {/* Container */}
       <div className="flex flex-wrap justify-between gap-5">
         {/* Left Section */}
-        <div className="w-[50%] flex flex-col gap-5 ms:w-full">
+        <div className="w-[50%] flex flex-col gap-5 cx:w-full">
           <div className="leading-7 text-sm">
             <p>
               At RYDEPRO Inc., we go beyond traditional transportation services,
