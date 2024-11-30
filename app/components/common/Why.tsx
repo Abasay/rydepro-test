@@ -5,7 +5,7 @@ import bg from "../../../public/Gradient.png";
 
 const Why: React.FC = () => {
   return (
-    <div className="flex items-center text-gray-300 p-10 border"
+    <div className="flex items-center cx:py-20 text-gray-300 p-0 border"
     style={{
       backgroundImage: `url(${bg.src})`,
       backgroundSize: "cover",
@@ -15,16 +15,16 @@ const Why: React.FC = () => {
       {/* Left Content */}
       <div className="flex flex-col  gap-28 df:gap-10 border">
         {/* Top Section */}
-        <div className="text-left space-y-6 px-4 flex-grow">
-          <span className="text-xl font-medium">Why Choose Us</span>
-          <h1 className="text-6xl font-200 text-white df:text-[2.5rem]">Why Choose Rydepro ?</h1>
-          <p className="leading-7 text-gray-400 ms:w-[50%] ax:w-[100%]">
+        <div className="border text-left space-y-6 px-4 flex-grow cx:flex cx:flex-col cx:justify-center cx:items-center">
+          <span className="text-xl font-medium ">Why Choose Us</span>
+          <h1 className="text-6xl cx:text-[1.5rem] font-200 text-white cx:font-bold">Why Choose Rydepro ?</h1>
+          <p className="leading-7 text-gray-400 cx:text-center cx:w-[70%] border">
             Driven Cutting-Edge Technology and Sustainable Innovation;
             Redefining Your Commute.
           </p>
         </div>
 
-        <div className="flex items-center justify-center lg:hidden  relative df:hidden">
+        <div className="flex items-center justify-center lg:hidden  relative cx:visible">
         <Image
           src={qwe}
           alt="Why Choose Us"
@@ -82,7 +82,7 @@ const Why: React.FC = () => {
       </div>
 
       {/* Right Image */}
-      <div className="flex items-end  relative df:visible">
+      <div className="flex items-end  relative cx:hidden lg:visible">
         <Image
           src={qwe}
           alt="Why Choose Us"
