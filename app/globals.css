@@ -69,7 +69,6 @@ body {
   justify-content: space-between;
 }
 .vehicle-image-wrapper {
-  position: relative;
   width: 400px; /* Fixed width */
   height: 300px; /* Fixed height */
   overflow: hidden;

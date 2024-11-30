@@ -13,6 +13,7 @@ export default {
         md: "768px",
         lg: "1440px",
         xl: "1280px",
+        cx : {max: "600px"},
         ms: { max: "711px" },
         df: { max: "832px" },
         fd: { max: "600px" },

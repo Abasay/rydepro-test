@@ -26,8 +26,8 @@ const Services: React.FC = () => {
           backgroundPosition: "center",
         }}
       >
-        <h2 className="text-3xl font-bold">RYDEPRO is Expanding</h2>
-        <p className="text-lg">
+        <h2 className="text-3xl font-bold cx:text-[1.5rem]">RYDEPRO is Expanding</h2>
+        <p className="text-lg cx:w-[80%]">
           Starting in California, rolling out across U.S. cities, and soon, the
           world. Get ready!
         </p>
