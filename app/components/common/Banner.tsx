@@ -1,9 +1,39 @@
+'use client'
 // components/Banner.tsx
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
 const Banner: React.FC = () => {
+  const [timeLeft, setTimeLeft] = useState({
+    days: 20,
+    hours: 0,
+    mins: 0,
+  });
+
+  useEffect(() => {
+    const targetTime = Date.now() + timeLeft.days * 24 * 60 * 60 * 1000;
+
+    const updateTimer = () => {
+      const now = Date.now();
+      const difference = targetTime - now;
+
+      if (difference <= 0) {
+        clearInterval(timerInterval);
+        setTimeLeft({ days: 0, hours: 0, mins: 0 });
+      } else {
+        const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((difference / (1000 * 60 * 60)) % 24);
+        const mins = Math.floor((difference / (1000 * 60)) % 60);
+        setTimeLeft({ days, hours, mins });
+      }
+    };
+
+    const timerInterval = setInterval(updateTimer, 1000);
+
+    return () => clearInterval(timerInterval);
+  }, []);
+
   return (
     <section className="relative flex items-center justify-center text-center text-white h-full px-4 pb-20 sm:px-8 ">
       {/* Background Video */}
@@ -36,7 +66,7 @@ const Banner: React.FC = () => {
             <span>Early Access Special Offer</span>
           </div>
 
-          <div className="flex  justify-center gap-4 mt-4 w-[100%] lg:w-full df:flex-wrap">
+          <div className="flex  justify-center gap-4 mt-4 w-[100%] lg:w-full cx:flex-wrap">
             <span className="border md:text-[12px] lg:text-sm border-yellow-400 px-4 py-2 rounded-full bg-white bg-opacity-10">
               Sign-Up for Early Access & Get 15% off your first 2 rides
             </span>
@@ -52,18 +82,26 @@ const Banner: React.FC = () => {
             </Link>
           </div>
 
-          {/* Timer */}
           <div className="flex items-center justify-center gap-10 mt-6">
-            {['Days', 'Hours', 'Mins'].map((unit) => (
-              <div key={unit} className="flex flex-col items-center">
-                <div className="flex gap-2">
-                  <span className="bg-white bg-opacity-10 px-3 py-2 rounded-lg text-2xl sm:text-3xl">8</span>
-                  <span className="bg-white bg-opacity-10 px-3 py-2 rounded-lg text-2xl sm:text-3xl">8</span>
-                </div>
-                <span className="mt-2 text-sm">{unit}</span>
-              </div>
-            ))}
+      {['Days', 'Hours', 'Mins'].map((unit) => (
+        <div key={unit} className="flex flex-col items-center">
+          <div className="flex gap-2">
+            {String(timeLeft[unit.toLowerCase() as keyof typeof timeLeft])
+              .padStart(2, '0')
+              .split('')
+              .map((digit, i) => (
+                <span
+                  key={i}
+                  className="bg-white bg-opacity-10 px-3 py-2 rounded-lg text-2xl sm:text-3xl"
+                >
+                  {digit}
+                </span>
+              ))}
           </div>
+          <span className="mt-2 text-sm">{unit}</span>
+        </div>
+      ))}
+    </div>
         </div>
 
         {/* Sign Up Section */}

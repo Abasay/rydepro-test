@@ -28,7 +28,7 @@ const InnovativeFeatures: React.FC = () => {
         <h2 className="text-sm uppercase tracking-widest">Features</h2>
         <h1 className="text-[2.5rem]">Innovative Features</h1>
 
-        <div className="flex ms:flex-wrap items-center justify-between w-full text-white px-16 py-16 gap-8">
+        <div className="feat flex df:px-3 cx:flex-wrap cx:p-8 items-center justify-around w-full text-white lg:px-52 lg:py-16">
             <div className="flex flex-col gap-8 w-full lg:w-1/2">
 
                 <div className="flex flex-col gap-6">
