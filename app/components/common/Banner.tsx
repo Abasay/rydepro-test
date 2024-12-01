@@ -66,7 +66,7 @@ const Banner: React.FC = () => {
             <span>Early Access Special Offer</span>
           </div>
 
-          <div className="flex  justify-center gap-4 mt-4 w-[100%] lg:w-full df:flex-wrap">
+          <div className="flex  justify-center gap-4 mt-4 w-[100%] lg:w-full cx:flex-wrap">
             <span className="border md:text-[12px] lg:text-sm border-yellow-400 px-4 py-2 rounded-full bg-white bg-opacity-10">
               Sign-Up for Early Access & Get 15% off your first 2 rides
             </span>
