@@ -8,11 +8,11 @@ import email from "../../../public/email.png";
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-black text-white py-12 px-16 cx:px-4 flex flex-col gap-8 fd:px-4 fd:py-4">
+    <footer className="bottline bg-black text-white py-12 px-16 cx:px-4 flex flex-col gap-8 fd:px-4 fd:py-4">
       {/* Container */}
       <div className="flex flex-wrap justify-between gap-5">
         {/* Left Section */}
-        <div className="w-[50%] flex flex-col gap-5 cx:w-full">
+        <div className="moreres w-[50%] flex flex-col gap-5 cx:w-full">
           <div className="leading-7 text-sm">
             <p>
               At RYDEPRO Inc., we go beyond traditional transportation services,
@@ -33,29 +33,31 @@ const Footer: React.FC = () => {
         </div>
 
         {/* Right Section */}
-        <div className="flex gap-12">
+        <div className="liners flex gap-12 relative  cx:w-full cx:justify-between p-2 cx:items-center">
           <div className="flex flex-col gap-5 pl-5">
-            <a href="#" className="text-gray-400 hover:text-white">
+            <a href="#" className="text-white hover:text-white">
               About Us
             </a>
-            <a href="#" className="text-gray-400 hover:text-white">
+            <a href="#" className="text-white hover:text-white">
               Service Area
             </a>
-            <a href="#" className="text-gray-400 hover:text-white">
+            <a href="#" className="text-white hover:text-white">
               Terms
             </a>
           </div>
-          <div className="flex flex-col gap-5 pl-5 border-l border-gray-500">
-            <a href="#" className="text-gray-400 hover:text-white">
+
+          <span className=" w-[2px] h-[100%] bg-white"></span>
+          <div className="flex flex-col gap-5 pl-5">
+            <a href="#" className="text-white hover:text-white">
               Promotions
             </a>
-            <a href="#" className="text-gray-400 hover:text-white">
+            <a href="#" className="text-white hover:text-white">
               Contact Us
             </a>
-            <a href="#" className="text-gray-400 hover:text-white">
+            <a href="#" className="text-white hover:text-white">
               Partner
             </a>
-            <a href="#" className="text-gray-400 hover:text-white">
+            <a href="#" className="text-white hover:text-white">
               Privacy
             </a>
           </div>
