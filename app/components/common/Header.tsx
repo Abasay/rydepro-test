@@ -29,7 +29,7 @@ const Header: React.FC = () => {
   }
 
   return (
-    <header className="bg-white shadow-white-bottom px-8 py-4 sticky top-0 z-20">
+    <header className="bg-[#F7F7F7] shadow-white-bottom px-8 py-4 sticky top-0 z-20">
       <div className="flex items-center justify-around">
         {/* Logo Section */}
         <div className="flex-shrink-0">
@@ -56,7 +56,7 @@ const Header: React.FC = () => {
               <li key={item.path}>
                 <Link
                   href={item.path}
-                  className={`hover:text-gray-700 text-[1.1rem] text-[#0E0E0E] transition ${
+                  className={`font-[500] hover:text-gray-700 text-[1.1rem] text-[#0E0E0E] transition ${
                     activeLink === item.path ? "underline" : ""
                   }`}
                   onClick={() => handleActiveLink(item.path)}
