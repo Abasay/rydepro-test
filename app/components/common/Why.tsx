@@ -6,7 +6,7 @@ import bg from "../../../public/Gradient.png";
 const Why: React.FC = () => {
   return (
     <div
-      className="whyHolder flex  gap-3 justify-center items-centertext-[#D0D0D0] py-16"
+      className="whyHolder flex  gap-3 justify-center items-center text-[#D0D0D0] py-16"
       style={{
         backgroundImage: `url(${bg.src})`,
         backgroundSize: "cover",
@@ -14,7 +14,7 @@ const Why: React.FC = () => {
       }}
     >
       {/* Left Content */}
-      <div className="flex flex-col gap-12 lg:w-1/2 px-6 ">
+      <div className="flex flex-col gap-12 px-6">
         {/* Top Section */}
         <div className="space-y-6 lg:text-left cx:text-center">
           <span className="text-xl font-medium">Why Choose Us</span>

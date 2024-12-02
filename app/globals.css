@@ -108,3 +108,31 @@ body {
 .notesRec{
   width: 400px;
 }
+.timers {
+  position: relative;
+}
+
+.timers::before, 
+.timers::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-style: solid;
+}
+
+.timers::before {
+  left: 0; /* Adjust to control the left triangle position */
+  top: 50%;
+  transform: translateY(-50%) rotate(180deg);
+  border-width: 10px 10px 10px 0; /* Adjust triangle size */
+  border-color: transparent #000000 transparent transparent; /* Triangle color */
+}
+
+.timers::after {
+  right: 0; /* Adjust to control the right triangle position */
+  top: 50%;
+  transform: translateY(-50%) rotate(180deg);
+  border-width: 10px 0 10px 10px; /* Adjust triangle size */
+  border-color: transparent transparent transparent #000000; /* Triangle color */
+}
