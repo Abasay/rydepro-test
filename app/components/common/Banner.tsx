@@ -98,7 +98,7 @@ const Banner: React.FC = () => {
                               .map((digit, i) => (
                                 <span
                                   key={i}
-                                  className="flex timers items-center justify-center bg-white bg-opacity-15 w-[54px] h-[80px] rounded-[8px] text-[40px]"
+                                  className="flex timers items-center justify-center bg-white bg-opacity-15 w-[54px] h-[80px] rounded-[8px] text-[40px] font-[500]"
                                 >
                                   {digit}
                                 </span>
