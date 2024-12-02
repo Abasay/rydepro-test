@@ -105,56 +105,6 @@ body {
     opacity: 0;
   }
 }
-@media (max-width: 710px) {
-  .nows{
-    display: none;
-  }
-  .newers{
-    display: block;
-    display: flex;
-    justify-content: center;
-  }
-  .whyHolder{
-    padding: 2rem 1rem;
-    justify-content: center;
-  }
-  .servicesInnerNotes{
-    flex-wrap: wrap;
-  }
-  .imgs{
-    width: 200px;
-  }
-}
-@media (max-width: 500px){
-  .whyHolder{
-    padding: 2rem 0;
-  }
-  .feat{
-    padding: 1rem;
-  }
-}
-@media (max-width: 715px) {
-  .bottline{
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-  .moreres{
-    width: 100%;
-  } 
-  .liners{
-    width: 100%;
-    justify-content: space-between;
-  }
-}
-@media (max-width: 900px) {
-  .hero-header{
-    padding: 2rem;
-  }
-  .inner-hero{
-    max-width: 100%;
-  }
-  .holders{
-    padding: 0 1rem;
-    gap: 0.4rem;
-  }
+.notesRec{
+  width: 400px;
 }

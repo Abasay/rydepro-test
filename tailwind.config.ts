@@ -25,6 +25,9 @@ export default {
       boxShadow: {
        'white-bottom': '0 4px 15px rgba(255, 255, 255, 0.7)',
       },
+      borderImage: {
+        'gradient-border': 'linear-gradient(90deg, #FFFFFF 0%, rgba(153, 153, 153, 0.25) 102.64%)',
+      },
     },
   },
   plugins: [],

@@ -29,8 +29,8 @@ const Header: React.FC = () => {
   }
 
   return (
-    <header className="bg-white shadow-white-bottom px-8 py-4 sticky top-0 z-20">
-      <div className="flex items-center justify-around">
+    <header className="bg-[#F7F7F7] shadow-white-bottom px-24 py-4 sticky top-0 z-20">
+      <div className="flex items-center justify-between">
         {/* Logo Section */}
         <div className="flex-shrink-0">
           <Link href="/">
@@ -44,7 +44,7 @@ const Header: React.FC = () => {
         </div>
 
         {/* Desktop Navigation */}
-        <nav className="hidden lg:flex gap-8 items-center">
+        <nav className="hidden lg:flex gap-4 items-center">
           <ul className="flex gap-8 list-none">
             {[
               { label: "Home", path: "/" },
@@ -56,8 +56,8 @@ const Header: React.FC = () => {
               <li key={item.path}>
                 <Link
                   href={item.path}
-                  className={`hover:text-gray-700 text-[1.1rem] text-[#0E0E0E] transition ${
-                    activeLink === item.path ? "underline" : ""
+                  className={`font-[500] hover:text-gray-700 text-[1.1rem] text-[#0E0E0E] transition ${
+                    activeLink === item.path ? "border-b-4 rounded-[4px] border-[#0E0E0E] pb-1" : ""
                   }`}
                   onClick={() => handleActiveLink(item.path)}
                 >
@@ -68,7 +68,7 @@ const Header: React.FC = () => {
           </ul>
         </nav>
 
-        <div className="flex items-center gap-5">
+        <div className="flex items-center">
           {/* Language Selector */}
           <div className="flex items-center gap-2">
             <Image
@@ -77,11 +77,19 @@ const Header: React.FC = () => {
               width={20}
               height={20}
             />
-            <span className="text-[#0E0E0E]">EN</span>
+            <div className="flex items-center justify-center px-1 py-3 gap-2">
+              <span className="text-[#0E0E0E]">EN</span>
+              <Image
+              src='/Shape.png'
+              alt="Lang"
+              width={10}
+              height={5}
+              />
+            </div>
           </div>
 
           {/* Tablet View Buttons */}
-          <div className="hidden md:flex gap-4 items-center">
+          <div className="hidden md:flex gap-2 items-center">
             <button className="px-4 py-2 text-[#0E0E0E] rounded-md hover:bg-gray-200 transition">
               Login
             </button>
@@ -120,8 +128,8 @@ const Header: React.FC = () => {
                 <li key={item.path}>
                   <Link
                     href={item.path}
-                    className={`hover:text-gray-700 text-[1.1rem] text-[#0E0E0E] transition ${
-                      activeLink === item.path ? "underline" : ""
+                    className={`font-[500] hover:text-gray-700 text-[1.1rem] text-[#0E0E0E] transition ${
+                      activeLink === item.path ? "border-b-4 rounded-[4px] border-[#0E0E0E] pb-1" : ""
                     }`}
                     onClick={() => handleActiveLink(item.path)}
                   >
@@ -131,7 +139,7 @@ const Header: React.FC = () => {
               ))}
             </ul>
           </nav>
-          <div className="flex flex-col gap-4 mt-4 md:hidden">
+          <div className="flex flex-col gap-2 mt-4 md:hidden">
             {/* Login and Sign Up */}
             <button className="px-4 py-2 text-[#0E0E0E] rounded-md hover:bg-gray-200 transition">
               Login
@@ -158,7 +166,7 @@ const Header: React.FC = () => {
                 <li key={item.path}>
                   <Link
                     href={item.path}
-                    className={`hover:text-gray-700 text-[1.1rem] text-[#0E0E0E] transition ${
+                    className={`hover:text-gray-700 font-[500] text-[1.1rem] text-[#0E0E0E] transition ${
                       activeLink === item.path ? "underline" : ""
                     }`}
                     onClick={() => handleActiveLink(item.path)}
