@@ -29,8 +29,8 @@ const Header: React.FC = () => {
   }
 
   return (
-    <header className="bg-white px-8 py-4 shadow-md">
-      <div className="flex items-center justify-between">
+    <header className="bg-white shadow-white-bottom px-8 py-4 sticky top-0 z-20">
+      <div className="flex items-center justify-around">
         {/* Logo Section */}
         <div className="flex-shrink-0">
           <Link href="/">
@@ -56,7 +56,7 @@ const Header: React.FC = () => {
               <li key={item.path}>
                 <Link
                   href={item.path}
-                  className={`hover:text-gray-700 text-black transition ${
+                  className={`hover:text-gray-700 text-[1.1rem] text-[#0E0E0E] transition ${
                     activeLink === item.path ? "underline" : ""
                   }`}
                   onClick={() => handleActiveLink(item.path)}
@@ -77,22 +77,22 @@ const Header: React.FC = () => {
               width={20}
               height={20}
             />
-            <span className="text-gray-900">EN</span>
+            <span className="text-[#0E0E0E]">EN</span>
           </div>
 
           {/* Tablet View Buttons */}
           <div className="hidden md:flex gap-4 items-center">
-            <button className="px-4 py-2 border border-gray-900 text-gray-900 rounded-md hover:bg-gray-200 transition">
+            <button className="px-4 py-2 text-[#0E0E0E] rounded-md hover:bg-gray-200 transition">
               Login
             </button>
-            <button className="px-4 py-2 bg-gray-900 text-white rounded-md hover:bg-gray-700 transition">
+            <button className="px-4 py-2 bg-[#0E0E0E] text-white rounded-md hover:bg-gray-700 transition">
               Sign Up
             </button>
           </div>
 
           {/* Mobile Hamburger Menu */}
           <button
-            className="lg:hidden text-gray-900"
+            className="lg:hidden text-[#0E0E0E]"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             <span className="sr-only">Open Menu</span>
@@ -120,7 +120,7 @@ const Header: React.FC = () => {
                 <li key={item.path}>
                   <Link
                     href={item.path}
-                    className={`hover:text-gray-700 text-black transition ${
+                    className={`hover:text-gray-700 text-[1.1rem] text-[#0E0E0E] transition ${
                       activeLink === item.path ? "underline" : ""
                     }`}
                     onClick={() => handleActiveLink(item.path)}
@@ -133,10 +133,10 @@ const Header: React.FC = () => {
           </nav>
           <div className="flex flex-col gap-4 mt-4 md:hidden">
             {/* Login and Sign Up */}
-            <button className="px-4 py-2 border border-gray-900 text-gray-900 rounded-md hover:bg-gray-200 transition">
+            <button className="px-4 py-2 text-[#0E0E0E] rounded-md hover:bg-gray-200 transition">
               Login
             </button>
-            <button className="px-4 py-2 bg-gray-900 text-white rounded-md hover:bg-gray-700 transition">
+            <button className="px-4 py-2 bg-[#0E0E0E] text-white rounded-md transition">
               Sign Up
             </button>
           </div>
@@ -145,14 +145,8 @@ const Header: React.FC = () => {
 
       {/* Tablet View Modal Navigation */}
       {isMenuOpen && isTablet && (
-        <div className=" flex justify-center items-center z-50">
-          <div className="bg-white rounded-lg w-3/5 p-6">
-            {/* <button
-              className="absolute top-4 right-4 text-gray-600"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Close ✕
-            </button> */}
+        <div className=" flex fixed w-[375px] justify-center items-center z-50">
+          <div className=" bg-white rounded-lg p-6">
             <ul className="flex flex-col gap-4 text-center">
               {[
                 { label: "Home", path: "/" },
@@ -164,7 +158,7 @@ const Header: React.FC = () => {
                 <li key={item.path}>
                   <Link
                     href={item.path}
-                    className={`hover:text-gray-700 text-black transition ${
+                    className={`hover:text-gray-700 text-[1.1rem] text-[#0E0E0E] transition ${
                       activeLink === item.path ? "underline" : ""
                     }`}
                     onClick={() => handleActiveLink(item.path)}

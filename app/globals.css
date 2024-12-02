@@ -60,16 +60,8 @@ body {
   font-family: 'Satoshi', Arial, sans-serif;
 }
 
-@media (max-width: 974px) {
-  .servicesInnerNotes{
-    justify-content: center;
-  }
-}
-.servicesNote{
-  justify-content: space-between;
-}
 .vehicle-image-wrapper {
-  width: 400px; /* Fixed width */
+  width: 650px; /* Fixed width */
   height: 300px; /* Fixed height */
   overflow: hidden;
   display: flex;
