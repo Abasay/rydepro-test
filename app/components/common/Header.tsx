@@ -142,7 +142,7 @@ const Header: React.FC = () => {
       {isPopupVisible && (
         <div
           ref={popupRef} // Set the reference to the popup
-          className="fixed top-[90px] right-12 bg-white shadow-lg p-4 rounded-lg z-30"
+          className="fixed top-[90px] la:top-[180px] la:right-[180px] right-12 bg-white shadow-lg p-4 rounded-lg z-30"
           style={{ width: "300px" }}
         >
           <div className="flex flex-col gap-2">
@@ -200,16 +200,16 @@ const Header: React.FC = () => {
                   </Link>
                 </li>
               ))}
-              <div className="flex flex-col gap-2 border w-full md:hidden ">
+              <div className="flex flex-col gap-2  w-full md:hidden ">
                 {/* Show Login and Sign Up buttons in mobile dropdown */}
                 <button
-                className="px-4 py-2 text-[#0E0E0E] rounded-md hover:bg-gray-200 transition"
+                className="px-4 py-2 text-[16px] text-[#0E0E0E] bg-[#F5F5F5] border border-[#D0D0D0] rounded-md hover:bg-gray-200 transition"
                 onClick={() => togglePopup(false)} // Login button click
               >
                 Login
                 </button>
                 <button
-                  className="px-4 py-2 bg-[#0E0E0E] text-white rounded-md hover:bg-gray-700 transition"
+                  className="px-6 text-[16px] py-2 bg-[#0E0E0E] text-white rounded-md hover:bg-gray-700 transition"
                   onClick={() => togglePopup(true)} // Sign Up button click
                 >
                   Sign Up

@@ -13,6 +13,7 @@ export default {
         md: "768px", // Min-width for medium devices
         lg: "1024px", // Min-width for large devices
         xl: "1280px", // Min-width for extra-large devices
+        la: {max: "767px"},
         cx: { max: "600px" }, // Custom: Max width 600px for small screens
         ms: { min: "601px", max: "711px" }, // Custom: Between 601px and 711px
         df: { min: "712px", max: "832px" }, // Custom: Between 712px and 832px
