@@ -35,7 +35,7 @@ const Banner: React.FC = () => {
   }, []);
 
   return (
-    <section className="relative flex items-center justify-center text-center text-white h-full px-4 pb-20 sm:px-8 ">
+    <section className="relative bg-gradient-to-t from-black/65 flex items-center justify-center text-center text-white h-full px-4 pb-20 sm:px-8 ">
       {/* Background Video */}
         <video
           className="absolute top-0 left-0 w-full h-full object-cover z-[-1]"
@@ -49,13 +49,13 @@ const Banner: React.FC = () => {
     </video>
 
       {/* Content */}
-      <div className="relative z-10 flex flex-col items-center gap-8 pt-10">
+      <div className="relative z-10 flex flex-col items-center gap-10 pt-10">
         {/* Title */}
         <span className="text-lg sm:text-2xl">RYDEPRO</span>
-        <h1 className="ms:font-[500] ms:text-5xl lg:text-5xl font-normalax:w-[80%] w-[100%] max-w-6xl ax:text-[2.2rem]">
+        <h1 className="font-[500] ms:font-[500] ms:text-5xl lg:text-5xl font-normalax:w-[80%] w-[80%] max-w-6xl ax:text-[2.2rem]">
           Your Ultimate On Demand Passenger Transportation Solution
         </h1>
-        <p className="text-sm fd:text-[20px] sm:text-base lg:text-lg w-[90%] max-w-lg leading-6 ax:text-[1.2rem]">
+        <p className="text-sm fd:text-[20px] sm:text-base lg:text-lg w-[70%]  leading-6 ax:text-[1.2rem]">
         Experience Premium to Luxury with our on-demand Chauffeur services, seamless airport transfers, and worldwide rideshare services.
         </p>
 
@@ -77,7 +77,7 @@ const Banner: React.FC = () => {
 
           <div className="flex flex-col items-center justify-center gap-2 mt-4">
             <span>Limited time offer. Hurry, this offer ends soon!</span>
-            <Link href="#" className="text-white ">
+            <Link href="#" className="text-white underline">
               Promotional Terms & Services
             </Link>
           </div>
@@ -92,13 +92,13 @@ const Banner: React.FC = () => {
               .map((digit, i) => (
                 <span
                   key={i}
-                  className="bg-white bg-opacity-10 px-3 py-2 rounded-lg text-2xl sm:text-3xl"
+                  className="flex items-center justify-center bg-white bg-opacity-15 w-[54px] h-[80px] rounded-[8px] text-[40px]"
                 >
                   {digit}
                 </span>
               ))}
           </div>
-          <span className="mt-2 text-sm">{unit}</span>
+          <span className="mt-2 text-[16px]">{unit}</span>
         </div>
       ))}
     </div>
@@ -107,14 +107,14 @@ const Banner: React.FC = () => {
         {/* Sign Up Section */}
         <div className="flex flex-col items-center gap-4">
           <span className="text-base">Sign Up via Web:</span>
-          <button className="bg-white text-gray-900 px-6 py-2 rounded-lg font-semiboldtransition">
+          <button className="bg-white text-[#0E0E0E] px-6 py-2 rounded-lg font-semiboldtransition">
             Sign Up Now for Early Access
           </button>
         </div>
 
         {/* App Download Section */}
         <div className='flex justify-center items-center flex-col'>
-            <p className='fd:w-[85%]'>Sign Up via App: Download the RYDEPRO App from the App Store or Google Play</p>
+            <p className='fd:w-[85%]'>Sign Up via App:</p>
             <div className="flex gap-4 mt-4 pb-20 mb-">
             <Image src="/appstore.png" alt="App Store" width={200} height={50} className='fd:w-[150px]' />
             <Image src="/googleplay.png" alt="Google Play" width={200} height={50} className='fd:w-[150px]' />
