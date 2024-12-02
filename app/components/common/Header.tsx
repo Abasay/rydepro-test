@@ -57,7 +57,7 @@ const Header: React.FC = () => {
                 <Link
                   href={item.path}
                   className={`font-[500] hover:text-gray-700 text-[1.1rem] text-[#0E0E0E] transition ${
-                    activeLink === item.path ? "border-b-4 rounded-[4px] border-[#0E0E0E] pb-1" : ""
+                    activeLink === item.path ? "border-b-4 rounded-[4px] border-[#0E0E0E] pb-1" : "text-[#3C3C3C]"
                   }`}
                   onClick={() => handleActiveLink(item.path)}
                 >
