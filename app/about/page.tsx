@@ -69,6 +69,7 @@ const About = () => {
               <p className="text-gray-600 leading-relaxed mb-2" style={{ fontSize: "18px" }}>
                 We're committed to making every ride great for you. From faster response times to more
                 comfortable and eco-friendly vehicles, we prioritize your comfort and convenience.
+                </p>
 
                 Our fleet includes:
 
@@ -77,9 +78,42 @@ const About = () => {
                 <li>Electric vehicles</li>
                 <li>Autonomous Vehicles</li>
               </ul>
-              </p>
-            </div>
+              </div>
           );
+          case "Accessibility for All":
+            return (
+              <div className="text-left w-full max-w-2xl ">
+                <h2 className="font-bold mb-4" style={{ fontSize: "24px" }}>
+                Superior Service Accessibility
+                </h2>
+                <h3 className="font-bold mb-4" style={{ fontSize: "24px" }}>
+              Superior Service Quality and User Experience
+              </h3>
+              <p className="text-gray-600 leading-relaxed mb-2" style={{ fontSize: "18px" }}>
+                We're committed to making every ride great for you. From faster response times to more
+                comfortable and eco-friendly vehicles, we prioritize your comfort and convenience.
+                </p>
+
+                Our fleet includes:
+
+                <ul className="list-disc ml-8 mt-4 text-gray-600">
+                <li>Fuel-efficient vehicles (gas, fuel, diesel)</li>
+                <li>Electric vehicles</li>
+                <li>Autonomous Vehicles</li>
+              </ul>
+
+            <h4 className="font-bold mb-4" style={{ fontSize: "24px" }}>
+              Accessibility for All
+            </h4>
+                <p className="text-gray-600 leading-relaxed mb-2" style={{ fontSize: "18px" }}>
+                  We believe transportation should be accessible to everyone. Our services cater to individuals
+                  with diverse needs, including those with disabilities. We offer features like wheelchairs-
+                  accessible vehicles (coming soon) and in-app options to request special assistance, ensuring
+                  everyone can travel with ease and dignity. We comply with the Americans with Disabilities Act
+                  and the Convention on the Rights of Persons with Disabilities (CRPD).
+                </p>
+              </div>
+            );
       default:
         return (
           <div className="bg-white p-6 rounded-lg shadow-md text-center w-full max-w-2xl">
@@ -161,17 +195,25 @@ const About = () => {
                   >
                     Superior Service Accessibility
                     </span>
-                    {activeSection === "Superior Service Quality and User Experience" && (
-                      <ul className="ml-4 mt-2 space-y-2">
-                        <li
+                    {["Superior Service Quality and User Experience", "Accessibility for All"].includes(activeSection) && (
+                    <ul className="ml-4 mt-2 space-y-2">
+                      <li
                         className={`text-gray-600 hover:text-black cursor-pointer ${
                           activeSection === "Superior Service Quality and User Experience" ? "underline" : ""
                         }`}
                         onClick={() => setActiveSection("Superior Service Quality and User Experience")}
-                        >
-                          Superior Service Quality and User Experience
-                          </li>
-                          </ul>
+                      >
+                        Superior Service Quality and User Experience
+                      </li>
+                      <li
+                        className={`text-gray-600 hover:text-black cursor-pointer ${
+                          activeSection === "Accessibility for All" ? "underline" : ""
+                        }`}
+                        onClick={() => setActiveSection("Accessibility for All")}
+                      >
+                        Accessibility for All
+                      </li>
+                    </ul>
                         )}
                         </div>
                         </li>
