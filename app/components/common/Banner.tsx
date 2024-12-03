@@ -35,7 +35,7 @@ const Banner: React.FC = () => {
   }, []);
 
   return (
-    <section className="relative bg-gradient-to-t from-black/65 flex items-center justify-center text-center text-white h-full px-4 sm:px-8 ">
+    <section className="relative bg-gradient-to-r from-black/60 via-black/65 to-black/80 flex items-center justify-center text-center text-white h-full px-4 sm:px-8 ">
       {/* Background Video */}
         <video
           className="absolute top-0 left-0 w-full h-full object-cover z-[-1]"
