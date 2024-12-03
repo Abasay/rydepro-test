@@ -96,7 +96,7 @@ const Header: React.FC = () => {
 
         {/* Desktop Navigation */}
         <nav className="hidden lg:flex gap-4 items-center">
-          <ul className="flex gap-8 list-none justify-center items-center">
+          <ul className="flex gap-8 list-none">
             {[
               { label: "Home", path: "/" },
               { label: "About Us", path: "/about" },
@@ -171,8 +171,8 @@ const Header: React.FC = () => {
 
       {/* Mobile Menu Dropdown */}
       {isMenuOpen && (
-        <div className="lg:hidden flex flex-col justify-center items-center bg-white absolute top-20 right-0 w-full p-4 shadow-md">
-          <ul className="flex flex-col gap-4 items-center">
+        <div className="lg:hidden bg-white absolute top-20 right-0 w-full p-4 shadow-md">
+          <ul className="flex flex-col gap-4">
             {[
               { label: "Home", path: "/" },
               { label: "About Us", path: "/about" },
@@ -203,21 +203,6 @@ const Header: React.FC = () => {
               </li>
             ))}
           </ul>
-          {/* Tablet View Buttons */}
-          <div className="hidden flex w-[inherit] flex-col gap-2 items-center la:flex">
-            <button
-              className="px-4 py-2 w-[inherit] text-[#0E0E0E] rounded-md hover:bg-gray-200 transition"
-              onClick={() => togglePopup(false)}
-            >
-              Login
-            </button>
-            <button
-              className="px-4 py-2 w-[inherit]  bg-[#0E0E0E] text-white rounded-md hover:bg-gray-700 transition"
-              onClick={() => togglePopup(true)}
-            >
-              Sign Up
-            </button>
-          </div>
         </div>
       )}
 
@@ -289,8 +274,8 @@ const Header: React.FC = () => {
       {isPopupVisible && (
         <div
           ref={popupRef}
-          className="fixed top-[90px] right-[110px] bg-white shadow-lg p-4 rounded-lg z-30"
-          style={{ width: "350px", height: "auto" }}
+          className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white shadow-lg p-4 rounded-lg z-30"
+          style={{ width: "350px", height: "400px" }}
         >
           {/* Popup content for SignUp/Login */}
           <div className="flex flex-col gap-2">

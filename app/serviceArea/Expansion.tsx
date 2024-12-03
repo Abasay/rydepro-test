@@ -2,7 +2,7 @@ import React from 'react'
 
 const Expansion = () => {
   return (
-    <div className='flex flex-col gap-9'>
+    <div className='flex flex-col gap-9 text-[20px] text-[#3c3c3c] font-[500]'>
         <p>
         This global expansion signifies our commitment to excellence and our dedication to redefining passenger 
         transportation worldwide.

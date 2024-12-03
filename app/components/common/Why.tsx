@@ -6,7 +6,7 @@ import bg from "../../../public/Gradient.png";
 const Why: React.FC = () => {
   return (
     <div
-      className="whyHolder flex  gap-3 justify-center items-centertext-[#D0D0D0] py-16"
+      className="whyHolder flex  gap-3 justify-center items-center text-[#D0D0D0] py-16"
       style={{
         backgroundImage: `url(${bg.src})`,
         backgroundSize: "cover",
@@ -14,14 +14,14 @@ const Why: React.FC = () => {
       }}
     >
       {/* Left Content */}
-      <div className="flex flex-col gap-12 lg:w-1/2 px-6 ">
+      <div className="flex flex-col gap-12 px-6">
         {/* Top Section */}
-        <div className="space-y-6 lg:text-left cx:text-center">
-          <span className="text-xl font-medium">Why Choose Us</span>
-          <h1 className="text-6xl df:text-[2rem] cx:text-xl font-light text-white">
+        <div className="space-y-6 lg:text-left cx:text-center la:flex la:justify-center la:flex-col la:items-center">
+          <span className="text-xl font-medium la:text-[16px] la:font-[400] la:text-center">Why Choose Us</span>
+          <h1 className="text-[40px] la:text-[24px] la:font-[500] la:text-center cx:text-xl font-light text-white">
             Why Choose Rydepro?
           </h1>
-          <p className="leading-7 text-[#D0D0D0] cx:w-full lg:w-4/5">
+          <p className="leading-7 text-[#D0D0D0] cx:w-full  la:w-[50%] la:text-center la:text-[16px]">
             Driven Cutting-Edge Technology and Sustainable Innovation;
             Redefining Your Commute.
           </p>
@@ -29,11 +29,11 @@ const Why: React.FC = () => {
 
 
          {/* Right Image */}
-      <div className="newers  hidden lg:w-1/2 mt-10 lg:mt-0">
+      <div className="newers la:flex  hidden lg:w-1/2 mt-10 lg:mt-0 justify-center">
         <Image
           src={qwe}
           alt="Why Choose Us"
-          className="w-[350px] cx:w-[248px] lg:w-[400px] object-cover"
+          className="w-[350px] la:w-[248px] lg:w-[400px] object-cover"
         />
       </div>
 
@@ -86,11 +86,11 @@ const Why: React.FC = () => {
       </div>
 
       {/* Right Image */}
-      <div className="nows flex items-center justify-center  mt-10 lg:mt-0 df:hidden">
+      <div className="nows flex items-center justify-center  mt-10 lg:mt-0 df:hidden la:hidden">
         <Image
           src={qwe}
           alt="Why Choose Us"
-          className="w-[302px] h-[543px] cx:w-[248px]  object-cover"
+          className="w-[302px] h-[543px] cx:w-[248px]  object-contain"
         />
       </div>
     </div>

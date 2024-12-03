@@ -5,13 +5,13 @@ const Country5: React.FC = () => {
         <>
              {/* Canada */}
           <div className="mb-6">
-            <h3 className="text-lg font-semibold text-gray-600 mb-2 flex items-center">
+            <h3 className="text-[20px] font-[700] text-[#0E0E0E] mb-2 flex items-center">
              AFRICA
             </h3>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2">
               <div>
-                <h4 className="font-bold">Northern Africa</h4>
-                <ul className="text-sm text-gray-600 space-y-1">
+                <h4 className="font-bold  text-[20px] text-[#0E0E0E]">Northern Africa</h4>
+                <ul className="font-[500] text-[16px] text-[#0E0E0E]">
                 <li>🇩🇿 Algeria</li>
                 <li>🇪🇬 Egypt</li>
                 <li>🇱🇾 Libya</li>
@@ -23,8 +23,8 @@ const Country5: React.FC = () => {
                 </ul>
               </div>
               <div>
-                <h4 className="font-bold">Western Africa </h4>
-                <ul className="text-sm text-gray-600 space-y-1">
+                <h4 className="font-bold  text-[20px] text-[#0E0E0E]">Western Africa </h4>
+                <ul className="font-[500] text-[16px] text-[#0E0E0E]">
                 <li>🇧🇫 Burkina Faso BF</li>
                 <li>🇨🇻 Cape Verde CV</li>
                 <li>🇨🇮 Cote DIvoire (Ivory Coast) CI</li>
@@ -43,8 +43,8 @@ const Country5: React.FC = () => {
                 </ul>
               </div>
               <div>
-                <h4 className="font-bold">Eastern Africa</h4>
-                <ul className="text-sm text-gray-600 space-y-1">
+                <h4 className="font-bold  text-[20px] text-[#0E0E0E]">Eastern Africa</h4>
+                <ul className="font-[500] text-[16px] text-[#0E0E0E]">
                 <li>🇧🇮 Burundi BI</li>
                 <li>🇰🇲 Comoros KM</li>
                 <li>🇩🇯 Djibouti DJ</li>
@@ -66,8 +66,8 @@ const Country5: React.FC = () => {
                 </ul>
               </div>
               <div>
-                <h4 className="font-bold">Southern Africa</h4>
-                <ul className="text-sm text-gray-600 space-y-1">
+                <h4 className="font-bold  text-[20px] text-[#0E0E0E]">Southern Africa</h4>
+                <ul className="font-[500] text-[16px] text-[#0E0E0E]">
                 <li>Botswana</li>
                 <li>Eswatini</li>
                 <li>Lesotho</li>
@@ -79,8 +79,8 @@ const Country5: React.FC = () => {
                 </ul>
               </div>
               <div>
-                <h4 className="font-bold">Central Africa</h4>
-                <ul className="text-sm text-gray-600 space-y-1">
+                <h4 className="font-bold  text-[20px] text-[#0E0E0E]">Central Africa</h4>
+                <ul className="font-[500] text-[16px] text-[#0E0E0E]">
                 <li>Angola</li>
                 <li>Cameroon</li>
                 <li>Central African Republic</li>

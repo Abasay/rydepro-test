@@ -5,13 +5,13 @@ const Country7: React.FC = () => {
         <>
              {/* Canada */}
           <div className="mb-6">
-            <h3 className="text-lg font-semibold text-gray-600 mb-2 flex items-center">
+            <h3 className="text-[20px] font-[700] text-[#0E0E0E] mb-2 flex items-center">
             OCEANIA
             </h3>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
               <div>
-                <h4 className="font-bold">Australia & New Zealand</h4>
-                <ul className="text-sm text-gray-600 space-y-1">
+                <h4 className="font-bold  text-[20px] text-[#0E0E0E]">Australia & New Zealand</h4>
+                <ul className="font-[500] text-[16px] text-[#0E0E0E]">
                 <li>🇦🇺 Australia (AU)</li>
                 <li>🇨🇽 Christmas Island</li>
                 <li>🇨🇨 Cocos (Keeling) Islands</li>
@@ -20,8 +20,8 @@ const Country7: React.FC = () => {
                 </ul>
               </div>
               <div>
-                <h4 className="font-bold">Melanesia</h4>
-                <ul className="text-sm text-gray-600 space-y-1">
+                <h4 className="font-bold  text-[20px] text-[#0E0E0E]">Melanesia</h4>
+                <ul className="font-[500] text-[16px] text-[#0E0E0E]">
                 <li>🇵🇬 Papua New Guinea</li>
                 <li>🇫🇯 Fiji</li>
                 <li>🇸🇧 Solomon Islands</li>
@@ -30,8 +30,8 @@ const Country7: React.FC = () => {
                 </ul>
               </div>
               <div>
-                <h4 className="font-bold">Micronesia</h4>
-                <ul className="text-sm text-gray-600 space-y-1">
+                <h4 className="font-bold  text-[20px] text-[#0E0E0E]">Micronesia</h4>
+                <ul className="font-[500] text-[16px] text-[#0E0E0E]">
                 <li>🇫🇲 Federated States of Micronesia</li>
                 <li>🇲🇭 Marshall Islands</li>
                 <li>🇳🇷 Nauru</li>
@@ -42,8 +42,8 @@ const Country7: React.FC = () => {
                 </ul>
               </div>
               <div>
-                <h4 className="font-bold">Polynesia</h4>
-                <ul className="text-sm text-gray-600 space-y-1">
+                <h4 className="font-bold  text-[20px] text-[#0E0E0E]">Polynesia</h4>
+                <ul className="font-[500] text-[16px] text-[#0E0E0E]">
                 <li>🇦🇸 American Samoa (AS)</li>
                 <li>🇨🇰 Cook Islands (CK)</li>
                 <li>🇵🇫 French Polynesia (PF)</li>

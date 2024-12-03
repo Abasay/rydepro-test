@@ -35,7 +35,7 @@ const Banner: React.FC = () => {
   }, []);
 
   return (
-    <section className="relative bg-gradient-to-t from-black/65 flex items-center justify-center text-center text-white h-full px-4 sm:px-8 ">
+    <section className="relative bg-gradient-to-r from-black/60 via-black/65 to-black/80 flex items-center justify-center text-center text-white h-full px-4 sm:px-8 ">
       {/* Background Video */}
         <video
           className="absolute top-0 left-0 w-full h-full object-cover z-[-1]"
@@ -51,13 +51,13 @@ const Banner: React.FC = () => {
       {/* Content */}
       <div className="relative z-10 flex flex-col items-center gap-10 pt-10">
         {/* Title */}
-        <span className="text-[32px] text-[#D0D0D0]">RYDEPRO</span>
+        <span className="text-[32px] text-[#D0D0D0] zx:text-[20px] zx:font-[500]">RYDEPRO</span>
           <div className='flex flex-col items-center justify-center gap-[3.2rem]'>
             <div className='ultimate flex flex-col items-center justify-center gap-[1rem]'>
-              <h1 className="font-[500] max-w-6xl  text-[3rem]">
+              <h1 className="font-[500] max-w-6xl  text-[3rem] zx:text-[32px]">
                 Your Ultimate On Demand Passenger Transportation Solution
               </h1>
-              <p className="text-sm fd:text-[20px] sm:text-base lg:text-lg w-[70%]  leading-6 ax:text-[1.2rem]">
+              <p className="text-[20px] font-[400] fd:text-[20px] sm:text-base lg:text-lg w-[70%] zx:text-[16px] leading-6 ax:text-[1.2rem]">
               Experience Premium to Luxury with our on-demand Chauffeur services, seamless airport transfers, and worldwide rideshare services.
               </p>
             </div>
@@ -70,11 +70,11 @@ const Banner: React.FC = () => {
                   <span className='text-[#FAF6F6] text-[20px]'>Early Access Special Offer</span>
                 </div>
 
-                <div className="flex  justify-center gap-4 mt-4 w-[100%] lg:w-full cx:flex-wrap">
-                  <span className="text-[#F7F7F7] border text-[14px] border-yellow-400 px-4 py-2 rounded-full bg-white bg-opacity-10">
+                <div className="flex justify-center gap-4 mt-4 w-[100%] lg:w-full cx:flex-wrap">
+                  <span className="text-[#F7F7F7] border text-[14px] border-yellow-400 px-4 py-2 rounded-full zx:px-[16px] zx:py-[8px] bg-white bg-opacity-10 zx:w-[inherit]">
                     Sign-Up for Early Access & Get 15% off your first 2 rides
                   </span>
-                  <span className="text-[#F7F7F7] border text-[14px] border-yellow-400 px-4 py-2 rounded-full bg-white bg-opacity-10">
+                  <span className="text-[#F7F7F7] border text-[14px] border-yellow-400 px-4 py-2 rounded-full zx:px-[16px] zx:py-[8px] bg-white bg-opacity-10 zx:w-[inherit]">
                     For each friend you refer, youll get an extra 10% off your next ride
                   </span>
                 </div>
@@ -98,7 +98,7 @@ const Banner: React.FC = () => {
                               .map((digit, i) => (
                                 <span
                                   key={i}
-                                  className="flex items-center justify-center bg-white bg-opacity-15 w-[54px] h-[80px] rounded-[8px] text-[40px]"
+                                  className="flex timers items-center justify-center bg-white bg-opacity-15 w-[54px] h-[80px] zx:w-[40px] zx:h-[55px] rounded-[8px] text-[40px] font-[500] zx:text-[24px]"
                                 >
                                   {digit}
                                 </span>

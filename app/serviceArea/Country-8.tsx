@@ -5,13 +5,13 @@ const Country8: React.FC = () => {
         <>
              {/* Canada */}
           <div className="mb-6">
-            <h3 className="text-lg font-semibold text-gray-600 mb-2 flex items-center">
+            <h3 className="text-[20px] font-[700] text-[#0E0E0E] mb-2 flex items-center">
             ARTARTICA
             </h3>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2">
               <div>
-                <h4 className="font-bold">Territories</h4>
-                <ul className="text-sm text-gray-600 space-y-1">
+                <h4 className="font-bold  text-[20px] text-[#0E0E0E]">Territories</h4>
+                <ul className="font-[500] text-[16px] text-[#0E0E0E]">
                 <li>🇦🇶 Adélie Land (claimed by France)</li>
                 <li>🇦🇷 Argentine Antarctica (claimed by Argentina)</li>
                 <li>🇦🇺 Australian Antarctic Territory (claimed by Australia)</li>

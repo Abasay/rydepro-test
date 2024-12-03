@@ -18,11 +18,11 @@ const Hero = () => {
       </div>
 
       {/* Text Content */}
-      <div className="holders  relative border-l-8 rounded-[4px] gap-7  z-10 flex flex-col items-start justify-center h-full px-8 ax:px-2">
-        <h1 className="text-3xl ax:text-2xl lg:text-5xl font-bold text-white mb-4">
-          RYDEPRO: Expanding Our Horizons
+      <div className="holders  relative border-l-8 rounded-[4px] gap-4  z-10 flex flex-col items-start justify-center h-full px-8 ax:px-2">
+        <h1 className="text-[32px] ax:text-2xl  font-[500] text-white mb-4">
+         <b className="text-[32px]">RYDEPRO:</b>  Expanding Our Horizons
         </h1>
-        <p className="inner-hero text-sm sm:text-lg lg:text-xl text-gray-300 max-w-[80%]">
+        <p className="inner-hero text-[16px] sm:text-lg lg:text-xl text-[#F5F5F5] max-w-[80%]">
           We are excited to announce that RYDEPRO, your premier choice for
           premium to luxury passenger transportation, is expanding its services
           to new and exciting destinations.

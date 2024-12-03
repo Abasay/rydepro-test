@@ -5,13 +5,13 @@ const Country4: React.FC = () => {
         <>
              {/* Canada */}
           <div className="mb-6">
-            <h3 className="text-lg font-semibold text-gray-600 mb-2 flex items-center">
+            <h3 className="text-[20px] font-[700] text-[#0E0E0E] mb-2 flex items-center">
               EUROPE
             </h3>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2">
               <div>
-                <h4 className="font-bold">Northern Europe</h4>
-                <ul className="text-sm text-gray-600 space-y-1">
+                <h4 className="font-bold  text-[20px] text-[#0E0E0E]">Northern Europe</h4>
+                <ul className="font-[500] text-[16px] text-[#0E0E0E]">
                     <li>🇩🇰 Denmark DK</li>
                     <li>🇪🇪 Estonia EE</li>
                     <li>🇫🇮 Finland FI</li>
@@ -22,8 +22,8 @@ const Country4: React.FC = () => {
                 </ul>
               </div>
               <div>
-                <h4 className="font-bold">Southern Europe</h4>
-                <ul className="text-sm text-gray-600 space-y-1">
+                <h4 className="font-bold  text-[20px] text-[#0E0E0E]">Southern Europe</h4>
+                <ul className="font-[500] text-[16px] text-[#0E0E0E]">
                 <li>🇦🇱 Albania AL</li>
                 <li>🇦🇩 Andorra AD</li>
                 <li>🇧🇦 Bosnia and Herzegovina BA</li>
@@ -44,8 +44,8 @@ const Country4: React.FC = () => {
                 </ul>
               </div>
               <div>
-                <h4 className="font-bold">Western Europe</h4>
-                <ul className="text-sm text-gray-600 space-y-1">
+                <h4 className="font-bold  text-[20px] text-[#0E0E0E]">Western Europe</h4>
+                <ul className="font-[500] text-[16px] text-[#0E0E0E]">
                 <li>🇦🇹 Austria AT</li>
                 <li>🇧🇪 Belgium BE</li>
                 <li>🇫🇷 France FR</li>
@@ -58,8 +58,8 @@ const Country4: React.FC = () => {
                 </ul>
               </div>
               <div>
-                <h4 className="font-bold">Eastern Europe</h4>
-                <ul className="text-sm text-gray-600 space-y-1">
+                <h4 className="font-bold  text-[20px] text-[#0E0E0E]">Eastern Europe</h4>
+                <ul className="font-[500] text-[16px] text-[#0E0E0E]">
                 <li>🇧🇾 Belarus BY</li>
                 <li>🇧🇬 Bulgaria BG</li>
                 <li>🇨🇿 Czech Republic CZ</li>
@@ -74,8 +74,8 @@ const Country4: React.FC = () => {
                 </ul>
               </div>
               <div>
-                <h4 className="font-bold">Territories</h4>
-                <ul className="text-sm text-gray-600 space-y-1">
+                <h4 className="font-bold  text-[20px] text-[#0E0E0E]">Territories</h4>
+                <ul className="font-[500] text-[16px] text-[#0E0E0E]">
                 <li>🇦🇽 Aland Islands AX</li>
                 <li>🇫🇴 Faroe Islands FO</li>
                 <li>🇬🇬 Guernsey and Alderney GG</li>
