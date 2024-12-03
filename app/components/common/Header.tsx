@@ -289,8 +289,8 @@ const Header: React.FC = () => {
       {isPopupVisible && (
         <div
           ref={popupRef}
-          className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white shadow-lg p-4 rounded-lg z-30"
-          style={{ width: "350px", height: "400px" }}
+          className="fixed top-[90px] right-[110px] bg-white shadow-lg p-4 rounded-lg z-30"
+          style={{ width: "350px", height: "auto" }}
         >
           {/* Popup content for SignUp/Login */}
           <div className="flex flex-col gap-2">
