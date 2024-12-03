@@ -57,7 +57,7 @@ const Banner: React.FC = () => {
               <h1 className="font-[500] max-w-6xl  text-[3rem] zx:text-[32px]">
                 Your Ultimate On Demand Passenger Transportation Solution
               </h1>
-              <p className="text-sm fd:text-[20px] sm:text-base lg:text-lg w-[70%] zx:text-[16px] leading-6 ax:text-[1.2rem]">
+              <p className="text-[20px] font-[400] fd:text-[20px] sm:text-base lg:text-lg w-[70%] zx:text-[16px] leading-6 ax:text-[1.2rem]">
               Experience Premium to Luxury with our on-demand Chauffeur services, seamless airport transfers, and worldwide rideshare services.
               </p>
             </div>
