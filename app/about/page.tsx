@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import { useState } from "react";
 import Footer from "../components/common/Footer";
 import Header from "../components/common/Header";
@@ -11,26 +11,14 @@ const About = () => {
       case "Introduction":
         return (
           <div className="flex-grow flex flex-col items-center justify-center px-12 py-8 bg-white">
-            <div
-              className="flex flex-col items-center mb-8"
-              style={{
-                gap: "0px",
-              }}
-            >
+            <div className="flex flex-col items-center mb-8" style={{ gap: "0px" }}>
               <img
                 src="/voblogo.jpg"
                 alt="Veteran Owned Business"
-                style={{
-                  height: "218.84px",
-                  width: "300px",
-                  objectFit: "cover",
-                }}
+                style={{ height: "218.84px", width: "300px", objectFit: "cover" }}
                 className="h-24"
               />
-              <span
-                className="text-gray-600 text-lg font-medium mt-2"
-                style={{ color: "#4A5568" }}
-              >
+              <span className="text-gray-600 text-lg font-medium mt-2" style={{ color: "#4A5568" }}>
                 Veteran Owned Business
               </span>
             </div>
@@ -39,17 +27,11 @@ const About = () => {
               <h2 className="font-bold mb-4" style={{ fontSize: "24px" }}>
                 Our Mission is Simple
               </h2>
-              <p
-                className="text-gray-600 leading-relaxed mb-2"
-                style={{ fontSize: "18px" }}
-              >
+              <p className="text-gray-600 leading-relaxed mb-2" style={{ fontSize: "18px" }}>
                 To create a seamless, efficient, and sustainable transportation
                 experience tailored to your needs.
               </p>
-              <p
-                className="text-gray-600 leading-relaxed"
-                style={{ fontSize: "18px" }}
-              >
+              <p className="text-gray-600 leading-relaxed" style={{ fontSize: "18px" }}>
                 Leveraging the latest technology and innovative solutions, we
                 bring you the future of mobility.
               </p>
@@ -58,17 +40,14 @@ const About = () => {
         );
       case "Brief Introduction":
         return (
-          <div className="bg-white p-6 rounded-lg shadow-md text-left w-full max-w-2xl">
+          <div className="text-left w-full max-w-2xl">
             <h2 className="font-bold mb-4" style={{ fontSize: "24px" }}>
               Who we Are?
             </h2>
             <h3 className="font-bold mb-4" style={{ fontSize: "24px" }}>
               Brief Introduction
             </h3>
-            <p
-              className="text-gray-600 leading-relaxed mb-2"
-              style={{ fontSize: "18px" }}
-            >
+            <p className="text-gray-600 leading-relaxed mb-2" style={{ fontSize: "18px" }}>
               As a U.S. <strong>Military Veteran-Owned Business</strong>, we
               uphold the highest standards, embodying the values of{" "}
               <em>integrity, discipline,</em> and <em>excellence</em> learned
@@ -78,6 +57,29 @@ const About = () => {
             </p>
           </div>
         );
+        case "Superior Service Quality and User Experience":
+          return (
+            <div className="text-left w-full max-w-2xl">
+              <h2 className="font-bold mb-4" style={{ fontSize: "24px" }}>
+                Superior Service Accessibility
+              </h2>
+              <h3 className="font-bold mb-4" style={{ fontSize: "24px" }}>
+              Superior Service Quality and User Experience
+              </h3>
+              <p className="text-gray-600 leading-relaxed mb-2" style={{ fontSize: "18px" }}>
+                We're committed to making every ride great for you. From faster response times to more
+                comfortable and eco-friendly vehicles, we prioritize your comfort and convenience.
+
+                Our fleet includes:
+
+                <ul className="list-disc ml-8 mt-4 text-gray-600">
+                <li>Fuel-efficient vehicles (gas, fuel, diesel)</li>
+                <li>Electric vehicles</li>
+                <li>Autonomous Vehicles</li>
+              </ul>
+              </p>
+            </div>
+          );
       default:
         return (
           <div className="bg-white p-6 rounded-lg shadow-md text-center w-full max-w-2xl">
@@ -119,7 +121,7 @@ const About = () => {
             <ul className="space-y-4">
               <li
                 className={`text-lg font-semibold cursor-pointer ${
-                  activeSection === "Introduction" ? "text-black" : "text-gray-600"
+                  activeSection === "Introduction" ? "text-black underline" : "text-gray-600"
                 }`}
                 onClick={() => setActiveSection("Introduction")}
               >
@@ -129,7 +131,7 @@ const About = () => {
                 <div>
                   <span
                     className={`cursor-pointer ${
-                      activeSection === "Brief Introduction" ? "text-black" : "text-gray-600"
+                      activeSection === "Brief Introduction" ? "text-black underline" : "text-gray-600"
                     }`}
                     onClick={() => setActiveSection("Brief Introduction")}
                   >
@@ -138,7 +140,9 @@ const About = () => {
                   {activeSection === "Brief Introduction" && (
                     <ul className="ml-4 mt-2 space-y-2">
                       <li
-                        className="text-gray-600 hover:text-black cursor-pointer"
+                        className={`text-gray-600 hover:text-black cursor-pointer ${
+                          activeSection === "Brief Introduction" ? "underline" : ""
+                        }`}
                         onClick={() => setActiveSection("Brief Introduction")}
                       >
                         Brief Introduction
@@ -147,9 +151,30 @@ const About = () => {
                   )}
                 </div>
               </li>
-              <li className="text-gray-600 hover:text-black cursor-pointer">
-                Superior Service Accessibility
-              </li>
+              <li>
+                <div>
+                  <span
+                   className={`cursor-pointer ${
+                    activeSection === "Superior Service Quality and User Experience" ? "text-black underline" : "text-gray-600"
+                  }`}
+                  onClick={() => setActiveSection("Superior Service Quality and User Experience")}
+                  >
+                    Superior Service Accessibility
+                    </span>
+                    {activeSection === "Superior Service Quality and User Experience" && (
+                      <ul className="ml-4 mt-2 space-y-2">
+                        <li
+                        className={`text-gray-600 hover:text-black cursor-pointer ${
+                          activeSection === "Superior Service Quality and User Experience" ? "underline" : ""
+                        }`}
+                        onClick={() => setActiveSection("Superior Service Quality and User Experience")}
+                        >
+                          Superior Service Quality and User Experience
+                          </li>
+                          </ul>
+                        )}
+                        </div>
+                        </li>
               <li className="text-gray-600 hover:text-black cursor-pointer">
                 Diverse and Well Maintained Fleet
               </li>
