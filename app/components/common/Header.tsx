@@ -206,13 +206,13 @@ const Header: React.FC = () => {
           {/* Tablet View Buttons */}
           <div className="hidden flex w-[inherit] flex-col gap-2 items-center la:flex">
             <button
-              className="px-4 py-2 text-[#0E0E0E] rounded-md hover:bg-gray-200 transition"
+              className="px-4 py-2 w-[inherit] text-[#0E0E0E] rounded-md hover:bg-gray-200 transition"
               onClick={() => togglePopup(false)}
             >
               Login
             </button>
             <button
-              className="px-4 py-2 bg-[#0E0E0E] text-white rounded-md hover:bg-gray-700 transition"
+              className="px-4 py-2 w-[inherit]  bg-[#0E0E0E] text-white rounded-md hover:bg-gray-700 transition"
               onClick={() => togglePopup(true)}
             >
               Sign Up
