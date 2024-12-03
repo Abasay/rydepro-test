@@ -9,10 +9,10 @@ const Country3: React.FC = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
         {/* Belize */}
         <div>
-          <h4 className="font-bold flex items-center">
+          <h4 className="font-bold flex items-center  text-[20px] text-[#0E0E0E]">
             🇧🇿 Belize BZ
           </h4>
-          <ul className="text-sm text-gray-600 space-y-1">
+          <ul className="font-[500] text-[16px] text-[#0E0E0E]">
             <li>Belize District BZ</li>
             <li>Stann Creek District SC</li>
             <li>Corozal District CZL</li>
@@ -24,10 +24,10 @@ const Country3: React.FC = () => {
 
         {/* Costa Rica */}
         <div>
-          <h4 className="font-bold flex items-center">
+          <h4 className="font-bold flex items-center  text-[20px] text-[#0E0E0E]">
             🇨🇷 Costa Rica CR
           </h4>
-          <ul className="text-sm text-gray-600 space-y-1">
+          <ul className="font-[500] text-[16px] text-[#0E0E0E]">
             <li>Guanacaste Province G</li>
             <li>Puntarenas Province P</li>
             <li>Provincia de Cartago C</li>
@@ -40,10 +40,10 @@ const Country3: React.FC = () => {
 
         {/* El Salvador */}
         <div>
-          <h4 className="font-bold flex items-center">
+          <h4 className="font-bold flex items-center  text-[20px] text-[#0E0E0E]">
             🇸🇻 El Salvador SV
           </h4>
-          <ul className="text-sm text-gray-600 space-y-1">
+          <ul className="font-[500] text-[16px] text-[#0E0E0E]">
             <li>San Vicente Department SV</li>
             <li>Santa Ana Department SA</li>
             <li>Usulután Department US</li>
@@ -63,10 +63,10 @@ const Country3: React.FC = () => {
 
         {/* Guatemala */}
         <div>
-          <h4 className="font-bold flex items-center">
+          <h4 className="font-bold flex items-center  text-[20px] text-[#0E0E0E]">
             🇬🇹 Guatemala GT
           </h4>
-          <ul className="text-sm text-gray-600 space-y-1">
+          <ul className="font-[500] text-[16px] text-[#0E0E0E]">
             <li>Quiché 14</li>
             <li>Jalapa 21</li>
             <li>Izabal 18</li>
@@ -94,10 +94,10 @@ const Country3: React.FC = () => {
 
         {/* Honduras */}
         <div>
-          <h4 className="font-bold flex items-center">
+          <h4 className="font-bold flex items-center  text-[20px] text-[#0E0E0E]">
             🇭🇳 Honduras HN
           </h4>
-          <ul className="text-sm text-gray-600 space-y-1">
+          <ul className="font-[500] text-[16px] text-[#0E0E0E]">
             <li>Choluteca Department CH</li>
             <li>Comayagua Department CM</li>
             <li>El Paraíso Department EP</li>
@@ -120,10 +120,10 @@ const Country3: React.FC = () => {
         </div>
 
         <div>
-          <h4 className="font-bold flex items-center">
+          <h4 className="font-bold flex items-center  text-[20px] text-[#0E0E0E]">
           🇳🇮 Nicaragua NI
           </h4>
-          <ul className="text-sm text-gray-600 space-y-1">
+          <ul className="font-[500] text-[16px] text-[#0E0E0E]">
             <li>Chontales CO</li>
             <li>Managua MN</li>
             <li>Rivas RI</li>
@@ -145,10 +145,10 @@ const Country3: React.FC = () => {
         </div>
 
         <div>
-          <h4 className="font-bold flex items-center">
+          <h4 className="font-bold flex items-center  text-[20px] text-[#0E0E0E]">
           🇵🇦 Panama PA
           </h4>
-          <ul className="text-sm text-gray-600 space-y-1">
+          <ul className="font-[500] text-[16px] text-[#0E0E0E]">
             <li>Darién Province 5</li>
             <li>Colón Province 3</li>
             <li>Coclé Province 2</li>
@@ -166,10 +166,10 @@ const Country3: React.FC = () => {
         </div>
 
         <div>
-          <h4 className="font-bold flex items-center">
+          <h4 className="font-bold flex items-center  text-[20px] text-[#0E0E0E]">
          Carribean
           </h4>
-          <ul className="text-sm text-gray-600 space-y-1">
+          <ul className="font-[500] text-[16px] text-[#0E0E0E]">
                 <li>🇦🇮 Anguilla AI</li>
                 <li>🇦🇬 Antigua and Barbuda AG</li>
                 <li>🇦🇼 Aruba AW</li>
