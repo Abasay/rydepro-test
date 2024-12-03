@@ -105,8 +105,13 @@ body {
     opacity: 0;
   }
 }
+
 .notesRec{
-  width: 400px;
+  width: clamp(300px, 100%, 800px);
+  /* border: solid; */
+}
+.notesRec h2{
+  font-size: clamp(1.2rem, 2.5vw, 1.8rem);
 }
 .timers {
   position: relative;
@@ -135,4 +140,13 @@ body {
   transform: translateY(-50%) rotate(180deg);
   border-width: 10px 0 10px 10px; /* Adjust triangle size */
   border-color: transparent transparent transparent #000000; /* Triangle color */
+}
+@media (max-width: 500px){
+  .timers::before {
+    border-width: 9px 9px 9px 0; /* Adjust triangle size */
+  }
+  
+  .timers::after {
+    border-width: 9px 0 9px 9px; /* Adjust triangle size */
+  }
 }
