@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import plugin from "tailwindcss/plugin";
 
 export default {
   content: [
@@ -32,7 +33,29 @@ export default {
         "gradient-border":
           "linear-gradient(90deg, #FFFFFF 0%, rgba(153, 153, 153, 0.25) 102.64%)",
       },
+              textHeader: '#3C3C3C',
+              textSecondary: '#0E0E0E',
     },
   },
-  plugins: [],
+  plugins: [
+     plugin(function ({ addUtilities }) {
+      const headerUtilities = {
+        '.text-header': {
+          fontSize: '1.125rem', // 18px
+          fontWeight: '500', // Bold
+          lineHeight: '1.5rem', // Tight line height
+          color: '#3C3C3C', // Text color
+          marginBottom: '1rem', // Spacing
+        },
+         '.text-header-active': {
+          fontSize: '1.125rem', // 18px
+          fontWeight: '500', // Bold
+          lineHeight: '1.5rem', // Tight line height
+          color: '#0E0E0E', // Text color
+          marginBottom: '1rem', // Spacing
+        },
+      };
+      addUtilities(headerUtilities);
+    }),
+  ],
 } satisfies Config;

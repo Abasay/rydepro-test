@@ -5,7 +5,8 @@ const Hero = () => {
   return (
     <section className="hero-header ax:p-6 p-16 relative h-[fit-content] w-full bg-background">
       {/* Background Image */}
-      <div className="absolute inset-0">
+      <div className="absolute inset-0"
+      style={{ width: "1400px" }}>
         <Image
           src={HeroImage}
           alt="Background with American flag"
