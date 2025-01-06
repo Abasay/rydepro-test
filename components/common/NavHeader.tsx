@@ -198,7 +198,7 @@ const HeaderComponent = () => {
         </ul>
         {/**sign up or login section */}
         <div className={`flex items-center gap-2`}>
-          <Link href={''} title='' className='flex gap-2 items-center'>
+          <Link href={'/language'} title='' className='flex gap-2 items-center'>
             <Image
               src={globe}
               width={20}
@@ -209,7 +209,7 @@ const HeaderComponent = () => {
               // placeholder='blur'
             />
             <span className='text-[#212121] text-base font-medium flex gap-1 items-center'>
-              EN <Image src={arrowDownIcon} alt='' width={15} height={15} />
+              EN <Image src={arrowDownIcon} alt='Icon' width={15} height={15} aria-hidden='true' />
             </span>
           </Link>
           <Button

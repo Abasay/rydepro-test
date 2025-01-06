@@ -185,7 +185,10 @@ const AboutSection = ({ className }: { className?: string }) => {
 
               {/* Mission Content */}
               <div className='max-w-full shadow-md rounded-[28px]  md:mt-4 flex flex-col gap-7 px-5 py-4 md:py-12 bg-white'>
-                <h2 className='text-[32px] max-md:text-xl leading-[40px] text-[#000000] font-medium'>
+                <h2
+                  className='text-[32px] max-md:text-xl leading-[40px] text-[#000000] font-medium'
+                  id='about-section-heading'
+                >
                   Our Mission is Simple
                 </h2>
                 <p className='text-2xl max-md:text-lg font-normal text-[#000000B2]  flex gap-7 flex-col items-start'>
