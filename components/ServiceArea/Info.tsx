@@ -2,9 +2,7 @@
 import clsx from 'clsx';
 import React, { useEffect, useState } from 'react';
 import styles from '@/styles/stylish.module.css';
-// import { ServiceAreas } from './Regions';
-import EmojiText from './EmojiConvert';
-import FlagIcon from './FlagIcon';
+// import
 import Flag from 'react-world-flags';
 import { ServiceAreas, ServiceAreas1 } from './Regions';
 

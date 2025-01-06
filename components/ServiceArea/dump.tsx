@@ -3,19 +3,14 @@ import clsx from 'clsx';
 import React, { useEffect, useState } from 'react';
 import styles from '@/styles/stylish.module.css';
 import { ServiceAreas } from './Regions';
-import EmojiText from './EmojiConvert';
-import FlagIcon from './FlagIcon';
 import Flag from 'react-world-flags';
 
 const CONTINENTS = ServiceAreas.map((area) => area.continent);
 
 const Dump = () => {
-  const [selectedContinent, setSelectedContinent] =
-    useState('Select a Continent');
-  const [selectedRegion, setSelectedRegion] =
-    useState<string>('Select a Region');
-  const [selectedCountry, setSelectedCountry] =
-    useState<string>('Select a Country');
+  const [selectedContinent, setSelectedContinent] = useState('Select a Continent');
+  const [selectedRegion, setSelectedRegion] = useState<string>('Select a Region');
+  const [selectedCountry, setSelectedCountry] = useState<string>('Select a Country');
 
   const [continentListOpen, setContinentListOpen] = useState<boolean>(false);
   const [regionListOpen, setRegionListOpen] = useState<boolean>(false);
@@ -34,14 +29,10 @@ const Dump = () => {
   useEffect(() => {
     if (selectedContinent !== 'Select a Continent') {
       setRegions(
-        ServiceAreas.find(
-          (area) => area.continent === selectedContinent
-        )?.regions.map((region) => region.region) || []
+        ServiceAreas.find((area) => area.continent === selectedContinent)?.regions.map((region) => region.region) || []
       );
 
-      const newServicesArea = ServiceAreas.filter(
-        (continent) => selectedContinent === continent.continent
-      );
+      const newServicesArea = ServiceAreas.filter((continent) => selectedContinent === continent.continent);
       // setServicesArea(newServicesArea);
     }
 
@@ -55,9 +46,7 @@ const Dump = () => {
       //     []
       // );
 
-      const newServicesAreas = ServiceAreas.filter(
-        (area) => selectedContinent === area.continent
-      );
+      const newServicesAreas = ServiceAreas.filter((area) => selectedContinent === area.continent);
 
       // const newRegions = newServicesAreas.map((area) =>
       //   area.regions.find((region) => region.region === selectedRegion)
@@ -89,24 +78,18 @@ const Dump = () => {
     <div className=' mt-16 w-full tracking-wider max-md:text-md max-md:leading-6 text-[#000000]'>
       <div className=' w-[60%] md:w-[70%] max-sm:w-[90%] mx-auto py-2 flex flex-col text-xl leading-8  font-[400] gap-10 max-md:text-md max-md:leading-6 '>
         <p>
-          We are excited to announce that RYDEPRO, your premier choice for
-          premium to luxury passenger transportation, is expanding its services
-          to new and exciting destinations
+          We are excited to announce that RYDEPRO, your premier choice for premium to luxury passenger transportation,
+          is expanding its services to new and exciting destinations
         </p>
         <p>
-          This global expansion signifies our commitment to excellence and our
-          dedication to redefining passenger transportation worldwide.
+          This global expansion signifies our commitment to excellence and our dedication to redefining passenger
+          transportation worldwide.
         </p>
       </div>
       <div className=' w-[90%] max-sm:w-[90%] mx-auto my-12 flex flex-col gap-8 text-xl leading-8 font-[400] max-md:text-md max-md:leading-6'>
-        <p className=''>
-          Our elite transportation services will soon be available in the
-          following locations:
-        </p>
+        <p className=''>Our elite transportation services will soon be available in the following locations:</p>
 
-        <h4 className='text-2xl max-md:text-xl mb-3 mt-3 font-bold tracking-wider text-[#0E0E0E]'>
-          NORTH AMERICA
-        </h4>
+        <h4 className='text-2xl max-md:text-xl mb-3 mt-3 font-bold tracking-wider text-[#0E0E0E]'>NORTH AMERICA</h4>
         <div className=' flex flex-col gap-16'>
           {ServiceAreas.map((area, idx) => {
             const { continent, regions } = area;
@@ -136,10 +119,7 @@ const Dump = () => {
                         className={clsx(
                           'flex flex-col gap-2 mt-4 min-w-[210px] ',
                           `${styles['areas-slide']}`,
-                          `${
-                            region.region === 'Pacific Islands' &&
-                            ' sm:min-w-[450px] '
-                          }`
+                          `${region.region === 'Pacific Islands' && ' sm:min-w-[450px] '}`
                         )}
                       >
                         <h5 className='text-lg max-md:text-md max-md:leading-6 text-[#0E0E0E] font-medium'>
@@ -166,15 +146,8 @@ const Dump = () => {
                                 key={state}
                                 className={clsx(
                                   'py-1 max-md:text-md max-md:leading-6 text-[#3C3C3C] font-[400]',
-                                  `${
-                                    selectedCountry === state &&
-                                    'font-bold underline-offset-3 underline '
-                                  }`,
-                                  `${
-                                    region.region === 'Pacific Islands' &&
-                                    idx >= 7 &&
-                                    'sm:ml-20'
-                                  }`,
+                                  `${selectedCountry === state && 'font-bold underline-offset-3 underline '}`,
+                                  `${region.region === 'Pacific Islands' && idx >= 7 && 'sm:ml-20'}`,
                                   `${
                                     region.region === 'Territories' &&
                                     continent === 'Canada Territories' &&
