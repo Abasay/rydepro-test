@@ -1,6 +1,9 @@
 import type { Metadata } from 'next';
 // import localFont from 'next/font/local';
 import './globals.css';
+import Footer from '@/components/common/Footer';
+import NavHeader from '@/components/common/NavHeader';
+import { PageProvider } from '@/contexts/PageContext';
 
 export const metadata: Metadata = {
   title: 'Rydepro',
@@ -13,8 +16,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang='en'>
-      <body className={` antialiased`}>{children}</body>
+    <html lang='en' dir='ltr'>
+      <body className={` antialiased`}>
+        <PageProvider>
+          <NavHeader />
+          {children}
+          <Footer />
+        </PageProvider>
+      </body>
     </html>
   );
 }
