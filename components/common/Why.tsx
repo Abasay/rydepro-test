@@ -1,14 +1,14 @@
 import React from 'react';
 import Image from 'next/image';
-import qwe from '@/public/2.png';
-import bg from '@/public/Gradient.png';
+// import qwe from '@/public/2.png';
+// import bg from '@/public/Gradient.png';
 
 const Why: React.FC = () => {
   return (
     <div
       className='whyHolder flex  gap-3 justify-center items-center text-[#D0D0D0] py-16'
       style={{
-        backgroundImage: `url(${bg.src})`,
+        // backgroundImage: `url(${bg.src})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
       }}
@@ -28,7 +28,7 @@ const Why: React.FC = () => {
 
         {/* Right Image */}
         <div className='newers la:flex  hidden lg:w-1/2 mt-10 lg:mt-0 justify-center'>
-          <Image src={qwe} alt='Why Choose Us' className='w-[350px] la:w-[248px] lg:w-[400px] object-cover' />
+          {/* <Image src={qwe} alt='Why Choose Us' className='w-[350px] la:w-[248px] lg:w-[400px] object-cover' /> */}
         </div>
 
         {/* Bottom Section */}
@@ -71,7 +71,7 @@ const Why: React.FC = () => {
 
       {/* Right Image */}
       <div className='nows flex items-center justify-center  mt-10 lg:mt-0 df:hidden la:hidden'>
-        <Image src={qwe} alt='Why Choose Us' className='w-[302px] h-[543px] cx:w-[248px]  object-contain' />
+        {/* <Image src={qwe} alt='Why Choose Us' className='w-[302px] h-[543px] cx:w-[248px]  object-contain' /> */}
       </div>
     </div>
   );
