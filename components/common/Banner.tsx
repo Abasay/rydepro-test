@@ -121,8 +121,8 @@ const Banner: React.FC = () => {
             <div className='flex justify-center items-center flex-col'>
               <p className='text-[20px] font-normal'>Sign Up via App:</p>
               <div className='flex gap-4 mt-4 pb-20 mb-'>
-                <Image src='/appstore.png' alt='App Store' width={200} height={50} className='fd:w-[150px]' />
-                <Image src='/googleplay.png' alt='Google Play' width={200} height={50} className='fd:w-[150px]' />
+                {/* <Image src='/appstore.png' alt='App Store' width={200} height={50} className='fd:w-[150px]' />
+                <Image src='/googleplay.png' alt='Google Play' width={200} height={50} className='fd:w-[150px]' /> */}
               </div>
             </div>
           </div>

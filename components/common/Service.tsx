@@ -1,8 +1,8 @@
 import React from 'react';
 import Image from 'next/image'; // Next.js Image for optimization
-import rectangle from '@/public/3.png';
-import bg from '@/public/multiple.webp';
-import world from '@/public/world.png';
+// import rectangle from '@/public/3.png';
+// import bg from '@/public/multiple.webp';
+// import world from '@/public/world.png';
 import Why from './Why';
 import InnovativeFeatures from './InnovativeFeatures';
 import Fleet from './Fleet';
@@ -12,7 +12,7 @@ const Services: React.FC = () => {
     <section
       className='services flex flex-col'
       style={{
-        backgroundImage: `url(${bg.src})`,
+        // backgroundImage: `url(${bg.src})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
       }}
@@ -21,7 +21,7 @@ const Services: React.FC = () => {
       <div
         className='serviceHolder flex flex-col justify-center items-center h-72 gap-5 py-5  text-center'
         style={{
-          backgroundImage: `url(${world.src})`,
+          // backgroundImage: `url(${world.src})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}
@@ -49,7 +49,7 @@ const Services: React.FC = () => {
           {/* Note 1 */}
           <div className='servicesNote  flex ex:flex-col-reverse justify-between gap-[1.7rem] '>
             <div className='w-[clamp(276px,50vw,2822px)] h-[clamp(440px,10vh,450px)] ex:w-full'>
-              <Image src={rectangle} alt='Multi-Stop' objectFit='contain' className='fixed-dimensions' />
+              {/* <Image src={rectangle} alt='Multi-Stop' objectFit='contain' className='fixed-dimensions' /> */}
             </div>
 
             <div className=' flex flex-col gap-16'>
