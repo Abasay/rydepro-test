@@ -17,7 +17,7 @@ export const headerdata = [
   {
     id: 4,
     name: 'Service Area',
-    link: '/service_areas',
+    link: '/service-area',
   },
   {
     id: 5,

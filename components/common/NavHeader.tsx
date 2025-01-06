@@ -145,7 +145,11 @@ const HeaderComponent = () => {
       className={`w-full font-satoshi shadow flex py-4 lg:h-[80px] h-auto flex-col px-5 md:px-2 lg:px-20 justify-center items-center bg-[#F7F7F7] sticky top-0 z-50`}
       style={{ boxShadow: '0px 4px 8px 0px #CFD7E2A3' }}
     >
-      <nav className={`container md:pl-5 lg:pl-0 flex justify-between items-center`}>
+      <nav
+        className={`container md:pl-5 lg:pl-0 flex justify-between items-center`}
+        role='navigation'
+        aria-label='Main navigation'
+      >
         {/**image / logo section */}
         <Link
           href='/'
@@ -157,16 +161,12 @@ const HeaderComponent = () => {
             width={logo_width.width}
             height={logo_width.height}
             className={`${logo_width.class}`}
-            alt='Rydepro Logo' // Provide meaningful alt text
+            alt='Rydepro Homepage' // Provide meaningful alt text
             title='Rydepro Logo' // Provide a descriptive title for the image
           />
         </Link>
         {/**routing links section */}
-        <ul
-          className='hidden list-none lg:flex lg:items-center md:gap-8'
-          role='navigation'
-          aria-label='Main navigation'
-        >
+        <ul className='hidden list-none lg:flex lg:items-center md:gap-8'>
           {headerdata.map((item) => {
             const { id, name, link } = item;
             const isActive = currentPage === link;

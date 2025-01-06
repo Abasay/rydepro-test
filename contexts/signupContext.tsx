@@ -5,25 +5,16 @@
 
 import { SignUpProps } from '@/types/GeneralTypes';
 import { GeneralSignUpContext } from '@/types/types';
-import React, {
-  createContext,
-  useState,
-  ReactNode,
-  useContext,
-  useEffect,
-} from 'react';
+import React, { createContext, useState, ReactNode, useContext, useEffect } from 'react';
 
 // Define the shape of the context state
 
 // Create the context with an initial undefined value
-const SignUpPageContext = createContext<GeneralSignUpContext | undefined>(
-  undefined
-);
+const SignUpPageContext = createContext<GeneralSignUpContext | undefined>(undefined);
 
 // Create a provider component
 export const SignUpProvider = ({ children }: { children: ReactNode }) => {
-  const [isSignUpButtonClicked, setIsSignUpButtonClicked] =
-    useState<boolean>(false);
+  const [isSignUpButtonClicked, setIsSignUpButtonClicked] = useState<boolean>(false);
   const [isHomePageActive, setIsHomePageActive] = useState<boolean>(true);
 
   const [signUp, setSignUp] = useState<SignUpProps>({
@@ -34,6 +25,8 @@ export const SignUpProvider = ({ children }: { children: ReactNode }) => {
     isOTPVerificationPageActive: false,
     isSetAccountRecoveryPageActive: false,
     isConfirmAccountRecoveryPageActive: false,
+    recoveryCode: '',
+    showOnboardUser: false,
   });
 
   return (
@@ -45,7 +38,8 @@ export const SignUpProvider = ({ children }: { children: ReactNode }) => {
         setIsHomePageActive,
         signUp,
         setSignUp,
-      }}>
+      }}
+    >
       {children}
     </SignUpPageContext.Provider>
   );

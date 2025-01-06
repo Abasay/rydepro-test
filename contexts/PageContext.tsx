@@ -5,8 +5,8 @@ import React, { useState, useContext, createContext, ReactNode, useEffect, useRe
 import { DefaultGlobalTypes } from '@/types/types';
 import { AuthTypes } from '@/types/Auth/CreateAccountTypes/auth';
 import { WebMenuTypes } from '@/types/WebMenu/webMenu';
-import reducer from '@/components/common/About/reducer';
-import { sidebarData } from '@/components/common/About/aboutSidebar';
+import reducer from '@/components/About/reducer';
+import { sidebarData } from '@/components/About/aboutSidebar';
 
 const PageContextAPI = createContext<DefaultGlobalTypes | undefined>(undefined);
 
