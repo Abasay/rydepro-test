@@ -1,23 +1,16 @@
 /** @format */
 
 'use client';
-import React, {
-  useState,
-  useContext,
-  createContext,
-  ReactNode,
-  useEffect,
-  useReducer,
-} from 'react';
+import React, { useState, useContext, createContext, ReactNode, useEffect, useReducer } from 'react';
 import { DefaultGlobalTypes } from '@/types/types';
 import { AuthTypes } from '@/types/Auth/CreateAccountTypes/auth';
 import { WebMenuTypes } from '@/types/WebMenu/webMenu';
-import reducer from '@/components/About/reducer';
-import { sidebarData } from '@/components/About/mainobj';
+import reducer from '@/components/common/About/reducer';
+import { sidebarData } from '@/components/common/About/aboutSidebar';
 
 const PageContextAPI = createContext<DefaultGlobalTypes | undefined>(undefined);
 
-export const PageContext = ({ children }: { children: ReactNode }) => {
+export const PageProvider = ({ children }: { children: ReactNode }) => {
   /**About us */
   const [currentPage, setCurrentPage] = useState('Home');
   const [animate, setAnimate] = useState<boolean>(false);

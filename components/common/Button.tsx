@@ -10,14 +10,7 @@ interface ButtonProps {
   name?: string;
 }
 
-const Button = ({
-  title,
-  value,
-  className,
-  isDisabled,
-  onClick,
-  name,
-}: ButtonProps) => {
+const Button = ({ title, value, className, isDisabled, onClick, name }: ButtonProps) => {
   return (
     <button
       name={name}
