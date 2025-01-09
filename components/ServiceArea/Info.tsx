@@ -107,7 +107,7 @@ const Info = () => {
                 <h2 className='text-2xl max-md:text-xl font-bold tracking-wider text-[#0E0E0E]'>
                   {code ? (
                     <span className=' flex items-center gap-2'>
-                      <Flag code={code} width={20} height={20} />
+                      <Flag code={code} width={20} height={20} alt={`Flag of ${continent}`} />
                       <span>{continent.toUpperCase()}</span>
                     </span>
                   ) : (
@@ -129,7 +129,7 @@ const Info = () => {
                         <h3 className='text-lg leading-6 max-md:text-base max-430:text-sm max-md:leading-6 text-[#0E0E0E] font-bold'>
                           {region.code ? (
                             <span className=' flex items-center gap-2'>
-                              <Flag code={region.code} width={20} height={20} />
+                              <Flag code={region.code} width={20} height={20} alt={`Flag of ${region.region}`} />
                               <span>{region.region}</span>
                             </span>
                           ) : (
@@ -147,7 +147,12 @@ const Info = () => {
                               >
                                 {province.code ? (
                                   <span className=' flex items-center gap-2'>
-                                    <Flag code={province.code} width={20} height={20} />
+                                    <Flag
+                                      code={province.code}
+                                      width={20}
+                                      height={20}
+                                      alt={`Flag of ${province.name}`}
+                                    />
                                     <span>{province.name}</span>
                                   </span>
                                 ) : (
