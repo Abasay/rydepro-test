@@ -25,7 +25,7 @@ const Info = () => {
 
             return (
               <article key={continent} className='flex flex-col gap-8 max-md:gap-6'>
-                <h2 className='text-2xl max-md:text-xl font-bold tracking-wider text-[#0E0E0E]' title={continent}>
+                <h2 className='text-2xl max-md:text-xl font-bold tracking-wider text-[#0E0E0E]'>
                   {continent.toUpperCase()}
                 </h2>
                 {states.map((state, idx) => {
@@ -144,7 +144,6 @@ const Info = () => {
                                 className={clsx(
                                   'py-1 max-md:text-md max-md:leading-6 text-[#0E0E0E] font-normal min-w-fit'
                                 )}
-                                title={province.name}
                               >
                                 {province.code ? (
                                   <span className=' flex items-center gap-2'>
