@@ -31,10 +31,7 @@ const Info = () => {
                 {states.map((state, idx) => {
                   return (
                     <section key={state.country} className='flex flex-col gap-4'>
-                      <h3
-                        className='text-xl leading-8 max-md:text-lg max-430:text-base font-bold text-[#0E0E0E] tracking-wider'
-                        title={state.country}
-                      >
+                      <h3 className='text-xl leading-8 max-md:text-lg max-430:text-base font-bold text-[#0E0E0E] tracking-wider'>
                         {state.code ? (
                           <span className='flex items-center gap-2'>
                             <Flag code={state.code} width={20} height={20} alt={`Flag of ${state.country}`} />
@@ -56,10 +53,7 @@ const Info = () => {
                               key={region.region}
                               className={clsx('flex flex-col gap-2 mt-2 min-w-[188px]', `${styles['areas-slide']}`)}
                             >
-                              <h4
-                                className='text-lg leading-6 max-md:text-base max-430:text-sm max-md:leading-6 text-[#0E0E0E] font-bold'
-                                title={region.region}
-                              >
+                              <h4 className='text-lg leading-6 max-md:text-base max-430:text-sm max-md:leading-6 text-[#0E0E0E] font-bold'>
                                 {region.code ? (
                                   <span className='flex items-center gap-2'>
                                     <Flag code={region.code} width={20} height={20} alt={`Flag of ${region.region}`} />{' '}
@@ -77,7 +71,6 @@ const Info = () => {
                                       className={clsx(
                                         'py-1 max-md:text-md max-md:leading-6 text-[#0E0E0E] font-normal min-w-fit'
                                       )}
-                                      title={province.name}
                                     >
                                       {province.code ? (
                                         <span className='flex items-center gap-2'>
@@ -106,15 +99,12 @@ const Info = () => {
               </article>
             );
           })}
-          {/* {ServiceAreas.map((area, idx) => {
+          {ServiceAreas.map((area, idx) => {
             const { continent, regions, code } = area;
 
             return (
               <article className='flex flex-col gap-8' key={continent}>
-                <h2
-                  className='text-2xl max-md:text-md max-md:leading-6 font-bold text-[#0E0E0E] tracking-wider'
-                  title={continent}
-                >
+                <h2 className='text-2xl max-md:text-xl font-bold tracking-wider text-[#0E0E0E]'>
                   {code ? (
                     <span className=' flex items-center gap-2'>
                       <Flag code={code} width={20} height={20} />
@@ -136,10 +126,7 @@ const Info = () => {
                         key={region.region}
                         className={clsx('flex flex-col gap-2 mt-2  min-w-[180px] ', `${styles['areas-slide']}`)}
                       >
-                        <h3
-                          className='text-lg max-md:text-md max-md:leading-6 text-[#0E0E0E] font-medium'
-                          title={region.region}
-                        >
+                        <h3 className='text-lg leading-6 max-md:text-base max-430:text-sm max-md:leading-6 text-[#0E0E0E] font-bold'>
                           {region.code ? (
                             <span className=' flex items-center gap-2'>
                               <Flag code={region.code} width={20} height={20} />
@@ -177,7 +164,7 @@ const Info = () => {
                 </section>
               </article>
             );
-          })} */}
+          })}
         </div>
       </div>
     </section>
