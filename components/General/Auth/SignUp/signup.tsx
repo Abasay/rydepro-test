@@ -19,8 +19,8 @@ import { useSignUpContext } from '@/contexts/signupContext';
 //import { encryptPassword } from '@/utils/encrypt';
 import SubOption from '@/components/GeneralWEBApp/SubOption/index';
 import styles from '@/styles/stylish.module.css';
-import { POST_REQUEST } from '@/app/utils/requests';
-import { URLS } from '@/app/utils/URLS';
+import { POST_REQUEST } from '@/utils/requests';
+import { URLS } from '@/utils/URLS';
 
 const SignUp = () => {
   const { signUp, setSignUp, setIsHomePageActive } = useSignUpContext();
@@ -30,17 +30,12 @@ const SignUp = () => {
   const [confirmErr, setConfirmErr] = useState<boolean>(false);
 
   const validationSchema = Yup.object({
-    email: Yup.string()
-      .email('Invalid email format')
-      .required('Email is required'),
+    email: Yup.string().email('Invalid email format').required('Email is required'),
     password: Yup.string()
       .min(8, 'Password should be at least 8 characters')
       .matches(/[A-Z]/, 'Password should contain at least one uppercase letter')
       .matches(/[a-z]/, 'Password should contain at least one lowercase letter')
-      .matches(
-        /[@$!%*?&#]/,
-        'Password should contain at least one special character'
-      )
+      .matches(/[@$!%*?&#]/, 'Password should contain at least one special character')
       .required('Password is required'),
     confirmPassword: Yup.string()
       .oneOf([Yup.ref('password')], 'Passwords must match')
@@ -64,18 +59,18 @@ const SignUp = () => {
       };
       //const encryptedPassword = encryptPassword(password, '');
       setSigningUp(true);
-      const url = URLS.BASE_AUTH + URLS.RIDER + URLS.sendOTP
-      const response = await POST_REQUEST(url, {email, password, confirm: confirmPassword})
-      if(response.success){
-         setSignUp({
-        ...signUp,
+      const url = URLS.BASE_AUTH + URLS.RIDER + URLS.sendOTP;
+      const response = await POST_REQUEST(url, { email, password, confirm: confirmPassword });
+      if (response.success) {
+        setSignUp({
+          ...signUp,
           email: values.email,
-        password: values.password,
-        isOTPVerificationPageActive: true,
-        isSignUpButtonClicked: false,
-      });
+          password: values.password,
+          isOTPVerificationPageActive: true,
+          isSignUpButtonClicked: false,
+        });
       } else {
-        setError((response as any).message )
+        setError((response as any).message);
       }
       setSigningUp(false);
       // setSignUp({
@@ -84,34 +79,35 @@ const SignUp = () => {
       //   password: values.password,
       //   confirmPassword: values.confirmPassword,
       // });
-      
-     
     },
   });
 
-  useEffect(()=>{
-    if(formik.values.password && formik.values.confirmPassword && (formik.values.password !== formik.values.confirmPassword)){
+  useEffect(() => {
+    if (
+      formik.values.password &&
+      formik.values.confirmPassword &&
+      formik.values.password !== formik.values.confirmPassword
+    ) {
       // formik.setErrors({confirmPassword: 'Passwords do not match'})
-      setConfirmErr(true)
-    } else{
-      setConfirmErr(false)
+      setConfirmErr(true);
+    } else {
+      setConfirmErr(false);
     }
-  }, [formik])
+  }, [formik]);
 
- useEffect(() => {
-  const timer = setTimeout(() => {
-    formik.setErrors({});
-  }, 3000);
-  return () => clearTimeout(timer);
-}, [formik.errors]);
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      formik.setErrors({});
+    }, 3000);
+    return () => clearTimeout(timer);
+  }, [formik.errors]);
 
-
-useEffect(()=>{
-  const interval = setInterval(() => {
-    setError('');
-  }, 3000);
-  return () => clearInterval(interval);
-}, [error])
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setError('');
+    }, 3000);
+    return () => clearInterval(interval);
+  }, [error]);
 
   return (
     <GeneralDesign>
@@ -119,13 +115,7 @@ useEffect(()=>{
         className={`container h-[70px] flex justify-center md:justify-between px-0 md:px-10 ${styles['fade-in']}`}
       >
         <div className='inline md:hidden'></div>
-        <Image
-          src={RydeProLogo}
-          alt=''
-          className='w-[77px] h-[77px]'
-          width={75}
-          height={77}
-        />
+        <Image src={RydeProLogo} alt='' className='w-[77px] h-[77px]' width={75} height={77} />
         <Button
           className='md:inline hidden'
           onClick={() => {
@@ -144,9 +134,7 @@ useEffect(()=>{
           className='md:hidden absolute right-10 top-[56px]'
         />
       </header>
-      <main
-        className={`w-full flex justify-center items-center ${styles['slide-from-bottom']}`}
-      >
+      <main className={`w-full flex justify-center items-center ${styles['slide-from-bottom']}`}>
         <form
           onSubmit={formik.handleSubmit}
           className='container md:w-[614px] mt-10 md:mt-0 min-h-[896px] rounded-[24px] md:p-[48px] flex flex-col gap-[24px] md:bg-[#FFFFFF] md:shadow-sm'
@@ -165,13 +153,8 @@ useEffect(()=>{
 
           {/** Inputs fields */}
           <div className='flex flex-col md:w-[518px] gap-[24px]'>
-            <label
-              htmlFor='email'
-              className='flex flex-col gap-[8px] w-[inherit]'
-            >
-              <span className='text-[14px] leading-[20px] font-medium text-[#0E0E0E]'>
-                Email Address
-              </span>
+            <label htmlFor='email' className='flex flex-col gap-[8px] w-[inherit]'>
+              <span className='text-[14px] leading-[20px] font-medium text-[#0E0E0E]'>Email Address</span>
               <input
                 name='email'
                 id='email'
@@ -184,19 +167,12 @@ useEffect(()=>{
                 onBlur={formik.handleBlur}
               />
               {formik.touched.email && formik.errors.email ? (
-                <p className='text-red-600 text-sm'>
-                  {formik.errors.email}
-                </p>
+                <p className='text-red-600 text-sm'>{formik.errors.email}</p>
               ) : null}
             </label>
 
-            <label
-              htmlFor='password'
-              className='flex flex-col gap-[8px] w-[inherit]'
-            >
-              <span className='text-[14px] leading-[20px] font-medium text-[#0E0E0E]'>
-                Password
-              </span>
+            <label htmlFor='password' className='flex flex-col gap-[8px] w-[inherit]'>
+              <span className='text-[14px] leading-[20px] font-medium text-[#0E0E0E]'>Password</span>
               <input
                 type='password'
                 id='password'
@@ -222,24 +198,17 @@ useEffect(()=>{
                   />
                 </svg>
                 <span className='text-[12px] leading-[16px] font-normal text-[#3C3C3C]'>
-                  Password should be at least 8 characters long, contain at
-                  least 1 uppercase, 1 lowercase, & 1 special character
+                  Password should be at least 8 characters long, contain at least 1 uppercase, 1 lowercase, & 1 special
+                  character
                 </span>
               </span>
               {formik.touched.password && formik.errors.password ? (
-                <p className='text-red-600 text-sm'>
-                  {formik.errors.password}
-                </p>
+                <p className='text-red-600 text-sm'>{formik.errors.password}</p>
               ) : null}
             </label>
 
-            <label
-              htmlFor='confirmPassword'
-              className='flex flex-col gap-[8px] w-[inherit]'
-            >
-              <span className='text-[14px] leading-[20px] font-medium text-[#0E0E0E]'>
-                Confirm Password
-              </span>
+            <label htmlFor='confirmPassword' className='flex flex-col gap-[8px] w-[inherit]'>
+              <span className='text-[14px] leading-[20px] font-medium text-[#0E0E0E]'>Confirm Password</span>
               <input
                 type='password'
                 id='confirmPassword'
@@ -250,25 +219,16 @@ useEffect(()=>{
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
               />
-              {formik.touched.confirmPassword &&
-              formik.errors.confirmPassword ? (
-                <p className='text-red-600 text-sm'>
-                  {formik.errors.confirmPassword}
-                </p>
+              {formik.touched.confirmPassword && formik.errors.confirmPassword ? (
+                <p className='text-red-600 text-sm'>{formik.errors.confirmPassword}</p>
               ) : null}
-              
-              {confirmErr ? (
-                <p className='text-red-600 text-sm'>
-                  Passwords do not match
-                </p>
-              ) : null}
+
+              {confirmErr ? <p className='text-red-600 text-sm'>Passwords do not match</p> : null}
             </label>
           </div>
 
           {/** Button */}
-          {error && <p className='text-red-600 text-sm my-1 text-center'>
-                  {error}
-          </p>}
+          {error && <p className='text-red-600 text-sm my-1 text-center'>{error}</p>}
           <button
             // onClick={formik.submitForm}
             disabled={signingUp}
@@ -276,16 +236,12 @@ useEffect(()=>{
             type='submit'
             className='h-[56px] rounded-[8px] p-[8px] gap-[16px] bg-[#0E0E0E] text-base leading-[24px] font-medium text-[#FAF6F6] disabled:cursor-not-allowed'
           >
-            {
-              signingUp ? 'Creating account...' : 'Create Account'
-            }
+            {signingUp ? 'Creating account...' : 'Create Account'}
           </button>
 
           <div className='w-[inherit] h-[24px] flex gap-[24px] items-center'>
             <hr className='w-[226px] border-[1px]' />
-            <span className='text-base leading-[24px] font-normal text-[#AAAAAA]'>
-              Or
-            </span>
+            <span className='text-base leading-[24px] font-normal text-[#AAAAAA]'>Or</span>
             <hr className='w-[226px] border-[1px]' />
           </div>
 
@@ -308,28 +264,12 @@ useEffect(()=>{
 
           <div className='md:hidden flex h-[92px] justify-evenly'>
             <div className='flex flex-col gap-[4px]'>
-              <Image
-                src={googleRoundIcon}
-                alt=''
-                width={64}
-                height={64}
-                className='w-[64px] h-[64px]'
-              />
-              <span className='font-bold text-base text-[#0E0E0E] leading-[24px] text-center'>
-                Google
-              </span>
+              <Image src={googleRoundIcon} alt='' width={64} height={64} className='w-[64px] h-[64px]' />
+              <span className='font-bold text-base text-[#0E0E0E] leading-[24px] text-center'>Google</span>
             </div>
             <div className='flex flex-col gap-[4px]'>
-              <Image
-                src={appleRoundIcon}
-                alt=''
-                width={64}
-                height={64}
-                className='w-[64px] h-[64px]'
-              />
-              <span className='font-bold text-base text-[#0E0E0E] leading-[24px] text-center'>
-                Apple
-              </span>
+              <Image src={appleRoundIcon} alt='' width={64} height={64} className='w-[64px] h-[64px]' />
+              <span className='font-bold text-base text-[#0E0E0E] leading-[24px] text-center'>Apple</span>
             </div>
           </div>
 
@@ -355,9 +295,7 @@ useEffect(()=>{
               return (
                 <Link
                   title={text}
-                  className={`text-[18px] text-[#0E0E0E] ${
-                    idx === 1 && 'hidden'
-                  } ${
+                  className={`text-[18px] text-[#0E0E0E] ${idx === 1 && 'hidden'} ${
                     idx !== 0 && 'border-l-[1px]'
                   } border-[#D0D0D0] px-3 leading-[24px] font-medium text-center`}
                   href={url}

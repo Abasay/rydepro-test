@@ -13,8 +13,8 @@ import { useSignUpContext } from '@/contexts/signupContext';
 import SubOption from '@/components/GeneralWEBApp/SubOption/index';
 import backArrow from '@/components/GeneralWEBApp/Auth/SignIn/PinLogin/svgs/backArrow.svg';
 import styles from '@/styles/stylish.module.css';
-import { PUT_REQUEST } from '@/app/utils/requests';
-import { URLS } from '@/app/utils/URLS';
+import { PUT_REQUEST } from '@/utils/requests';
+import { URLS } from '@/utils/URLS';
 
 const SetAccountRecovery = () => {
   const [recoveryCode, setRecoveryCode] = useState<string>('');
@@ -28,31 +28,26 @@ const SetAccountRecovery = () => {
       .min(8, 'Password should be at least 8 characters')
       .matches(/[A-Z]/, 'Password should contain at least one uppercase letter')
       .matches(/[a-z]/, 'Password should contain at least one lowercase letter')
-      .matches(
-        /[@$!%*?&#]/,
-        'Password should contain at least one special character'
-      )
+      .matches(/[@$!%*?&#]/, 'Password should contain at least one special character')
       .matches(/[0-9]/, 'Password should contain at least one number'),
   });
-
-  
 
   const formik = useFormik({
     initialValues: {
       recoveryCode: recoveryCode || '',
     },
     validationSchema,
-    onSubmit: async (values, { setSubmitting, resetForm, }) => {
+    onSubmit: async (values, { setSubmitting, resetForm }) => {
       event?.preventDefault();
       console.log(values);
-         setSignUp({
-          ...signUp,
-          recoveryCode: values.recoveryCode,
-          isOTPVerificationPageActive: false,
-          isSignUpButtonClicked: false,
-          isSetAccountRecoveryPageActive: false,
-          isConfirmAccountRecoveryPageActive: true,
-        });
+      setSignUp({
+        ...signUp,
+        recoveryCode: values.recoveryCode,
+        isOTPVerificationPageActive: false,
+        isSignUpButtonClicked: false,
+        isSetAccountRecoveryPageActive: false,
+        isConfirmAccountRecoveryPageActive: true,
+      });
       // const payload = {
       //   email: signUp.email,
       //   code: values.recoveryCode,
@@ -85,7 +80,6 @@ const SetAccountRecovery = () => {
       //   isSetAccountRecoveryPageActive: false,
       //   isConfirmAccountRecoveryPageActive: true,
       // });
-
     },
   });
 
@@ -125,18 +119,8 @@ const SetAccountRecovery = () => {
             alt=''
           />
         </div> */}
-        <Image
-          src={RydeProLogo}
-          alt=''
-          className='w-[77px] h-[77px]  md:inline '
-          width={75}
-          height={52}
-        />
-        <Button
-          className='md:inline hidden'
-          onClick={() => {}}
-          value='Sign In'
-        />
+        <Image src={RydeProLogo} alt='' className='w-[77px] h-[77px]  md:inline ' width={75} height={52} />
+        <Button className='md:inline hidden' onClick={() => {}} value='Sign In' />
         <Image
           src={ellipses}
           width={20}
@@ -148,9 +132,7 @@ const SetAccountRecovery = () => {
           className='hidden'
         />
       </header>
-      <main
-        className={`w-full flex justify-center md:h-[70vh] items-center ${styles['slide-from-right']}`}
-      >
+      <main className={`w-full flex justify-center md:h-[70vh] items-center ${styles['slide-from-right']}`}>
         <form
           action=''
           onSubmit={formik.handleSubmit}
@@ -162,13 +144,11 @@ const SetAccountRecovery = () => {
             </h2>
             <div className='md:h-[168px] flex flex-col gap-[4px] mt-4 md:mt-0'>
               <span className='text-base font-normal leading-[24px] text-[#3C3C3C]'>
-                To keep your account secure, set up a recovery code. You&apos;ll
-                need this code if you lose access to your account.
+                To keep your account secure, set up a recovery code. You&apos;ll need this code if you lose access to
+                your account.
               </span>
               <div className='flex flex-col mt-6'>
-                <h2 className='font-bold text-base leading-[24px] text-[#3C3C3C]'>
-                  Instructions
-                </h2>
+                <h2 className='font-bold text-base leading-[24px] text-[#3C3C3C]'>Instructions</h2>
                 <ol className=' text-base font-normal leading-[24px] text-[#3C3C3C] list-decimal list-inside'>
                   <li>Create a code you can remember.</li>
                   <li> Store it safely.</li>
@@ -177,13 +157,8 @@ const SetAccountRecovery = () => {
               </div>
             </div>
           </div>
-          <label
-            htmlFor='password'
-            className='flex flex-col gap-[8px] min-h-[116px] '
-          >
-            <span className='text-[14px] leading-[20px] font-medium text-[#0E0E0E]'>
-              Account Recovery Code
-            </span>
+          <label htmlFor='password' className='flex flex-col gap-[8px] min-h-[116px] '>
+            <span className='text-[14px] leading-[20px] font-medium text-[#0E0E0E]'>Account Recovery Code</span>
             <input
               type='password'
               aria-describedby='recovery-help'
@@ -195,31 +170,19 @@ const SetAccountRecovery = () => {
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
             />
-            <span
-              id='recovery-help'
-              className='flex items-center gap-[4px] rounded-[8px]'
-            >
-              <svg
-                width='12'
-                height='12'
-                viewBox='0 0 12 12'
-                fill='none'
-                xmlns='http://www.w3.org/2000/svg'
-              >
+            <span id='recovery-help' className='flex items-center gap-[4px] rounded-[8px]'>
+              <svg width='12' height='12' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'>
                 <path
                   d='M6 5C6.27614 5 6.5 5.22386 6.5 5.5V8.5C6.5 8.77614 6.27614 9 6 9C5.72386 9 5.5 8.77614 5.5 8.5V5.5C5.5 5.22386 5.72386 5 6 5ZM6.00001 4.24907C6.41369 4.24907 6.74905 3.91371 6.74905 3.50003C6.74905 3.08635 6.41369 2.751 6.00001 2.751C5.58633 2.751 5.25098 3.08635 5.25098 3.50003C5.25098 3.91371 5.58633 4.24907 6.00001 4.24907ZM0 6C0 2.68629 2.68629 0 6 0C9.31371 0 12 2.68629 12 6C12 9.31371 9.31371 12 6 12C2.68629 12 0 9.31371 0 6ZM6 1C3.23858 1 1 3.23858 1 6C1 8.76142 3.23858 11 6 11C8.76142 11 11 8.76142 11 6C11 3.23858 8.76142 1 6 1Z'
                   fill='#111111'
                 />
               </svg>
               <span className='text-[12px] leading-[16px] font-normal text-[#3C3C3C]'>
-                Use 8-12 characters with uppercase, lowercase, numbers, and
-                special characters (e.g., A1b2C3d4!).
+                Use 8-12 characters with uppercase, lowercase, numbers, and special characters (e.g., A1b2C3d4!).
               </span>
             </span>
             {formik.touched.recoveryCode && formik.errors.recoveryCode ? (
-              <div className='text-red-600 text-sm'>
-                {formik.errors.recoveryCode}
-              </div>
+              <div className='text-red-600 text-sm'>{formik.errors.recoveryCode}</div>
             ) : null}
           </label>
 

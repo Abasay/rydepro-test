@@ -14,8 +14,8 @@ import { useSignUpContext } from '@/contexts/signupContext';
 import styles from '@/styles/stylish.module.css';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
-import { PUT_REQUEST } from '@/app/utils/requests';
-import { URLS } from '@/app/utils/URLS';
+import { PUT_REQUEST } from '@/utils/requests';
+import { URLS } from '@/utils/URLS';
 
 const ConfirmAccountRecovery = () => {
   const [isClicked, setIsClicked] = useState<boolean>(false);
@@ -23,71 +23,66 @@ const ConfirmAccountRecovery = () => {
   const [recoveryCode, setRecoveryCode] = useState<string>('');
   const [error, setError] = useState<string>('');
 
-    const validationSchema = Yup.object({
-      recoveryCode: Yup.string()
-        .min(8, 'Password should be at least 8 characters')
-        .matches(/[A-Z]/, 'Password should contain at least one uppercase letter')
-        .matches(/[a-z]/, 'Password should contain at least one lowercase letter')
-        .matches(
-          /[@$!%*?&#]/,
-          'Password should contain at least one special character'
-        )
-        .matches(/[0-9]/, 'Password should contain at least one number'),
-    });
-   const formik = useFormik({
-      initialValues: {
-        recoveryCode: recoveryCode || '',
-      },
-      validationSchema,
-      onSubmit: async (values, { setSubmitting, resetForm, }) => {
-        event?.preventDefault();
-        console.log(values);
-        if(signUp.recoveryCode !== values.recoveryCode){
-          setError('Recovery code does not match')
-          return
-        }
-        const payload = {
-          email: signUp.email,
-          code: values.recoveryCode,
-          confirmCode: values.recoveryCode,
-        }
-  
-        setSubmitting(true);
-        const url = URLS.BASE_AUTH + URLS.RIDER + URLS.setRecoveryCode
-        const response = await PUT_REQUEST(url, payload)
-        if(response.success){
-          setSignUp({
-            ...signUp,
-            isOTPVerificationPageActive: false,
-            isSignUpButtonClicked: false,
-            isSetAccountRecoveryPageActive: false,
-            isConfirmAccountRecoveryPageActive: false,
-            showOnboardUser: true,
-          });
-          resetForm()
-  
-        } else{
-          setError((response as any).message)
-        }
-        setSubmitting(false);
-        // setSubmitting(false);
-        // resetForm();
-        // setSignUp({
-        //   ...signUp,
-        //   isOTPVerificationPageActive: false,
-        //   isSignUpButtonClicked: false,
-        //   isSetAccountRecoveryPageActive: false,
-        //   isConfirmAccountRecoveryPageActive: true,
-        // });
-  
-      },
-    });
+  const validationSchema = Yup.object({
+    recoveryCode: Yup.string()
+      .min(8, 'Password should be at least 8 characters')
+      .matches(/[A-Z]/, 'Password should contain at least one uppercase letter')
+      .matches(/[a-z]/, 'Password should contain at least one lowercase letter')
+      .matches(/[@$!%*?&#]/, 'Password should contain at least one special character')
+      .matches(/[0-9]/, 'Password should contain at least one number'),
+  });
+  const formik = useFormik({
+    initialValues: {
+      recoveryCode: recoveryCode || '',
+    },
+    validationSchema,
+    onSubmit: async (values, { setSubmitting, resetForm }) => {
+      event?.preventDefault();
+      console.log(values);
+      if (signUp.recoveryCode !== values.recoveryCode) {
+        setError('Recovery code does not match');
+        return;
+      }
+      const payload = {
+        email: signUp.email,
+        code: values.recoveryCode,
+        confirmCode: values.recoveryCode,
+      };
 
-    useEffect(()=>{
-      const interval = setInterval(()=>{
-        setError('')
-      }, 3000)
-    }, [error])
+      setSubmitting(true);
+      const url = URLS.BASE_AUTH + URLS.RIDER + URLS.setRecoveryCode;
+      const response = await PUT_REQUEST(url, payload);
+      if (response.success) {
+        setSignUp({
+          ...signUp,
+          isOTPVerificationPageActive: false,
+          isSignUpButtonClicked: false,
+          isSetAccountRecoveryPageActive: false,
+          isConfirmAccountRecoveryPageActive: false,
+          showOnboardUser: true,
+        });
+        resetForm();
+      } else {
+        setError((response as any).message);
+      }
+      setSubmitting(false);
+      // setSubmitting(false);
+      // resetForm();
+      // setSignUp({
+      //   ...signUp,
+      //   isOTPVerificationPageActive: false,
+      //   isSignUpButtonClicked: false,
+      //   isSetAccountRecoveryPageActive: false,
+      //   isConfirmAccountRecoveryPageActive: true,
+      // });
+    },
+  });
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setError('');
+    }, 3000);
+  }, [error]);
   return (
     <GeneralDesign>
       <header
@@ -104,21 +99,9 @@ const ConfirmAccountRecovery = () => {
           }}
           className='flex items-center justify-center absolute w-[48px] h-[48px] rounded-[64px] py-[5px] px-[3px] gap-[8px] bg-[#FCFCFC] shadow-sm md:hidden left-4 top-10'
         >
-          <Image
-            src={backArrow}
-            width={20}
-            height={20}
-            className='w-[20px] h-[20px]'
-            alt=''
-          />
+          <Image src={backArrow} width={20} height={20} className='w-[20px] h-[20px]' alt='' />
         </div>
-        <Image
-          src={RydeProLogo}
-          alt=''
-          className='w-[77px] h-[77px]  md:inline '
-          width={75}
-          height={52}
-        />
+        <Image src={RydeProLogo} alt='' className='w-[77px] h-[77px]  md:inline ' width={75} height={52} />
         <Button
           className='md:inline hidden'
           onClick={() => {
@@ -141,9 +124,7 @@ const ConfirmAccountRecovery = () => {
           className='hidden'
         />
       </header>
-      <main
-        className={`w-full flex justify-center items-center ${styles['slide-from-bottom']}`}
-      >
+      <main className={`w-full flex justify-center items-center ${styles['slide-from-bottom']}`}>
         <form
           action=''
           method='POST'
@@ -170,13 +151,8 @@ const ConfirmAccountRecovery = () => {
           <h2 className='text-[20px] md:text-[24px] mt-2 md:mt-0 text-center md:text-start leading-[32px] font-medium text-[#0E0E0E]'>
             Confirm your Account Recovery Code
           </h2>
-          <label
-            htmlFor='password'
-            className='flex flex-col gap-[8px] min-h-[116px] '
-          >
-            <span className='text-[14px] leading-[20px] font-medium text-[#0E0E0E]'>
-              Account Recovery Code
-            </span>
+          <label htmlFor='password' className='flex flex-col gap-[8px] min-h-[116px] '>
+            <span className='text-[14px] leading-[20px] font-medium text-[#0E0E0E]'>Account Recovery Code</span>
             <input
               type='password'
               id='recoveryCode'
@@ -187,10 +163,8 @@ const ConfirmAccountRecovery = () => {
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
             />
-             {formik.touched.recoveryCode && formik.errors.recoveryCode ? (
-              <div className='text-red-600 text-sm'>
-                {formik.errors.recoveryCode}
-              </div>
+            {formik.touched.recoveryCode && formik.errors.recoveryCode ? (
+              <div className='text-red-600 text-sm'>{formik.errors.recoveryCode}</div>
             ) : null}
             {/*             
             {formik.touched.recoveryCode && formik.errors.recoveryCode ? (
@@ -205,15 +179,11 @@ const ConfirmAccountRecovery = () => {
               className='h-[56px] absolute md:relative bottom-10 md:bottom-0 right-10 md:right-0 w-[138px] md:w-[initial] md:mt-6 rounded-[8px] p-[8px] gap-[16px] bg-[#0E0E0E] text-base leading-[24px] font-medium text-[#FAF6F6]'>
               Save
             </button> */}
-            {error && <p className='text-red-600 text-sm'>
-                  {error}
-                </p>}
+            {error && <p className='text-red-600 text-sm'>{error}</p>}
             <div className='w-full flex justify-end md:flex md:justify-normal md:w-[initial]'>
               {' '}
               {/** Button */}
-              
               <button
-              
                 type='submit'
                 className={`h-[48px] md:h-[56px] mt-[220px] md:mt-2 rounded-[8px] p-[8px] gap-[22px] md:gap-[16px] bg-[#0E0E0E] text-base leading-[24px] font-medium text-[#FAF6F6] w-[138px] md:w-full`}
               >

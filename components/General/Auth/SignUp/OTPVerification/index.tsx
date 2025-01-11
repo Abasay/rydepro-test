@@ -15,8 +15,8 @@ import SubOption from '@/components/GeneralWEBApp/SubOption/index';
 // import OTPButton from './button';
 import OTPButton from './button';
 import styles from '@/styles/stylish.module.css';
- import { POST_REQUEST } from '@/app/utils/requests';
-import { URLS } from '@/app/utils/URLS';
+import { POST_REQUEST } from '@/utils/requests';
+import { URLS } from '@/utils/URLS';
 
 const OTPVerification = () => {
   const { signUp, setSignUp } = useSignUpContext();
@@ -53,11 +53,11 @@ const OTPVerification = () => {
       };
       console.log('Submitted OTP:', otpCode, payload);
 
-      setVerifyingOTP(true)
-      const url = URLS.BASE_AUTH + URLS.RIDER + URLS.verifyOTP
-      const response = await POST_REQUEST(url, payload, '')
+      setVerifyingOTP(true);
+      const url = URLS.BASE_AUTH + URLS.RIDER + URLS.verifyOTP;
+      const response = await POST_REQUEST(url, payload, '');
 
-      if(response.success){
+      if (response.success) {
         setSignUp({
           ...signUp,
           isOTPVerificationPageActive: false,
@@ -65,9 +65,9 @@ const OTPVerification = () => {
           isSetAccountRecoveryPageActive: true,
         });
       } else {
-        setError((response as any).message)
+        setError((response as any).message);
       }
-      setVerifyingOTP(false)
+      setVerifyingOTP(false);
 
       // try {
       //   // const response = await axios.post('/api/verify-otp', { otp: otpCode });
@@ -90,10 +90,7 @@ const OTPVerification = () => {
     },
   });
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement>,
-    idx: number
-  ) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>, idx: number) => {
     const { value } = e.target;
     if (Number.isNaN(Number(value))) {
       setError('Please enter a valid number');
@@ -113,11 +110,7 @@ const OTPVerification = () => {
     }
   };
 
-
-  const handleKeyDown = (
-    e: React.KeyboardEvent<HTMLInputElement>,
-    idx: number
-  ) => {
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>, idx: number) => {
     if (e.key === 'Backspace' && idx > 0 && !inputsRef.current[idx]?.value) {
       inputsRef.current[idx - 1]?.focus();
     }
@@ -130,30 +123,29 @@ const OTPVerification = () => {
       confirm: signUp.confirmPassword,
     };
 
-  setResendingOTP(true)
-    const response  = await POST_REQUEST(URLS.BASE_AUTH + URLS.RIDER + URLS.sendOTP, payload, '')
-  
-    if(response.success){
+    setResendingOTP(true);
+    const response = await POST_REQUEST(URLS.BASE_AUTH + URLS.RIDER + URLS.sendOTP, payload, '');
+
+    if (response.success) {
       setTimeRemaining(180);
       setIsTimeUp(false);
     } else {
-      setError((response as any).message)
+      setError((response as any).message);
     }
-    setResendingOTP(false)
+    setResendingOTP(false);
   };
 
-  useEffect(()=>{
+  useEffect(() => {
     const timer = setInterval(() => {
-      setError('')
+      setError('');
     }, 3000);
-  }, [error])
+  }, [error]);
 
   useEffect(() => {
     const isComplete = formik.values.otp.every((digit) => digit !== '');
     setIsFormComplete(isComplete);
 
     if (isComplete) {
-     
       formik.handleSubmit();
     }
   }, [formik.values.otp]);
@@ -199,17 +191,9 @@ const OTPVerification = () => {
 
   return (
     <GeneralDesign>
-      <header
-        className={`container h-[70px] flex justify-between px-0 md:px-10 ${styles['fade-in']}`}
-      >
+      <header className={`container h-[70px] flex justify-between px-0 md:px-10 ${styles['fade-in']}`}>
         <div className='inline md:hidden'></div>
-        <Image
-          src={RydeProLogo}
-          alt=''
-          className='w-[77px] h-[77px]'
-          width={75}
-          height={52}
-        />
+        <Image src={RydeProLogo} alt='' className='w-[77px] h-[77px]' width={75} height={52} />
         <Button
           className='md:inline hidden'
           onClick={() => {
@@ -232,17 +216,15 @@ const OTPVerification = () => {
           className='md:hidden invisible'
         />
       </header>
-      <main
-        className={`w-full flex justify-center items-center ${styles['slide-from-bottom']}`}
-      >
+      <main className={`w-full flex justify-center items-center ${styles['slide-from-bottom']}`}>
         <form
           onSubmit={formik.handleSubmit}
           className='md:w-[614px] mt-10 md:mt-0 md:min-h-[640px] rounded-[24px] md:p-[48px] flex flex-col md:justify-center md:items-center gap-[64px] md:bg-[#FFFFFF] md:shadow-sm'
         >
           <div className='md:w-[518px] min-h-[176px] flex flex-col gap-[14px] md:gap-[32px]'>
             <span className='font-normal text-base leading-[24px] text-[#3C3C3C] hidden md:inline'>
-              Verify your Identity Enter the 6 digit code sent to your email
-              address. Please check your email inbox or spam{' '}
+              Verify your Identity Enter the 6 digit code sent to your email address. Please check your email inbox or
+              spam{' '}
             </span>
             <h2 className='inline md:hidden font-bold text-center text-[24px] leading-[32px] text-[#212121]'>
               Enter 6-digit code
@@ -251,9 +233,7 @@ const OTPVerification = () => {
               Please check your email inbox or spam
             </span>
             <div className='flex flex-col gap-[16px] md:w-[518px] mt-[40px] md:mt-0'>
-              <span className='text-[14px] leading-[20px] font-medium text-[#0E0E0E] hidden md:inline'>
-                Code
-              </span>
+              <span className='text-[14px] leading-[20px] font-medium text-[#0E0E0E] hidden md:inline'>Code</span>
               <div className='flex justify-between md:relative gap-2 md:gap-3'>
                 {formik.values.otp.map((_, idx) => (
                   <input
@@ -299,9 +279,11 @@ const OTPVerification = () => {
               </span>
             </div>
           </div>
-          {error && <span className='text-[#C92014] md:text-[#DC5353] text-center md:text-start text-base md:text-[14px] leading-[20px] font-normal'>
-                  Required
-          </span>}
+          {error && (
+            <span className='text-[#C92014] md:text-[#DC5353] text-center md:text-start text-base md:text-[14px] leading-[20px] font-normal'>
+              Required
+            </span>
+          )}
           {/** Button */}
           <button
             type='submit'
@@ -313,15 +295,10 @@ const OTPVerification = () => {
           <div className='flex justify-center md:hidden'>
             <div className='w-[250px] min-h-[77px] gap-[17px] flex flex-col'>
               <span className='h-[24px] text-[#5C5A5A] text-base leading-[24px] font-normal'>
-                I didn&apos;t receive any code?{' '}
-                <time>{formatTime(timeRemaining)}</time>
+                I didn&apos;t receive any code? <time>{formatTime(timeRemaining)}</time>
               </span>
               <div className='flex gap-[10px]'>
-                <OTPButton
-                  value='Resend code'
-                  onClick={handleResend}
-                  className='min-w-[117px]'
-                />
+                <OTPButton value='Resend code' onClick={handleResend} className='min-w-[117px]' />
                 <OTPButton value='Send SMS' className='min-w-[120px]' />
               </div>
             </div>
@@ -340,13 +317,7 @@ const OTPVerification = () => {
               type='button'
               className='flex gap-[4px] items-center py-[12px] rounded-[8px]'
             >
-              <svg
-                width='24'
-                height='24'
-                viewBox='0 0 24 24'
-                fill='none'
-                xmlns='http://www.w3.org/2000/svg'
-              >
+              <svg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'>
                 <path
                   d='M9.57008 5.92992L3.50008 11.9999L9.57008 18.0699'
                   stroke='#909090'
@@ -364,9 +335,7 @@ const OTPVerification = () => {
                   stroke-linejoin='round'
                 />
               </svg>
-              <span className='text-[18px] leading-[24px] font-normal text-[#909090]'>
-                Back
-              </span>
+              <span className='text-[18px] leading-[24px] font-normal text-[#909090]'>Back</span>
             </button>
           </div>
         </form>
