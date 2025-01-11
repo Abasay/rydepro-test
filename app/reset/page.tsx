@@ -1,7 +1,7 @@
 /** @format */
 
 import React from 'react';
-import Reset from '@/components/GeneralWEBApp/AccountRecovery';
+import Reset from '@/components/General/AccountRecovery';
 
 const page = () => {
   return <Reset />;

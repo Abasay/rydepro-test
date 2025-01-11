@@ -1,10 +1,10 @@
 /** @format */
 
 import React from 'react';
-import Dashboard  from '@/components/GeneralWEBApp/GeneralProfile';
+import Dashboard from '@/components/General/GeneralProfile';
 
 const page = () => {
-  return  <Dashboard />;
+  return <Dashboard />;
 };
 
 export default page;

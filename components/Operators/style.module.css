@@ -1,0 +1,10 @@
+/** @format */
+
+.hero {
+  background: url('../../public/assets/OperatorWebPage/heroImg.jpeg');
+  background-size: cover;
+  /* object-fit: cover; */
+  filter: brightness(30%);
+  background-position: top;
+  background-repeat: no-repeat;
+}

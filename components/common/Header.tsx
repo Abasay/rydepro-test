@@ -32,8 +32,7 @@ const Header: React.FC = () => {
     setIsPopupVisible(!isPopupVisible); // Toggle popup visibility
   };
 
-    const router = useRouter()
-
+  const router = useRouter();
 
   // Determine if the device is tablet
   const handleResize = () => {
@@ -64,17 +63,11 @@ const Header: React.FC = () => {
   // Close popups if clicked outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (
-        popupRef.current &&
-        !popupRef.current.contains(event.target as Node)
-      ) {
+      if (popupRef.current && !popupRef.current.contains(event.target as Node)) {
         setIsPopupVisible(false); // Close SignUp/Login popup
       }
 
-      if (
-        contactPopupRef.current &&
-        !contactPopupRef.current.contains(event.target as Node)
-      ) {
+      if (contactPopupRef.current && !contactPopupRef.current.contains(event.target as Node)) {
         setIsContactPopupVisible(false); // Close Contact popup
       }
     };
@@ -92,18 +85,13 @@ const Header: React.FC = () => {
         {/* Logo Section */}
         <div className='flex-shrink-0'>
           <Link href='/'>
-            <Image
-              src='/RYDEPRO_BLACK.png'
-              alt='RYDEPRO Logo'
-              width={55}
-              height={55}
-            />
+            <Image src='/RYDEPRO_BLACK.png' alt='RYDEPRO Logo' width={55} height={55} />
           </Link>
         </div>
 
         {/* Desktop Navigation */}
         <nav className='hidden lg:flex gap-4 items-center'>
-          <ul className='flex gap-8 list-none justify-center items-center'>
+          <ul className='flex gap-4 list-none justify-center items-center'>
             {[
               { label: 'Home', path: '/' },
               { label: 'About Us', path: '/about' },
@@ -117,9 +105,7 @@ const Header: React.FC = () => {
                 <Link
                   href={item.path || '#'}
                   className={`font-[500] hover:text-gray-700 text-[1.1rem] text-[#0E0E0E] transition ${
-                    activeLink === item.path
-                      ? 'border-b-4 rounded-[4px] border-[#0E0E0E] pb-1'
-                      : 'text-[#3C3C3C]'
+                    activeLink === item.path ? 'border-b-4 rounded-[4px] border-[#0E0E0E] pb-1' : 'text-[#3C3C3C]'
                   }`}
                   onClick={(e) => {
                     if (item.label === 'Contact Us') {
@@ -140,12 +126,7 @@ const Header: React.FC = () => {
         <div className='flex items-center'>
           {/* Language Selector */}
           <div className='flex items-center gap-2'>
-            <Image
-              src='/mdi_web.png'
-              alt='Language Icon'
-              width={20}
-              height={20}
-            />
+            <Image src='/mdi_web.png' alt='Language Icon' width={20} height={20} />
             <div className='flex items-center justify-center px-1 py-3 gap-2'>
               <span className='text-[#0E0E0E]'>EN</span>
               <Image src='/Shape.png' alt='Lang' width={10} height={5} />
@@ -169,10 +150,7 @@ const Header: React.FC = () => {
           </div>
 
           {/* Mobile Hamburger Menu */}
-          <button
-            className='lg:hidden text-[#0E0E0E]'
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-          >
+          <button className='lg:hidden text-[#0E0E0E]' onClick={() => setIsMenuOpen(!isMenuOpen)}>
             <span className='sr-only'>Open Menu</span>
             <div className='flex flex-col gap-1 rounded border border-black-900 p-2'>
               <span className='w-6 h-0.5 bg-gray-900'></span>
@@ -198,9 +176,7 @@ const Header: React.FC = () => {
                 <Link
                   href={item.path || '#'}
                   className={`font-[500] hover:text-gray-700 text-[1.1rem] text-[#0E0E0E] transition ${
-                    activeLink === item.path
-                      ? 'border-b-4 rounded-[4px] border-[#0E0E0E] pb-1'
-                      : 'text-[#3C3C3C]'
+                    activeLink === item.path ? 'border-b-4 rounded-[4px] border-[#0E0E0E] pb-1' : 'text-[#3C3C3C]'
                   }`}
                   onClick={(e) => {
                     if (item.label === 'Contact Us') {
@@ -253,9 +229,7 @@ const Header: React.FC = () => {
                 width={40}
                 height={40}
               />
-              <div className='font-[500] text-[14px] text-[#272727]'>
-                RYDEPRO Support
-              </div>
+              <div className='font-[500] text-[14px] text-[#272727]'>RYDEPRO Support</div>
             </div>
 
             {/* Chat Area */}
@@ -291,11 +265,7 @@ const Header: React.FC = () => {
                   stroke='currentColor'
                   className='w-5 h-5'
                 >
-                  <path
-                    strokeLinecap='round'
-                    strokeLinejoin='round'
-                    d='M4.5 12.75l6-6m0 0l6 6m-6-6v12'
-                  />
+                  <path strokeLinecap='round' strokeLinejoin='round' d='M4.5 12.75l6-6m0 0l6 6m-6-6v12' />
                 </svg>
               </button>
             </div>

@@ -166,7 +166,7 @@ const HeaderComponent = () => {
           />
         </Link>
         {/**routing links section */}
-        <ul className='hidden list-none lg:flex lg:items-center md:gap-8'>
+        <ul className='hidden list-none lg:flex lg:flex-wrap lg:justify-center lg:items-center md:gap-8'>
           {headerdata.map((item) => {
             const { id, name, link } = item;
             const isActive = currentPage === link;

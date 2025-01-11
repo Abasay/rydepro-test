@@ -2,7 +2,7 @@
 
 'use client';
 import React from 'react';
-import SigIn from '@/components/GeneralWEBApp/Auth/SignIn';
+import SigIn from '@/components/General/Auth/SignIn';
 
 const page = () => {
   return <SigIn />;

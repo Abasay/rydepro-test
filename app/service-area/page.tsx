@@ -13,7 +13,7 @@ export const metadata = {
     siteName: 'RydePro',
     images: [
       {
-        // url: '/images/service-areas-cover.png', // Custom image for Service Areas
+        // url: '/images/service-areas-cover.png', // Custom image for Service Area Page
         width: 800,
         height: 600,
         alt: 'RydePro Service Area',
