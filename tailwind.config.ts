@@ -30,6 +30,11 @@ export default {
         'max-md': { raw: 'not all and (min-width: 768px)' },
         'max-430': { max: '430px' }, // Custom breakpoint for max-width: 430px
         'max-360': { max: '360px' }, // Custom breakpoint for max-width: 360px
+        'min-800': { min: '800px' }, // Custom breakpoint for min-width: 800px
+        'max-505': { max: '505px' }, // Custom breakpoint for max-width: 505px
+        'max-785': { max: '785px' }, // Custom breakpoint for max-width: 785px
+        'max-480': { max: '480px' }, // Custom breakpoint for max-width: 480px
+        'max-lg': { max: '1024px' }, // Custom breakpoint for max-width: 1024px
       },
       colors: {
         background: 'var(--background)',
