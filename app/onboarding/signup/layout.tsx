@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   description: '',
 };
 
-export default function GeneralWebAppLayout({
+export default function GeneralLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;

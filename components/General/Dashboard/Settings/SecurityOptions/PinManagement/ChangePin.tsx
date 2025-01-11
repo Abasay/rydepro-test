@@ -5,7 +5,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import styles from '@/styles/stylish.module.css';
 import { Formik, useFormik } from 'formik';
 import * as Yup from 'yup';
-import lockIcon from '@/components/GeneralWEBApp/Dashboard/svgs/lock.svg';
+import lockIcon from '@/components/General/Dashboard/svgs/lock.svg';
 import Image from 'next/image';
 import { useDashboardContext } from '@/contexts/DashboardContext';
 
@@ -49,10 +49,7 @@ const ChangePin = () => {
     },
   });
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement>,
-    idx: number
-  ) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>, idx: number) => {
     const { value } = e.target;
     if (Number.isNaN(Number(value))) {
       setError('Please enter a valid number');
@@ -72,10 +69,7 @@ const ChangePin = () => {
     }
   };
 
-  const handleKeyDown = (
-    e: React.KeyboardEvent<HTMLInputElement>,
-    idx: number
-  ) => {
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>, idx: number) => {
     if (e.key === 'Backspace' && idx > 0 && !inputsRef.current[idx]?.value) {
       inputsRef.current[idx - 1]?.focus();
     }
@@ -103,16 +97,8 @@ const ChangePin = () => {
       className={`${styles['slide-from-bottom']} min-h-[176px] md:w-[518px] w-full flex flex-col gap-[64px]`}
     >
       <div className='flex md:hidden flex-col min-h-[125px] items-center justify-center gap-[30px]'>
-        <Image
-          src={lockIcon}
-          alt=''
-          width={63}
-          height={63}
-          className='w-[63px] h-[63px]'
-        />
-        <h2 className='text-[20px] leading-[32px] text-[#0E0E0E] font-medium'>
-          Create your 4-digit Pin
-        </h2>
+        <Image src={lockIcon} alt='' width={63} height={63} className='w-[63px] h-[63px]' />
+        <h2 className='text-[20px] leading-[32px] text-[#0E0E0E] font-medium'>Create your 4-digit Pin</h2>
       </div>
       <div className='flex flex-col gap-[24px] md:mt-6 mt-0'>
         <span className='hidden md:inline text-base leading-[24px] text-[#555555] font-normal'>

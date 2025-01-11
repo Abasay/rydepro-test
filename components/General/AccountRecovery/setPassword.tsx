@@ -1,18 +1,18 @@
 /** @format */
 
 import React, { useEffect, useState } from 'react';
-import GeneralDesign from '@/components/GeneralWEBApp/GeneralDesign/index';
+import GeneralDesign from '@/components/General/GeneralDesign/index';
 import RydeProLogo from '@/public/assets/RydeproLogo.png';
 import Image from 'next/image';
-import Button from '@/components/GeneralWEBApp/Button/index';
-import ellipses from '@/components/GeneralWEBApp/Auth/SignUp/svgs/ellipses.svg';
+import Button from '@/components/General/Button/index';
+import ellipses from '@/components/General/Auth/SignUp/svgs/ellipses.svg';
 import Link from 'next/link';
-import { options } from '@/components/GeneralWEBApp/Auth/SignIn/data/index';
-import { FooterData } from '@/components/GeneralWEBApp/data';
+import { options } from '@/components/General/Auth/SignIn/data/index';
+import { FooterData } from '@/components/General/data';
 import { useGeneralLogInContext } from '@/contexts/loginContext';
 import { useSignUpContext } from '@/contexts/signupContext';
-import SubOption from '@/components/GeneralWEBApp/SubOption/index';
-import backArrow from '@/components/GeneralWEBApp/Auth/SignIn/PinLogin/svgs/backArrow.svg';
+import SubOption from '@/components/General/SubOption/index';
+import backArrow from '@/components/General/Auth/SignIn/PinLogin/svgs/backArrow.svg';
 import PhoneInputWithCountrySelect from 'react-phone-number-input';
 import 'react-phone-number-input/style.css';
 import { useFormik } from 'formik';
@@ -45,10 +45,7 @@ const SetPassword = () => {
       .min(8, 'Password must be minimum of 8 characters long')
       .matches(/['A-Z']/, 'Password must contain at least one uppercase')
       .matches(/[a-z]/, 'Password must contain at least one lowercase')
-      .matches(
-        /[@$!%*?&#]/,
-        'Password must contain at least one special character'
-      ),
+      .matches(/[@$!%*?&#]/, 'Password must contain at least one special character'),
   });
 
   const validationSchema = Yup.object({
@@ -57,19 +54,13 @@ const SetPassword = () => {
       .min(8, 'Password must be minimum of 8 characters long')
       .matches(/['A-Z']/, 'Password must contain at least one uppercase')
       .matches(/[a-z]/, 'Password must contain at least one lowercase')
-      .matches(
-        /[@$!%*?&#]/,
-        'Password must contain at least one special character'
-      ),
+      .matches(/[@$!%*?&#]/, 'Password must contain at least one special character'),
     confirmPasword: Yup.string()
       .required('Please, fill out this field')
       .min(8, 'Password must be minimum of 8 characters long')
       .matches(/['A-Z']/, 'Password must contain at least one uppercase')
       .matches(/[a-z]/, 'Password must contain at least one lowercase')
-      .matches(
-        /[@$!%*?&#]/,
-        'Password must contain at least one special character'
-      ),
+      .matches(/[@$!%*?&#]/, 'Password must contain at least one special character'),
   });
 
   const formik = useFormik({
@@ -138,9 +129,7 @@ const SetPassword = () => {
 
   return (
     <GeneralDesign>
-      <header
-        className={`container h-[70px] flex justify-between px-0 md:px-10 ${styles['steps-in']}`}
-      >
+      <header className={`container h-[70px] flex justify-between px-0 md:px-10 ${styles['steps-in']}`}>
         <div className='inline md:hidden'></div>
         <div
           onClick={() => {
@@ -155,21 +144,9 @@ const SetPassword = () => {
           }}
           className='flex items-center justify-center absolute w-[48px] h-[48px] rounded-[64px] py-[5px] px-[3px] gap-[8px] bg-[#FCFCFC] shadow-md md:hidden left-4 top-10'
         >
-          <Image
-            src={backArrow}
-            width={20}
-            height={20}
-            className='w-[20px] h-[20px]'
-            alt=''
-          />
+          <Image src={backArrow} width={20} height={20} className='w-[20px] h-[20px]' alt='' />
         </div>
-        <Image
-          src={RydeProLogo}
-          alt=''
-          className='w-[77px] h-[77px] '
-          width={75}
-          height={52}
-        />
+        <Image src={RydeProLogo} alt='' className='w-[77px] h-[77px] ' width={75} height={52} />
         <Button
           className='md:flex hidden'
           img={backArrow}
@@ -196,9 +173,7 @@ const SetPassword = () => {
           className='hidden'
         />
       </header>
-      <main
-        className={`flex justify-center items-center w-full ${styles['slide-from-bottom']}`}
-      >
+      <main className={`flex justify-center items-center w-full ${styles['slide-from-bottom']}`}>
         <form
           action=''
           method='post'
@@ -206,16 +181,10 @@ const SetPassword = () => {
           className='w-[614px] min-h-[668px] rounded-[24px] md:p-[48px] gap-[24px] flex flex-col md:bg-[#FFFFFF] md:shadow-sm'
         >
           <div className='h-[92px] gap-[8px] hidden md:flex flex-col'>
-            <span className='text-base leading-[24px] font-medium text-[#0E0E0E]'>
-              Account Recovery
-            </span>
+            <span className='text-base leading-[24px] font-medium text-[#0E0E0E]'>Account Recovery</span>
             <div className='h-[6px] gap-[4px] flex flex-col'>
-              <h2 className='text-[24px] leading-[32px] text-[#0E0E0E] font-medium'>
-                Hi, Welcome back Michael!
-              </h2>
-              <span className='text-base leading-[24px] font-normal text-[#3C3C3C]'>
-                Please set your new password.
-              </span>
+              <h2 className='text-[24px] leading-[32px] text-[#0E0E0E] font-medium'>Hi, Welcome back Michael!</h2>
+              <span className='text-base leading-[24px] font-normal text-[#3C3C3C]'>Please set your new password.</span>
             </div>
           </div>
 
@@ -226,10 +195,7 @@ const SetPassword = () => {
           <div className='min-h-[456px] gap-[120px] flex flex-col'>
             <div className='min-h-[312px] gap-[24px] flex flex-col'>
               <div className='min-h-[232px] gap-[24px] flex flex-col'>
-                <label
-                  htmlFor='password'
-                  className='gap-[8px] min-h-[124px] flex flex-col'
-                >
+                <label htmlFor='password' className='gap-[8px] min-h-[124px] flex flex-col'>
                   <span className='text-[14px] leading-[20px] font-medium text-[#0E0E0E] md:inline hidden'>
                     Password
                   </span>
@@ -244,17 +210,8 @@ const SetPassword = () => {
                     className='h-[56px] outline-none rounded-[8px] border-b-[1px] p-[16px] border-[#DADADA] placeholder:text-[#8A8A8A] text-[#0E0E0E] text-base leading-[24px] font-normal'
                     placeholder='**********'
                   />
-                  <span
-                    id='details'
-                    className='text-[12px] leading-[16px] text-[#3C3C3C] font-normal flex items-start'
-                  >
-                    <svg
-                      width='16'
-                      height='16'
-                      viewBox='0 0 16 16'
-                      fill='none'
-                      xmlns='http://www.w3.org/2000/svg'
-                    >
+                  <span id='details' className='text-[12px] leading-[16px] text-[#3C3C3C] font-normal flex items-start'>
+                    <svg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'>
                       <path
                         d='M8 7C8.27614 7 8.5 7.22386 8.5 7.5V10.5C8.5 10.7761 8.27614 11 8 11C7.72386 11 7.5 10.7761 7.5 10.5V7.5C7.5 7.22386 7.72386 7 8 7ZM8.00001 6.24907C8.41369 6.24907 8.74905 5.91371 8.74905 5.50003C8.74905 5.08635 8.41369 4.751 8.00001 4.751C7.58633 4.751 7.25098 5.08635 7.25098 5.50003C7.25098 5.91371 7.58633 6.24907 8.00001 6.24907ZM2 8C2 4.68629 4.68629 2 8 2C11.3137 2 14 4.68629 14 8C14 11.3137 11.3137 14 8 14C4.68629 14 2 11.3137 2 8ZM8 3C5.23858 3 3 5.23858 3 8C3 10.7614 5.23858 13 8 13C10.7614 13 13 10.7614 13 8C13 5.23858 10.7614 3 8 3Z'
                         fill='#111111'
@@ -262,24 +219,17 @@ const SetPassword = () => {
                     </svg>
 
                     <span>
-                      Password should be at least 8 characters long, contain at
-                      least 1 uppercase, 1 lowercase, & 1 special character
+                      Password should be at least 8 characters long, contain at least 1 uppercase, 1 lowercase, & 1
+                      special character
                     </span>
                   </span>
                   {(formik.errors.password || formik.touched.password) && (
-                    <span className='text-sm text-[#D21B34] leading-[20px]'>
-                      {formik.errors.password}
-                    </span>
+                    <span className='text-sm text-[#D21B34] leading-[20px]'>{formik.errors.password}</span>
                   )}
                 </label>
 
-                <label
-                  htmlFor='confirmPassword'
-                  className='gap-[8px] min-h-[84px] hidden md:flex flex-col'
-                >
-                  <span className='text-[14px] leading-[20px] font-medium text-[#0E0E0E]'>
-                    Confirm Password
-                  </span>
+                <label htmlFor='confirmPassword' className='gap-[8px] min-h-[84px] hidden md:flex flex-col'>
+                  <span className='text-[14px] leading-[20px] font-medium text-[#0E0E0E]'>Confirm Password</span>
                   <input
                     id='confirmPassword'
                     name='confirmPassword'
@@ -290,11 +240,8 @@ const SetPassword = () => {
                     className='h-[56px] outline-none rounded-[8px] border-b-[1px] p-[16px] border-[#DADADA] placeholder:text-[#8A8A8A] text-[#0E0E0E] text-base leading-[24px] font-normal'
                     placeholder='**********'
                   />
-                  {(formik.errors.confirmPassword ||
-                    formik.touched.confirmPassword) && (
-                    <span className='text-sm text-[#D21B34] leading-[20px]'>
-                      {formik.errors.confirmPassword}
-                    </span>
+                  {(formik.errors.confirmPassword || formik.touched.confirmPassword) && (
+                    <span className='text-sm text-[#D21B34] leading-[20px]'>{formik.errors.confirmPassword}</span>
                   )}
                 </label>
               </div>

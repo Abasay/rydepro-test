@@ -1,10 +1,10 @@
 /** @format */
 
-import lockIcon from '@/components/GeneralWEBApp/Auth/SignIn/svgs/lock.svg';
-import keyIcon from '@/components/GeneralWEBApp/Auth/SignIn/svgs/passphrase.svg';
-import appleIcon from '@/components/GeneralWEBApp/Auth/SignIn/svgs/apple.svg';
-import googleIcon from '@/components/GeneralWEBApp/Auth/SignIn/svgs/google.svg';
-import emailIcon from '@/components/GeneralWEBApp/Auth/SignIn/svgs/email.svg';
+import lockIcon from '@/components/General/Auth/SignIn/svgs/lock.svg';
+import keyIcon from '@/components/General/Auth/SignIn/svgs/passphrase.svg';
+import appleIcon from '@/components/General/Auth/SignIn/svgs/apple.svg';
+import googleIcon from '@/components/General/Auth/SignIn/svgs/google.svg';
+import emailIcon from '@/components/General/Auth/SignIn/svgs/email.svg';
 
 export const options: readonly { text: string; image: any; as: string }[] = [
   {

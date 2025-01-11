@@ -4,14 +4,14 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
-import GeneralDesign from '@/components/GeneralWEBApp/GeneralDesign/index';
+import GeneralDesign from '@/components/General/GeneralDesign/index';
 import RydeProLogo from '@/public/assets/RydeproLogo.png';
 import Image from 'next/image';
-import Button from '@/components/GeneralWEBApp/Button/index';
-import ellipses from '@/components/GeneralWEBApp/Auth/SignUp/svgs/ellipses.svg';
+import Button from '@/components/General/Button/index';
+import ellipses from '@/components/General/Auth/SignUp/svgs/ellipses.svg';
 import axios from 'axios';
 import { useSignUpContext } from '@/contexts/signupContext';
-import SubOption from '@/components/GeneralWEBApp/SubOption/index';
+import SubOption from '@/components/General/SubOption/index';
 // import OTPButton from './button';
 import OTPButton from './button';
 import styles from '@/styles/stylish.module.css';

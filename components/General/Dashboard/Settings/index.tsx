@@ -4,8 +4,8 @@
 import { useDashboardContext } from '@/contexts/DashboardContext';
 import React, { useEffect, useState } from 'react';
 import RectangleComponent from './recComp';
-import settingsIcon from '@/components/GeneralWEBApp/Dashboard/svgs/securityGuard.svg';
-import languageIcon from '@/components/GeneralWEBApp/Dashboard/svgs/language.svg';
+import settingsIcon from '@/components/General/Dashboard/svgs/securityGuard.svg';
+import languageIcon from '@/components/General/Dashboard/svgs/language.svg';
 import styles from '@/styles/stylish.module.css';
 import SecurityOptions from './SecurityOptions';
 import PinManagement from './SecurityOptions/PinManagement';
@@ -33,8 +33,7 @@ const Settings = () => {
       setSettings({ ...settings, isSettingsClicked: false });
     };
 
-    const { isSecurityOptionsClicked, isLanguageClicked, securityOptions } =
-      settings;
+    const { isSecurityOptionsClicked, isLanguageClicked, securityOptions } = settings;
     const {
       isPinManagementClicked,
       pinManagement,
@@ -48,22 +47,15 @@ const Settings = () => {
       isUserVerifiedforChangePassword,
       isConfirmPasswordPageActive,
     } = securityOptions;
-    const {
-      isPinClicked,
-      isConfirmPinClicked,
-      isChangePinClicked,
-      isUserVerified,
-    } = pinManagement;
+    const { isPinClicked, isConfirmPinClicked, isChangePinClicked, isUserVerified } = pinManagement;
 
     /**Pin Routing */
     if (isSecurityOptionsClicked) {
-      goBackHandler = () =>
-        setSettings({ ...settings, isSecurityOptionsClicked: false });
+      goBackHandler = () => setSettings({ ...settings, isSecurityOptionsClicked: false });
       return { component: <SecurityOptions />, goBackHandler };
     }
     if (isLanguageClicked) {
-      goBackHandler = () =>
-        setSettings({ ...settings, isLanguageClicked: false });
+      goBackHandler = () => setSettings({ ...settings, isLanguageClicked: false });
       return { component: <p>Language</p>, goBackHandler };
     }
     if (isPinManagementClicked) {
@@ -71,8 +63,7 @@ const Settings = () => {
         setSettings({
           ...settings,
           setHeadingText: 'Security',
-          setSubHeadingText:
-            'Enable one option from each of the following layers',
+          setSubHeadingText: 'Enable one option from each of the following layers',
           isSecurityOptionsClicked: true,
           securityOptions: {
             ...securityOptions,
@@ -127,18 +118,14 @@ const Settings = () => {
     }
 
     /**Passphrase Routing */
-    const {
-      isUserVerifiedForPassphrase,
-      isAutoGeneratePassphraseClicked,
-      isManuallyCreatePassphraseClicked,
-    } = passPhrase;
+    const { isUserVerifiedForPassphrase, isAutoGeneratePassphraseClicked, isManuallyCreatePassphraseClicked } =
+      passPhrase;
     if (isPassphraseManagement) {
       goBackHandler = () =>
         setSettings({
           ...settings,
           setHeadingText: 'Security',
-          setSubHeadingText:
-            'Enable one option from each of the following layers',
+          setSubHeadingText: 'Enable one option from each of the following layers',
           isSecurityOptionsClicked: true,
           securityOptions: {
             ...securityOptions,
@@ -197,8 +184,7 @@ const Settings = () => {
         setSettings({
           ...settings,
           setHeadingText: 'Security',
-          setSubHeadingText:
-            'Enable one option from each of the following layers',
+          setSubHeadingText: 'Enable one option from each of the following layers',
           isSecurityOptionsClicked: true,
           securityOptions: {
             ...securityOptions,
@@ -226,8 +212,7 @@ const Settings = () => {
         setSettings({
           ...settings,
           setHeadingText: 'Security',
-          setSubHeadingText:
-            'Enable one option from each of the following layers',
+          setSubHeadingText: 'Enable one option from each of the following layers',
           isSecurityOptionsClicked: true,
           securityOptions: {
             ...securityOptions,
@@ -258,8 +243,7 @@ const Settings = () => {
         setSettings({
           ...settings,
           setHeadingText: 'Security',
-          setSubHeadingText:
-            'Enable one option from each of the following layers',
+          setSubHeadingText: 'Enable one option from each of the following layers',
           isSecurityOptionsClicked: true,
           securityOptions: {
             ...securityOptions,
@@ -285,8 +269,7 @@ const Settings = () => {
     isMobile
       ? setSettings({
           ...settings,
-          setSubHeadingText:
-            'Enable one option from each of the following layers',
+          setSubHeadingText: 'Enable one option from each of the following layers',
         })
       : setSettings({
           ...settings,
@@ -301,9 +284,7 @@ const Settings = () => {
     <section
       className={`flex flex-col gap-[16px] py-[10px] md:py-[45px] px-[15px] md:p-[45px] md:items-center md:justify-center ${styles['slide-from-top']}`}
     >
-      <div
-        className={`w-full md:min-w-[700px] min-h-[40px] gap-[10px] flex flex-col ${styles['slide-from-left']}`}
-      >
+      <div className={`w-full md:min-w-[700px] min-h-[40px] gap-[10px] flex flex-col ${styles['slide-from-left']}`}>
         {/**nav */}
         <div className='md:flex gap-[8px] hidden items-center'>
           {navMap.length !== 0 && (
@@ -340,13 +321,7 @@ const Settings = () => {
           )}
           {navMap.map((text, idx) => (
             <div className='flex gap-2' key={idx}>
-              <svg
-                width='18'
-                height='18'
-                viewBox='0 0 18 18'
-                fill='none'
-                xmlns='http://www.w3.org/2000/svg'
-              >
+              <svg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'>
                 <path
                   d='M6.96967 3.21967C6.67678 3.51256 6.67678 3.98744 6.96967 4.28033L11.6893 9L6.96967 13.7197C6.67678 14.0126 6.67678 14.4874 6.96967 14.7803C7.26256 15.0732 7.73744 15.0732 8.03033 14.7803L13.2803 9.53033C13.5732 9.23744 13.5732 8.76256 13.2803 8.46967L8.03033 3.21967C7.73744 2.92678 7.26256 2.92678 6.96967 3.21967Z'
                   fill='#DADADA'
@@ -357,13 +332,9 @@ const Settings = () => {
                   setSettings({ ...settings });
                 }}
                 className={`text-[14px]  ${
-                  navMap[navMap.length - 1] === 'Delete Account'
-                    ? 'text-[#D21B34]'
-                    : 'text-[#8A8A8A]'
+                  navMap[navMap.length - 1] === 'Delete Account' ? 'text-[#D21B34]' : 'text-[#8A8A8A]'
                 } leading-[20px] font-normal ${
-                  navMap[navMap.length - 1] === text
-                    ? 'text-[#0E0E0E]'
-                    : 'text-[#8A8A8A]'
+                  navMap[navMap.length - 1] === text ? 'text-[#0E0E0E]' : 'text-[#8A8A8A]'
                 }`}
                 key={idx}
               >
@@ -381,13 +352,7 @@ const Settings = () => {
             }}
             className='md:hidden flex items-center justify-center w-[48px] h-[48px] rounded-[64px] py-[5px] px-[3px] gap-[8px] bg-[#FCFCFC] shadow-md mb-2'
           >
-            <svg
-              width='20'
-              height='20'
-              viewBox='0 0 20 20'
-              fill='none'
-              xmlns='http://www.w3.org/2000/svg'
-            >
+            <svg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'>
               <path
                 d='M12.2676 15.793C11.9677 16.0787 11.493 16.0672 11.2073 15.7672L6.20597 10.5168C5.93004 10.2271 5.93004 9.77187 6.20597 9.4822L11.2073 4.23173C11.493 3.93181 11.9677 3.92028 12.2676 4.20597C12.5676 4.49166 12.5791 4.96639 12.2934 5.26631L7.78483 9.99949L12.2934 14.7327C12.5791 15.0326 12.5676 15.5073 12.2676 15.793Z'
                 fill='#111111'
@@ -396,22 +361,12 @@ const Settings = () => {
           </div>
           <h2
             className={`text-[20px] md:text-[24px] leading-[32px] font-medium ${
-              settings.setHeadingText === 'Delete Account'
-                ? 'text-[#D21B34]'
-                : 'text-[#2B2B2B]'
-            }  ${
-              settings.securityOptions.pinManagement.isUserVerified
-                ? 'hidden md:inline'
-                : 'inline'
-            }`}
+              settings.setHeadingText === 'Delete Account' ? 'text-[#D21B34]' : 'text-[#2B2B2B]'
+            }  ${settings.securityOptions.pinManagement.isUserVerified ? 'hidden md:inline' : 'inline'}`}
           >
             {settings.setHeadingText}
           </h2>
-          <span
-            className={`text-base leading-[24px] font-normal text-[#555555]`}
-          >
-            {settings.setSubHeadingText}
-          </span>
+          <span className={`text-base leading-[24px] font-normal text-[#555555]`}>{settings.setSubHeadingText}</span>
         </div>
       </div>
 

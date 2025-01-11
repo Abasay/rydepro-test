@@ -2,24 +2,24 @@
 
 'use client';
 import React, { useEffect, useState } from 'react';
-import GeneralDesign from '@/components/GeneralWEBApp/GeneralDesign/index';
+import GeneralDesign from '@/components/General/GeneralDesign/index';
 import RydeProLogo from '@/public/assets/RydeproLogo.png';
 import Image from 'next/image';
-import Button from '@/components/GeneralWEBApp/Button/index';
-import ellipses from '@/components/GeneralWEBApp/Auth/SignUp/svgs/ellipses.svg';
+import Button from '@/components/General/Button/index';
+import ellipses from '@/components/General/Auth/SignUp/svgs/ellipses.svg';
 import Link from 'next/link';
-import { options } from '@/components/GeneralWEBApp/Auth/SignIn/data/index';
-import { FooterData } from '@/components/GeneralWEBApp/data';
+import { options } from '@/components/General/Auth/SignIn/data/index';
+import { FooterData } from '@/components/General/data';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import axios from 'axios';
 import { useGeneralLogInContext } from '@/contexts/loginContext';
-import googleIcon from '@/components/GeneralWEBApp/Auth/SignUp/svgs/google.svg';
-import appleIcon from '@/components/GeneralWEBApp/Auth/SignUp/svgs/apple.svg';
-import googleRoundIcon from '@/components/GeneralWEBApp/Auth/SignUp/svgs/googleRounded.svg';
-import lockIcon from '@/components/GeneralWEBApp/Auth/SignIn/PinLogin/svgs/lock.svg';
-import backArrow from '@/components/GeneralWEBApp/Auth/SignIn/PinLogin/svgs/backArrow.svg';
-import SubOption from '@/components/GeneralWEBApp/SubOption/index';
+import googleIcon from '@/components/General/Auth/SignUp/svgs/google.svg';
+import appleIcon from '@/components/General/Auth/SignUp/svgs/apple.svg';
+import googleRoundIcon from '@/components/General/Auth/SignUp/svgs/googleRounded.svg';
+import lockIcon from '@/components/General/Auth/SignIn/PinLogin/svgs/lock.svg';
+import backArrow from '@/components/General/Auth/SignIn/PinLogin/svgs/backArrow.svg';
+import SubOption from '@/components/General/SubOption/index';
 import styles from '@/styles/stylish.module.css';
 
 const PassphraseLogin = () => {
@@ -63,9 +63,7 @@ const PassphraseLogin = () => {
   }, [formik.values.passphrase]);
   return (
     <GeneralDesign>
-      <header
-        className={`container h-[70px] flex justify-between px-0 md:px-10 ${styles['fade-in']}`}
-      >
+      <header className={`container h-[70px] flex justify-between px-0 md:px-10 ${styles['fade-in']}`}>
         <div
           onClick={() => {
             setSignIn({
@@ -78,22 +76,10 @@ const PassphraseLogin = () => {
           }}
           className='flex items-center justify-center absolute w-[48px] h-[48px] rounded-[64px] py-[5px] px-[3px] gap-[8px] bg-[#FCFCFC] shadow-md md:hidden left-4 top-10'
         >
-          <Image
-            src={backArrow}
-            width={20}
-            height={20}
-            className='w-[20px] h-[20px]'
-            alt=''
-          />
+          <Image src={backArrow} width={20} height={20} className='w-[20px] h-[20px]' alt='' />
         </div>
         <div className='md:hidden inline'></div>
-        <Image
-          src={RydeProLogo}
-          alt=''
-          className='w-[77px] h-[77px]  md:inline '
-          width={75}
-          height={52}
-        />
+        <Image src={RydeProLogo} alt='' className='w-[77px] h-[77px]  md:inline ' width={75} height={52} />
         <Button
           className='md:flex hidden'
           img={backArrow}
@@ -119,9 +105,7 @@ const PassphraseLogin = () => {
           className='md:hidden'
         />
       </header>
-      <main
-        className={`w-full flex justify-center items-center ${styles['steps-in']}`}
-      >
+      <main className={`w-full flex justify-center items-center ${styles['steps-in']}`}>
         <form
           action=''
           method='post'
@@ -132,13 +116,8 @@ const PassphraseLogin = () => {
             <h2 className='text-[20px] md:text-[24px] leading-[32px] font-medium text-[#3C3C3C]'>
               Enter your Passphrase to sign in
             </h2>
-            <label
-              htmlFor='passphrase'
-              className='min-h-[84px] flex flex-col gap-[8px]'
-            >
-              <span className='text-[14px] hidden md:inline leading-[20px] font-medium text-[#0E0E0E]'>
-                Passphrase
-              </span>
+            <label htmlFor='passphrase' className='min-h-[84px] flex flex-col gap-[8px]'>
+              <span className='text-[14px] hidden md:inline leading-[20px] font-medium text-[#0E0E0E]'>Passphrase</span>
               <input
                 type='text'
                 placeholder='Enter Passphrase'
@@ -151,9 +130,7 @@ const PassphraseLogin = () => {
                 className='h-[56px] bg-transparent rounded-[8px] border-y-[1px] p-[16px] border-[#DADADA] text-[#0E0E0E] text-base leading-[24px] font-normal outline-none'
               />
               {formik.errors.passphrase || formik.touched.passphrase ? (
-                <div className='text-red-600 text-sm'>
-                  {formik.errors.passphrase}
-                </div>
+                <div className='text-red-600 text-sm'>{formik.errors.passphrase}</div>
               ) : null}
             </label>
             {/** Button */}

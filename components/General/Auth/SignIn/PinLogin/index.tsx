@@ -1,21 +1,21 @@
 /** @format */
 
 'use client';
-import React, {  useRef, useState } from 'react';
-import GeneralDesign from '@/components/GeneralWEBApp/GeneralDesign/index';
+import React, { useRef, useState } from 'react';
+import GeneralDesign from '@/components/General/GeneralDesign/index';
 import RydeProLogo from '@/public/assets/RydeproLogo.png';
 import Image from 'next/image';
-import Button from '@/components/GeneralWEBApp/Button/index';
-import ellipses from '@/components/GeneralWEBApp/Auth/SignUp/svgs/ellipses.svg';
+import Button from '@/components/General/Button/index';
+import ellipses from '@/components/General/Auth/SignUp/svgs/ellipses.svg';
 import Link from 'next/link';
 
-import { FooterData } from '@/components/GeneralWEBApp/data';
+import { FooterData } from '@/components/General/data';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { useGeneralLogInContext } from '@/contexts/loginContext';
-import lockIcon from '@/components/GeneralWEBApp/Auth/SignIn/PinLogin/svgs/lock.svg';
-import backArrow from '@/components/GeneralWEBApp/Auth/SignIn/PinLogin/svgs/backArrow.svg';
-import SubOption from '@/components/GeneralWEBApp/SubOption/index';
+import lockIcon from '@/components/General/Auth/SignIn/PinLogin/svgs/lock.svg';
+import backArrow from '@/components/General/Auth/SignIn/PinLogin/svgs/backArrow.svg';
+import SubOption from '@/components/General/SubOption/index';
 import styles from '@/styles/stylish.module.css';
 import { useRouter } from 'next/navigation';
 
@@ -26,7 +26,7 @@ const PinLogin = () => {
   const [isClicked, setIsClicked] = useState<boolean>(false);
   // const [keyBoardOpened, setKeyBoardOpened] = useState<boolean>(false);
 
-  const router = useRouter()
+  const router = useRouter();
   // Formik setup with Yup validation
   const formik = useFormik({
     initialValues: {
@@ -56,15 +56,11 @@ const PinLogin = () => {
       //   isSignUpButtonClicked: false,
       //   isSetAccountRecoveryPageActive: true,
       // });
-      router.push('/onboarding/dashboard')
-      
+      router.push('/onboarding/dashboard');
     },
   });
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement>,
-    idx: number
-  ) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>, idx: number) => {
     const { value } = e.target;
     if (Number.isNaN(Number(value))) {
       setError('Please enter a valid number');
@@ -84,10 +80,7 @@ const PinLogin = () => {
     }
   };
 
-  const handleKeyDown = (
-    e: React.KeyboardEvent<HTMLInputElement>,
-    idx: number
-  ) => {
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>, idx: number) => {
     if (e.key === 'Backspace' && idx > 0 && !inputsRef.current[idx]?.value) {
       inputsRef.current[idx - 1]?.focus();
     }
@@ -111,9 +104,7 @@ const PinLogin = () => {
 
   return (
     <GeneralDesign>
-      <header
-        className={`container h-[70px] flex justify-between px-0 md:px-10 ${styles['fade-in']}`}
-      >
+      <header className={`container h-[70px] flex justify-between px-0 md:px-10 ${styles['fade-in']}`}>
         <div
           onClick={() => {
             setSignIn({
@@ -125,22 +116,10 @@ const PinLogin = () => {
           }}
           className='flex items-center justify-center absolute w-[48px] h-[48px] rounded-[64px] py-[5px] px-[3px] gap-[8px] bg-[#FCFCFC] shadow-md md:hidden left-4 top-10'
         >
-          <Image
-            src={backArrow}
-            width={20}
-            height={20}
-            className='w-[20px] h-[20px]'
-            alt=''
-          />
+          <Image src={backArrow} width={20} height={20} className='w-[20px] h-[20px]' alt='' />
         </div>
         <div className='inline md:hidden'></div>
-        <Image
-          src={RydeProLogo}
-          alt=''
-          className='w-[77px] h-[77px]  md:inline '
-          width={75}
-          height={52}
-        />
+        <Image src={RydeProLogo} alt='' className='w-[77px] h-[77px]  md:inline ' width={75} height={52} />
         <Button
           className='md:flex hidden'
           onClick={() => {
@@ -166,9 +145,7 @@ const PinLogin = () => {
           color='#909090'
         />
       </header>
-      <main
-        className={`w-full flex justify-center items-center ${styles['slide-from-right']}`}
-      >
+      <main className={`w-full flex justify-center items-center ${styles['slide-from-right']}`}>
         <form
           onSubmit={formik.handleSubmit}
           action=''
@@ -176,13 +153,7 @@ const PinLogin = () => {
           className='md:w-[614px] [390px] min-h-[560px] mt-10 md:mt-0 rounded-[24px] px-[10px] md:p-[48px] gap-[64px] flex flex-col md:bg-[#FFFFFF] md:shadow-sm'
         >
           <div className='flex flex-col gap-[30px] md:gap-[64px] min-h-[272px] justify-center md:justify-normal items-center md:items-start'>
-            <Image
-              src={lockIcon}
-              alt=''
-              width={63}
-              height={63}
-              className='w-[63px] h-[63px] inline md:hidden'
-            />
+            <Image src={lockIcon} alt='' width={63} height={63} className='w-[63px] h-[63px] inline md:hidden' />
             <span className='text-[20px] md:text-[24px] leading-[32px] font-medium text-[#3C3C3C]'>
               Enter your 4 digit pin to sign in.
             </span>
@@ -205,11 +176,7 @@ const PinLogin = () => {
             </div>
 
             {/**errors */}
-            {error && (
-              <span className='text-[#DC5353] float-left text-[14px] leading-[20px] font-normal'>
-                {error}
-              </span>
-            )}
+            {error && <span className='text-[#DC5353] float-left text-[14px] leading-[20px] font-normal'>{error}</span>}
 
             {/** Button */}
             {/* <button
@@ -247,7 +214,6 @@ const PinLogin = () => {
                 </Link>
               ))}
             </div>
-
           </div>
         </form>
       </main>

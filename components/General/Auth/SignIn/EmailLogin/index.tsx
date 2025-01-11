@@ -1,23 +1,23 @@
 /** @format */
 
 import React, { useState } from 'react';
-import GeneralDesign from '@/components/GeneralWEBApp/GeneralDesign/index';
+import GeneralDesign from '@/components/General/GeneralDesign/index';
 import RydeProLogo from '@/public/assets/RydeproLogo.png';
 import Image from 'next/image';
-import Button from '@/components/GeneralWEBApp/Button/index';
-import ellipses from '@/components/GeneralWEBApp/Auth/SignUp/svgs/ellipses.svg';
+import Button from '@/components/General/Button/index';
+import ellipses from '@/components/General/Auth/SignUp/svgs/ellipses.svg';
 import Link from 'next/link';
-import { FooterData } from '@/components/GeneralWEBApp/data';
+import { FooterData } from '@/components/General/data';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import axios from 'axios';
 import { useGeneralLogInContext } from '@/contexts/loginContext';
-import googleIcon from '@/components/GeneralWEBApp/Auth/SignUp/svgs/google.svg';
-import appleIcon from '@/components/GeneralWEBApp/Auth/SignUp/svgs/apple.svg';
-import googleRoundIcon from '@/components/GeneralWEBApp/Auth/SignUp/svgs/googleRounded.svg';
-import appleRoundIcon from '@/components/GeneralWEBApp/Auth/SignUp/svgs/appleRounded.svg';
-import backArrow from '@/components/GeneralWEBApp/Auth/SignIn/PinLogin/svgs/backArrow.svg';
-import SubOption from '@/components/GeneralWEBApp/SubOption';
+import googleIcon from '@/components/General/Auth/SignUp/svgs/google.svg';
+import appleIcon from '@/components/General/Auth/SignUp/svgs/apple.svg';
+import googleRoundIcon from '@/components/General/Auth/SignUp/svgs/googleRounded.svg';
+import appleRoundIcon from '@/components/General/Auth/SignUp/svgs/appleRounded.svg';
+import backArrow from '@/components/General/Auth/SignIn/PinLogin/svgs/backArrow.svg';
+import SubOption from '@/components/General/SubOption';
 import styles from '@/styles/stylish.module.css';
 import { useDashboardContext } from '@/contexts/DashboardContext';
 
@@ -28,18 +28,13 @@ const EmailLogin = () => {
   const [isClicked, setIsClicked] = useState<boolean>(false);
 
   const validationSchema = Yup.object({
-    email: Yup.string()
-      .email('Invalid email format')
-      .required('Email is required'),
+    email: Yup.string().email('Invalid email format').required('Email is required'),
     password: Yup.string()
       .required('Password is required')
       .min(8, 'Password should be at least 8 characters')
       .matches(/[A-Z]/, 'Password should contain at least one uppercase letter')
       .matches(/[a-z]/, 'Password should contain at least one lowercase letter')
-      .matches(
-        /[@$!%*?&#]/,
-        'Password should contain at least one special character'
-      ),
+      .matches(/[@$!%*?&#]/, 'Password should contain at least one special character'),
   });
 
   const formik = useFormik({
@@ -60,9 +55,7 @@ const EmailLogin = () => {
   });
   return (
     <GeneralDesign>
-      <header
-        className={`container h-[70px] flex justify-between px-0 md:px-10 ${styles['fade-in']}`}
-      >
+      <header className={`container h-[70px] flex justify-between px-0 md:px-10 ${styles['fade-in']}`}>
         <div
           onClick={() => {
             setSignIn({
@@ -74,13 +67,7 @@ const EmailLogin = () => {
           }}
           className='flex items-center justify-center absolute w-[48px] h-[48px] rounded-[64px] py-[5px] px-[3px] gap-[8px] bg-[#FCFCFC] shadow-md md:hidden left-4 top-10'
         >
-          <Image
-            src={backArrow}
-            width={20}
-            height={20}
-            className='w-[20px] h-[20px]'
-            alt=''
-          />
+          <Image src={backArrow} width={20} height={20} className='w-[20px] h-[20px]' alt='' />
         </div>
         <div className='md:hidden inline'></div>
         <Image
@@ -114,27 +101,19 @@ const EmailLogin = () => {
           className='md:hidden'
         />
       </header>
-      <main
-        className={`w-full flex justify-center items-center ${styles['slide-from-left']}`}
-      >
+      <main className={`w-full flex justify-center items-center ${styles['slide-from-left']}`}>
         <form
           onSubmit={formik.handleSubmit}
           action='POST'
           className='md:w-[614px] w-full min-h-[716px] rounded-[24px] py-[48px] md:p-[48px] flex flex-col gap-[24px] md:bg-[#FFFFFF] md:shadow-sm'
         >
           <div className='flex flex-col min-h-[60px] gap-[8px]'>
-            <h2 className='text-[24px] leading-[32px] font-medium text-[#0E0E0E]'>
-              Hello. Ready to Ride?
-            </h2>
-            <span className='text-[#3C3C3C] text-base leading-[24px]'>
-              Sign In Now!
-            </span>
+            <h2 className='text-[24px] leading-[32px] font-medium text-[#0E0E0E]'>Hello. Ready to Ride?</h2>
+            <span className='text-[#3C3C3C] text-base leading-[24px]'>Sign In Now!</span>
           </div>
           <div className='flex flex-col w-full min-h-[536px] gap-[20px] md:gap-[40px]'>
             <label htmlFor='email' className='flex flex-col gap-[8px]'>
-              <span className='text-[14px] leading-[20px] font-medium text-[#0E0E0E]'>
-                Email Address
-              </span>
+              <span className='text-[14px] leading-[20px] font-medium text-[#0E0E0E]'>Email Address</span>
               <input
                 id='email'
                 name='email'
@@ -147,16 +126,12 @@ const EmailLogin = () => {
                 onBlur={formik.handleBlur}
               />
               {formik.errors.email || formik.touched.email ? (
-                <div className='text-red-600 text-sm'>
-                  {formik.errors.email}
-                </div>
+                <div className='text-red-600 text-sm'>{formik.errors.email}</div>
               ) : null}
             </label>
 
             <label htmlFor='password' className='flex flex-col gap-[8px]'>
-              <span className='text-[14px] leading-[20px] font-medium text-[#0E0E0E]'>
-                Pasword
-              </span>
+              <span className='text-[14px] leading-[20px] font-medium text-[#0E0E0E]'>Pasword</span>
               <input
                 id='password'
                 name='password'
@@ -169,9 +144,7 @@ const EmailLogin = () => {
                 onBlur={formik.handleBlur}
               />
               {formik.errors.password || formik.touched.password ? (
-                <div className='text-red-600 text-sm'>
-                  {formik.errors.password}
-                </div>
+                <div className='text-red-600 text-sm'>{formik.errors.password}</div>
               ) : null}
             </label>
 
@@ -186,9 +159,7 @@ const EmailLogin = () => {
 
             <div className='w-[inherit] h-[24px] flex gap-[24px] items-center'>
               <hr className='w-[226px] border-[1px]' />
-              <span className='text-base leading-[24px] font-normal text-[#AAAAAA]'>
-                Or
-              </span>
+              <span className='text-base leading-[24px] font-normal text-[#AAAAAA]'>Or</span>
               <hr className='w-[226px] border-[1px]' />
             </div>
 
@@ -211,28 +182,12 @@ const EmailLogin = () => {
 
             <div className='md:hidden flex h-[92px] justify-evenly'>
               <div className='flex flex-col gap-[4px]'>
-                <Image
-                  src={googleRoundIcon}
-                  alt=''
-                  width={64}
-                  height={64}
-                  className='w-[64px] h-[64px]'
-                />
-                <span className='font-bold text-base text-[#0E0E0E] leading-[24px] text-center'>
-                  Google
-                </span>
+                <Image src={googleRoundIcon} alt='' width={64} height={64} className='w-[64px] h-[64px]' />
+                <span className='font-bold text-base text-[#0E0E0E] leading-[24px] text-center'>Google</span>
               </div>
               <div className='flex flex-col gap-[4px]'>
-                <Image
-                  src={appleRoundIcon}
-                  alt=''
-                  width={64}
-                  height={64}
-                  className='w-[64px] h-[64px]'
-                />
-                <span className='font-bold text-base text-[#0E0E0E] leading-[24px] text-center'>
-                  Apple
-                </span>
+                <Image src={appleRoundIcon} alt='' width={64} height={64} className='w-[64px] h-[64px]' />
+                <span className='font-bold text-base text-[#0E0E0E] leading-[24px] text-center'>Apple</span>
               </div>
             </div>
 
@@ -265,9 +220,7 @@ const EmailLogin = () => {
                       //   setIsHomePageActive(false);
                       // }
                     }}
-                    className={`text-[18px] text-[#0E0E0E] ${
-                      idx === 1 && 'hidden'
-                    } ${
+                    className={`text-[18px] text-[#0E0E0E] ${idx === 1 && 'hidden'} ${
                       idx !== 0 && 'border-l-[1px]'
                     } border-[#D0D0D0] px-3 leading-[24px] font-medium text-center`}
                     href={url}

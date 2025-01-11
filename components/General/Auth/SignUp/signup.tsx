@@ -1,23 +1,23 @@
 /** @format */
 
 import React, { useEffect, useState } from 'react';
-import GeneralDesign from '@/components/GeneralWEBApp/GeneralDesign/index';
+import GeneralDesign from '@/components/General/GeneralDesign/index';
 import RydeProLogo from '@/public/assets/RydeproLogo.png';
 import Image from 'next/image';
-import Button from '@/components/GeneralWEBApp/Button/index';
-import ellipses from '@/components/GeneralWEBApp/Auth/SignUp/svgs/ellipses.svg';
-import googleIcon from '@/components/GeneralWEBApp/Auth/SignUp/svgs/google.svg';
-import appleIcon from '@/components/GeneralWEBApp/Auth/SignUp/svgs/apple.svg';
-import googleRoundIcon from '@/components/GeneralWEBApp/Auth/SignUp/svgs/googleRounded.svg';
-import appleRoundIcon from '@/components/GeneralWEBApp/Auth/SignUp/svgs/appleRounded.svg';
-import { FooterData, SignUpFooterData } from '@/components/GeneralWEBApp/data';
+import Button from '@/components/General/Button/index';
+import ellipses from '@/components/General/Auth/SignUp/svgs/ellipses.svg';
+import googleIcon from '@/components/General/Auth/SignUp/svgs/google.svg';
+import appleIcon from '@/components/General/Auth/SignUp/svgs/apple.svg';
+import googleRoundIcon from '@/components/General/Auth/SignUp/svgs/googleRounded.svg';
+import appleRoundIcon from '@/components/General/Auth/SignUp/svgs/appleRounded.svg';
+import { FooterData, SignUpFooterData } from '@/components/General/data';
 import Link from 'next/link';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import axios from 'axios';
 import { useSignUpContext } from '@/contexts/signupContext';
 //import { encryptPassword } from '@/utils/encrypt';
-import SubOption from '@/components/GeneralWEBApp/SubOption/index';
+import SubOption from '@/components/General/SubOption/index';
 import styles from '@/styles/stylish.module.css';
 import { POST_REQUEST } from '@/utils/requests';
 import { URLS } from '@/utils/URLS';

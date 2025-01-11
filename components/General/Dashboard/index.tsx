@@ -2,13 +2,13 @@
 
 'use client';
 import React, { useEffect, useState } from 'react';
-import Sidebar from '@/components/GeneralWEBApp/Dashboard/Sidebar/sidebar';
-import Header from '@/components/GeneralWEBApp/Dashboard/header/header';
+import Sidebar from '@/components/General/Dashboard/Sidebar/sidebar';
+import Header from '@/components/General/Dashboard/header/header';
 import { useDashboardContext } from '@/contexts/DashboardContext';
 import Image from 'next/image';
 import guard from '@/components/admin/Dashboard/svgs/guard.svg';
 import arrowRight from '@/components/admin/Dashboard/svgs/arrowRight.svg';
-import Settings from '@/components/GeneralWEBApp/Dashboard/Settings/index';
+import Settings from '@/components/General/Dashboard/Settings/index';
 import Verification from './Settings/Verification';
 import styles from '@/styles/stylish.module.css';
 import Confirmation from './Settings/SecurityOptions/DeleteAccount/confirmation';
@@ -46,11 +46,7 @@ const Dashboard = () => {
           className={`w-full justify-center absolute top-0 min-h-[100vh] px-4 items-center flex ${styles['slide-from-left']}`}
         >
           {settings.securityOptions.pinManagement.isChangePinClicked && (
-            <Verification
-              isClicked={
-                settings.securityOptions.pinManagement.isChangePinClicked
-              }
-            />
+            <Verification isClicked={settings.securityOptions.pinManagement.isChangePinClicked} />
           )}
         </div>
       )}
@@ -59,11 +55,7 @@ const Dashboard = () => {
           className={`w-full justify-center absolute top-0 min-h-[100vh] px-4 items-center flex ${styles['slide-from-bottom']}`}
         >
           {settings.securityOptions.passPhrase.isChangePassphraseClicked && (
-            <Verification
-              isClicked={
-                settings.securityOptions.passPhrase.isChangePassphraseClicked
-              }
-            />
+            <Verification isClicked={settings.securityOptions.passPhrase.isChangePassphraseClicked} />
           )}
         </div>
       )}
@@ -72,9 +64,7 @@ const Dashboard = () => {
           className={`w-full justify-center absolute top-0 min-h-[100vh] px-4 items-center flex ${styles['slide-from-top']}`}
         >
           {settings.securityOptions.isChangePasswordClicked && (
-            <Verification
-              isClicked={settings.securityOptions.isChangePasswordClicked}
-            />
+            <Verification isClicked={settings.securityOptions.isChangePasswordClicked} />
           )}
         </div>
       )}
@@ -83,11 +73,7 @@ const Dashboard = () => {
           className={`w-full justify-center absolute top-0 min-h-[100vh] px-4 items-center flex ${styles['slide-from-left']}`}
         >
           {settings.securityOptions.isChangeAccountRecoveryCodeClicked && (
-            <Verification
-              isClicked={
-                settings.securityOptions.isChangeAccountRecoveryCodeClicked
-              }
-            />
+            <Verification isClicked={settings.securityOptions.isChangeAccountRecoveryCodeClicked} />
           )}
         </div>
       )}
@@ -96,11 +82,7 @@ const Dashboard = () => {
           className={`w-full justify-center absolute top-0 min-h-[100vh] px-4 items-center flex ${styles['slide-from-right']}`}
         >
           {settings.securityOptions.isDeleteAccountConfirmationPageActive && (
-            <Verification
-              isClicked={
-                settings.securityOptions.isDeleteAccountConfirmationPageActive
-              }
-            />
+            <Verification isClicked={settings.securityOptions.isDeleteAccountConfirmationPageActive} />
           )}
         </div>
       )}
@@ -109,11 +91,7 @@ const Dashboard = () => {
           className={`w-full justify-center absolute top-0 min-h-[100vh] px-4 items-center flex ${styles['slide-from-bottom']}`}
         >
           {settings.securityOptions.isDeleteConfirmationPopUpActive && (
-            <Confirmation
-              isClicked={
-                settings.securityOptions.isDeleteConfirmationPopUpActive
-              }
-            />
+            <Confirmation isClicked={settings.securityOptions.isDeleteConfirmationPopUpActive} />
           )}
         </div>
       )}

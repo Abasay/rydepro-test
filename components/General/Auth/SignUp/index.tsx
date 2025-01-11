@@ -1,13 +1,13 @@
 /** @format */
 
 import React from 'react';
-import Homepage from '@/components/GeneralWEBApp/Home/homepage';
-import SignUp from '@/components/GeneralWEBApp/Auth/SignUp/signup';
-import OTPVerification from '@/components/GeneralWEBApp/Auth/SignUp/OTPVerification';
-import SetAccountRecovery from '@/components/GeneralWEBApp/Auth/SignUp/SetAccountRecovery';
-import ConfirmAccountRecovery from '@/components/GeneralWEBApp/Auth/SignUp/ConfirmAccountRecovery';
-import SignIn from '@/components/GeneralWEBApp/Auth/SignIn/signin';
-import EmailLogin from '@/components/GeneralWEBApp/Auth/SignIn/EmailLogin';
+import Homepage from '@/components/General/Home/homepage';
+import SignUp from '@/components/General/Auth/SignUp/signup';
+import OTPVerification from '@/components/General/Auth/SignUp/OTPVerification';
+import SetAccountRecovery from '@/components/General/Auth/SignUp/SetAccountRecovery';
+import ConfirmAccountRecovery from '@/components/General/Auth/SignUp/ConfirmAccountRecovery';
+import SignIn from '@/components/General/Auth/SignIn/signin';
+import EmailLogin from '@/components/General/Auth/SignIn/EmailLogin';
 import { useSignUpContext } from '@/contexts/signupContext';
 import { useGeneralLogInContext } from '@/contexts/loginContext';
 import OnboardUser from './Onboard';
@@ -19,7 +19,7 @@ const Index = () => {
     <React.Fragment>
       {/* {isHomePageActive && <Homepage />} */}
       {/**Sign Up Logic */}
-     
+
       {signUp.isSignUpButtonClicked && <SignUp />}
       {signUp.isOTPVerificationPageActive && <OTPVerification />}
       {signUp.isSetAccountRecoveryPageActive && <SetAccountRecovery />}

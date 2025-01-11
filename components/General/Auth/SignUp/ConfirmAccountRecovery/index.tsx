@@ -2,13 +2,13 @@
 
 'use client';
 import React, { useEffect, useState } from 'react';
-import GeneralDesign from '@/components/GeneralWEBApp/GeneralDesign/index';
+import GeneralDesign from '@/components/General/GeneralDesign/index';
 import RydeProLogo from '@/public/assets/RydeproLogo.png';
 import Image from 'next/image';
-import Button from '@/components/GeneralWEBApp/Button/index';
-import ellipses from '@/components/GeneralWEBApp/Auth/SignUp/svgs/ellipses.svg';
-import SubOption from '@/components/GeneralWEBApp/SubOption/index';
-import backArrow from '@/components/GeneralWEBApp/Auth/SignIn/PinLogin/svgs/backArrow.svg';
+import Button from '@/components/General/Button/index';
+import ellipses from '@/components/General/Auth/SignUp/svgs/ellipses.svg';
+import SubOption from '@/components/General/SubOption/index';
+import backArrow from '@/components/General/Auth/SignIn/PinLogin/svgs/backArrow.svg';
 import { useResetContext } from '@/contexts/resetContext';
 import { useSignUpContext } from '@/contexts/signupContext';
 import styles from '@/styles/stylish.module.css';

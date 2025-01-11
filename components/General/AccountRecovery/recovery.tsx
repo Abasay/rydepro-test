@@ -1,18 +1,18 @@
 /** @format */
 
 import React, { useState } from 'react';
-import GeneralDesign from '@/components/GeneralWEBApp/GeneralDesign/index';
+import GeneralDesign from '@/components/General/GeneralDesign/index';
 import RydeProLogo from '@/public/assets/RydeproLogo.png';
 import Image from 'next/image';
-import Button from '@/components/GeneralWEBApp/Button/index';
-import ellipses from '@/components/GeneralWEBApp/Auth/SignUp/svgs/ellipses.svg';
+import Button from '@/components/General/Button/index';
+import ellipses from '@/components/General/Auth/SignUp/svgs/ellipses.svg';
 import Link from 'next/link';
-import { options } from '@/components/GeneralWEBApp/Auth/SignIn/data/index';
-import { FooterData } from '@/components/GeneralWEBApp/data';
+import { options } from '@/components/General/Auth/SignIn/data/index';
+import { FooterData } from '@/components/General/data';
 import { useGeneralLogInContext } from '@/contexts/loginContext';
 import { useSignUpContext } from '@/contexts/signupContext';
-import SubOption from '@/components/GeneralWEBApp/SubOption/index';
-import backArrow from '@/components/GeneralWEBApp/Auth/SignIn/PinLogin/svgs/backArrow.svg';
+import SubOption from '@/components/General/SubOption/index';
+import backArrow from '@/components/General/Auth/SignIn/PinLogin/svgs/backArrow.svg';
 import PhoneInputWithCountrySelect from 'react-phone-number-input';
 import 'react-phone-number-input/style.css';
 import { useFormik } from 'formik';
@@ -48,9 +48,7 @@ const AccountRecovery = () => {
   });
   return (
     <GeneralDesign>
-      <header
-        className={`container h-[70px] flex justify-between px-0 md:px-10 ${styles['about-steps-in']}`}
-      >
+      <header className={`container h-[70px] flex justify-between px-0 md:px-10 ${styles['about-steps-in']}`}>
         <div className='inline md:hidden'></div>
         <div
           onClick={() => {
@@ -59,21 +57,9 @@ const AccountRecovery = () => {
           }}
           className='flex items-center justify-center absolute w-[48px] h-[48px] rounded-[64px] py-[5px] px-[3px] gap-[8px] bg-[#FCFCFC] shadow-md md:hidden left-4 top-10'
         >
-          <Image
-            src={backArrow}
-            width={20}
-            height={20}
-            className='w-[20px] h-[20px]'
-            alt=''
-          />
+          <Image src={backArrow} width={20} height={20} className='w-[20px] h-[20px]' alt='' />
         </div>
-        <Image
-          src={RydeProLogo}
-          alt=''
-          className='w-[77px] h-[77px] '
-          width={75}
-          height={52}
-        />
+        <Image src={RydeProLogo} alt='' className='w-[77px] h-[77px] ' width={75} height={52} />
         <Button
           className='md:flex hidden'
           img={backArrow}
@@ -93,9 +79,7 @@ const AccountRecovery = () => {
           className='md:hidden'
         />
       </header>
-      <main
-        className={`w-full flex justify-center items-center ${styles['slide-from-left']}`}
-      >
+      <main className={`w-full flex justify-center items-center ${styles['slide-from-left']}`}>
         <form
           onSubmit={formik.handleSubmit}
           action=''
@@ -104,9 +88,7 @@ const AccountRecovery = () => {
         >
           {/**header */}
           <div className='flex flex-col min-h-[60px] gap-[4px]'>
-            <h2 className='text-[24px] leading-[32px] font-medium text-[#0E0E0E]'>
-              Account Recovery
-            </h2>
+            <h2 className='text-[24px] leading-[32px] font-medium text-[#0E0E0E]'>Account Recovery</h2>
             <span className='text-base leading-[24px] font-normal text-[#3C3C3C]'>
               Please enter the following details to recover your account.
             </span>
@@ -115,13 +97,8 @@ const AccountRecovery = () => {
           <div className='md:w-[518px] min-h-[380px] flex flex-col gap-[120px] mt-10'>
             <div className='md:w-[518px] min-h-[300px] gap-[24px] flex flex-col'>
               {/**Last Name */}
-              <label
-                htmlFor=''
-                className='min-h-[84px] gap-[8px] flex flex-col'
-              >
-                <span className='font-medium text-[14px] leading-[20px] text-[#0E0E0E]'>
-                  Last Name
-                </span>
+              <label htmlFor='' className='min-h-[84px] gap-[8px] flex flex-col'>
+                <span className='font-medium text-[14px] leading-[20px] text-[#0E0E0E]'>Last Name</span>
                 <input
                   placeholder='John Doe'
                   required
@@ -134,19 +111,12 @@ const AccountRecovery = () => {
                   type='text'
                 />
                 {formik.errors.lastName || formik.touched.lastName ? (
-                  <span className='text-sm text-[#D21B34]'>
-                    {formik.errors.lastName}
-                  </span>
+                  <span className='text-sm text-[#D21B34]'>{formik.errors.lastName}</span>
                 ) : null}
               </label>
               {/**Date of Birth */}
-              <label
-                htmlFor='dateOfBirth'
-                className='min-h-[84px] gap-[8px] flex flex-col'
-              >
-                <span className='font-medium text-[14px] leading-[20px] text-[#0E0E0E]'>
-                  Date of Birth
-                </span>
+              <label htmlFor='dateOfBirth' className='min-h-[84px] gap-[8px] flex flex-col'>
+                <span className='font-medium text-[14px] leading-[20px] text-[#0E0E0E]'>Date of Birth</span>
                 <input
                   placeholder=''
                   name='dateOfBirth'
@@ -159,19 +129,12 @@ const AccountRecovery = () => {
                   type='date'
                 />
                 {formik.errors.dateOfBirth ? (
-                  <span className='text-sm text-[#D21B34]'>
-                    {formik.errors.dateOfBirth}
-                  </span>
+                  <span className='text-sm text-[#D21B34]'>{formik.errors.dateOfBirth}</span>
                 ) : null}
               </label>
               {/**Phone Number */}
-              <label
-                htmlFor='phoneNumber'
-                className='min-h-[84px] gap-[8px] flex flex-col'
-              >
-                <span className='font-medium text-[14px] leading-[20px] text-[#0E0E0E]'>
-                  Phone Number
-                </span>
+              <label htmlFor='phoneNumber' className='min-h-[84px] gap-[8px] flex flex-col'>
+                <span className='font-medium text-[14px] leading-[20px] text-[#0E0E0E]'>Phone Number</span>
                 <PhoneInputWithCountrySelect
                   value={formik.values.phoneNumber}
                   style={{ outline: 'none', background: 'transparent' }}
@@ -180,16 +143,12 @@ const AccountRecovery = () => {
                   id='phoneNumber'
                   name='phoneNumber'
                   className='h-[56px] rounded-[8px] border-b-[1px] p-[16px] bg-transparent border-[#DADADA] font-normal text-base outline-none leading-[24px] placeholder:text-[#8A8A8A] text-[#0E0E0E]'
-                  onChange={(value) =>
-                    formik.setFieldValue('phoneNumber', value)
-                  }
+                  onChange={(value) => formik.setFieldValue('phoneNumber', value)}
                   onBlur={formik.handleBlur}
                   required
                 />
                 {formik.errors.phoneNumber || formik.touched.phoneNumber ? (
-                  <span className='text-sm text-[#D21B34]'>
-                    {formik.errors.phoneNumber}
-                  </span>
+                  <span className='text-sm text-[#D21B34]'>{formik.errors.phoneNumber}</span>
                 ) : null}
               </label>
             </div>

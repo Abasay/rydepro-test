@@ -1,14 +1,14 @@
 /** @format */
 
 import React from 'react';
-import SignIn from '@/components/GeneralWEBApp/Auth/SignIn/signin';
-import EmailLogin from '@/components/GeneralWEBApp/Auth/SignIn/EmailLogin';
+import SignIn from '@/components/General/Auth/SignIn/signin';
+import EmailLogin from '@/components/General/Auth/SignIn/EmailLogin';
 import { useGeneralLogInContext } from '@/contexts/loginContext';
-import PinLogin from '@/components/GeneralWEBApp/Auth/SignIn/PinLogin';
-import PassphraseLogin from '@/components/GeneralWEBApp/Auth/SignIn/PassphraseLogin';
+import PinLogin from '@/components/General/Auth/SignIn/PinLogin';
+import PassphraseLogin from '@/components/General/Auth/SignIn/PassphraseLogin';
 
 const SignInComponent = () => {
-  const { signIn, } = useGeneralLogInContext();
+  const { signIn } = useGeneralLogInContext();
   return (
     <React.Fragment>
       {/* {isHomePageActive && <Homepage />} */}

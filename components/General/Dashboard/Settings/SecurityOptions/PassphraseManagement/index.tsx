@@ -1,9 +1,9 @@
 /** @format */
 
 import React, { useState } from 'react';
-import RectangleComponent from '@/components/GeneralWEBApp/Dashboard/Settings/recComp';
-import settingsIcon from '@/components/GeneralWEBApp/Dashboard/svgs/securityGuard.svg';
-import languageIcon from '@/components/GeneralWEBApp/Dashboard/svgs/language.svg';
+import RectangleComponent from '@/components/General/Dashboard/Settings/recComp';
+import settingsIcon from '@/components/General/Dashboard/svgs/securityGuard.svg';
+import languageIcon from '@/components/General/Dashboard/svgs/language.svg';
 import styles from '@/styles/stylish.module.css';
 import { useDashboardContext } from '@/contexts/DashboardContext';
 import RecComponent from '../../../RecComponent';
@@ -71,16 +71,13 @@ const PassphraseManagement = () => {
             // setNavMap([...navMap, 'Passphrase Management']);
           }}
           idLabel=''
-          isClicked={
-            isPinCreatedSuccessfully ? isPinCreatedSuccessfully : isClicked
-          }
+          isClicked={isPinCreatedSuccessfully ? isPinCreatedSuccessfully : isClicked}
           textSize='text-[18px]'
         />
         <RectangleComponent
           text='Change Passphrase'
           onClick={() => {
-            const { isChangePinClicked, isUserVerified } =
-              settings.securityOptions.pinManagement;
+            const { isChangePinClicked, isUserVerified } = settings.securityOptions.pinManagement;
 
             setSettings({
               ...settings,

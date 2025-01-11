@@ -1,18 +1,18 @@
 /** @format */
 
 import React, { useEffect, useRef, useState } from 'react';
-import GeneralDesign from '@/components/GeneralWEBApp/GeneralDesign/index';
+import GeneralDesign from '@/components/General/GeneralDesign/index';
 import RydeProLogo from '@/public/assets/RydeproLogo.png';
 import Image from 'next/image';
-import Button from '@/components/GeneralWEBApp/Button/index';
-import ellipses from '@/components/GeneralWEBApp/Auth/SignUp/svgs/ellipses.svg';
+import Button from '@/components/General/Button/index';
+import ellipses from '@/components/General/Auth/SignUp/svgs/ellipses.svg';
 import Link from 'next/link';
-import { options } from '@/components/GeneralWEBApp/Auth/SignIn/data/index';
-import { FooterData } from '@/components/GeneralWEBApp/data';
+import { options } from '@/components/General/Auth/SignIn/data/index';
+import { FooterData } from '@/components/General/data';
 import { useGeneralLogInContext } from '@/contexts/loginContext';
 import { useSignUpContext } from '@/contexts/signupContext';
-import SubOption from '@/components/GeneralWEBApp/SubOption/index';
-import backArrow from '@/components/GeneralWEBApp/Auth/SignIn/PinLogin/svgs/backArrow.svg';
+import SubOption from '@/components/General/SubOption/index';
+import backArrow from '@/components/General/Auth/SignIn/PinLogin/svgs/backArrow.svg';
 import PhoneInputWithCountrySelect from 'react-phone-number-input';
 import 'react-phone-number-input/style.css';
 import { useFormik } from 'formik';
@@ -66,10 +66,7 @@ const VerificationCode = () => {
     },
   });
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement>,
-    idx: number
-  ) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>, idx: number) => {
     const { value } = e.target;
     if (Number.isNaN(Number(value))) {
       setError('Please enter a valid number');
@@ -89,10 +86,7 @@ const VerificationCode = () => {
     }
   };
 
-  const handleKeyDown = (
-    e: React.KeyboardEvent<HTMLInputElement>,
-    idx: number
-  ) => {
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>, idx: number) => {
     if (e.key === 'Backspace' && idx > 0 && !inputsRef.current[idx]?.value) {
       inputsRef.current[idx - 1]?.focus();
     }
@@ -106,9 +100,7 @@ const VerificationCode = () => {
 
   return (
     <GeneralDesign>
-      <header
-        className={`container h-[70px] flex justify-between px-0 md:px-10 ${styles['steps-in']}`}
-      >
+      <header className={`container h-[70px] flex justify-between px-0 md:px-10 ${styles['steps-in']}`}>
         <div className='inline md:hidden'></div>
         <div
           onClick={() => {
@@ -121,21 +113,9 @@ const VerificationCode = () => {
           }}
           className='flex items-center justify-center absolute w-[48px] h-[48px] rounded-[64px] py-[5px] px-[3px] gap-[8px] bg-[#FCFCFC] shadow-md md:hidden left-4 top-10'
         >
-          <Image
-            src={backArrow}
-            width={20}
-            height={20}
-            className='w-[20px] h-[20px]'
-            alt=''
-          />
+          <Image src={backArrow} width={20} height={20} className='w-[20px] h-[20px]' alt='' />
         </div>
-        <Image
-          src={RydeProLogo}
-          alt=''
-          className='w-[77px] h-[77px] '
-          width={75}
-          height={52}
-        />
+        <Image src={RydeProLogo} alt='' className='w-[77px] h-[77px] ' width={75} height={52} />
         <Button
           className='md:flex hidden'
           img={backArrow}
@@ -160,9 +140,7 @@ const VerificationCode = () => {
           className='md:hidden'
         />
       </header>
-      <main
-        className={`w-full flex justify-center items-center ${styles['expand']}`}
-      >
+      <main className={`w-full flex justify-center items-center ${styles['expand']}`}>
         <form
           action=''
           method='post'
@@ -171,18 +149,13 @@ const VerificationCode = () => {
         >
           <div className='min-h-[188px] md:w-[518px] flex flex-col gap-[32px]'>
             <div className='h-[60px] gap-[8px] flex flex-col items-center md:items-start'>
-              <h2 className='text-[24px] leading-[32px] font-medium text-[#0E0E0E]'>
-                Enter Verification Code
-              </h2>
+              <h2 className='text-[24px] leading-[32px] font-medium text-[#0E0E0E]'>Enter Verification Code</h2>
               <span className='text-[18px] md:text-base text-center md:text-start leading-[24px] text-[#3C3C3C] font-normal'>
                 Enter the 4-digit verification code sent to your email
               </span>
             </div>
             <div className='h-[96px] gap-[16px] md:w-[initial] mt-2 flex flex-col'>
-              <label
-                htmlFor=''
-                className='h-[56px] gap-[8px] flex items-center justify-center'
-              >
+              <label htmlFor='' className='h-[56px] gap-[8px] flex items-center justify-center'>
                 <div className='flex md:justify-evenly md:relative gap-[24px] md:gap-3'>
                   {formik.values.otp.map((_, idx) => (
                     <input
@@ -202,8 +175,7 @@ const VerificationCode = () => {
                 </div>
               </label>
               <span className='text-base text-[#3C3C3C] leading-[24px] text-center md:text-start font-normal'>
-                Didn&apos;t get any code?{' '}
-                <time className='font-medium'>00:04</time>
+                Didn&apos;t get any code? <time className='font-medium'>00:04</time>
               </span>
               <div className='flex justify-center gap-[10px] md:hidden'>
                 <OTPButton value='Resend code' className='min-w-[114px]' />

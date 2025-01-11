@@ -1,18 +1,18 @@
 /** @format */
 
 import React, { useState } from 'react';
-import GeneralDesign from '@/components/GeneralWEBApp/GeneralDesign/index';
+import GeneralDesign from '@/components/General/GeneralDesign/index';
 import RydeProLogo from '@/public/assets/RydeproLogo.png';
 import Image from 'next/image';
-import Button from '@/components/GeneralWEBApp/Button/index';
-import ellipses from '@/components/GeneralWEBApp/Auth/SignUp/svgs/ellipses.svg';
+import Button from '@/components/General/Button/index';
+import ellipses from '@/components/General/Auth/SignUp/svgs/ellipses.svg';
 import Link from 'next/link';
-import { options } from '@/components/GeneralWEBApp/Auth/SignIn/data/index';
-import { FooterData } from '@/components/GeneralWEBApp/data';
+import { options } from '@/components/General/Auth/SignIn/data/index';
+import { FooterData } from '@/components/General/data';
 import { useGeneralLogInContext } from '@/contexts/loginContext';
 import { useSignUpContext } from '@/contexts/signupContext';
-import SubOption from '@/components/GeneralWEBApp/SubOption/index';
-import backArrow from '@/components/GeneralWEBApp/Auth/SignIn/PinLogin/svgs/backArrow.svg';
+import SubOption from '@/components/General/SubOption/index';
+import backArrow from '@/components/General/Auth/SignIn/PinLogin/svgs/backArrow.svg';
 import PhoneInputWithCountrySelect from 'react-phone-number-input';
 import 'react-phone-number-input/style.css';
 import { useFormik } from 'formik';
@@ -57,9 +57,7 @@ const EmailCodeAccountRecovery = () => {
   // }
   return (
     <GeneralDesign>
-      <header
-        className={`container h-[70px] flex justify-between px-0 md:px-10 ${styles['steps-in']}`}
-      >
+      <header className={`container h-[70px] flex justify-between px-0 md:px-10 ${styles['steps-in']}`}>
         <div className='inline md:hidden'></div>
         <div
           onClick={() => {
@@ -72,21 +70,9 @@ const EmailCodeAccountRecovery = () => {
           }}
           className='flex items-center justify-center absolute w-[48px] h-[48px] rounded-[64px] py-[5px] px-[3px] gap-[8px] bg-[#FCFCFC] shadow-md md:hidden left-4 top-10'
         >
-          <Image
-            src={backArrow}
-            width={20}
-            height={20}
-            className='w-[20px] h-[20px]'
-            alt=''
-          />
+          <Image src={backArrow} width={20} height={20} className='w-[20px] h-[20px]' alt='' />
         </div>
-        <Image
-          src={RydeProLogo}
-          alt=''
-          className='w-[77px] h-[77px] '
-          width={75}
-          height={52}
-        />
+        <Image src={RydeProLogo} alt='' className='w-[77px] h-[77px] ' width={75} height={52} />
         <Button
           className='md:flex hidden'
           img={backArrow}
@@ -110,9 +96,7 @@ const EmailCodeAccountRecovery = () => {
           className='md:hidden'
         />
       </header>
-      <main
-        className={`w-full flex justify-center items-center ${styles['slide-in']}`}
-      >
+      <main className={`w-full flex justify-center items-center ${styles['slide-in']}`}>
         <form
           action=''
           onSubmit={formik.handleSubmit}
@@ -120,9 +104,7 @@ const EmailCodeAccountRecovery = () => {
           className='md:w-[614px] w-[390px] min-h-[452px] mt-20 md:mt-0 rounded-[24px] md:p-[48px] gap-[24px] md:bg-[#FFFFFF] md:shadow-sm'
         >
           <div className='flex flex-col min-h-[60px] md:w-[518px] gap-[8px]'>
-            <h2 className='font-medium text-[24px] leading-[32px] text-[#0E0E0E]'>
-              Account Recovery
-            </h2>
+            <h2 className='font-medium text-[24px] leading-[32px] text-[#0E0E0E]'>Account Recovery</h2>
             <span className='font-normal text-[16px] leading-[24px] text-[#3C3C3C]'>
               Please enter the following details to recover your account.
             </span>
@@ -131,13 +113,8 @@ const EmailCodeAccountRecovery = () => {
           <div className='md:w-[518px] min-h-[272px] flex flex-col gap-[120px] mt-10'>
             <div className='md:w-[518px] min-h-[300px] gap-[24px] flex flex-col'>
               {/**EMail */}
-              <label
-                htmlFor='email'
-                className='min-h-[84px] gap-[8px] flex flex-col'
-              >
-                <span className='font-medium text-[14px] leading-[20px] text-[#0E0E0E]'>
-                  Registered Email Address
-                </span>
+              <label htmlFor='email' className='min-h-[84px] gap-[8px] flex flex-col'>
+                <span className='font-medium text-[14px] leading-[20px] text-[#0E0E0E]'>Registered Email Address</span>
                 <input
                   placeholder='johndoe@gmail.com'
                   required
@@ -150,19 +127,12 @@ const EmailCodeAccountRecovery = () => {
                   type='email'
                 />
                 {formik.errors.email || formik.touched.email ? (
-                  <span className='text-sm text-[#D21B34]'>
-                    {formik.errors.email}
-                  </span>
+                  <span className='text-sm text-[#D21B34]'>{formik.errors.email}</span>
                 ) : null}
               </label>
               {/**Recovery Code */}
-              <label
-                htmlFor='recoveryCode'
-                className='min-h-[84px] gap-[8px] flex flex-col'
-              >
-                <span className='font-medium text-[14px] leading-[20px] text-[#0E0E0E]'>
-                  Account Recovery Code
-                </span>
+              <label htmlFor='recoveryCode' className='min-h-[84px] gap-[8px] flex flex-col'>
+                <span className='font-medium text-[14px] leading-[20px] text-[#0E0E0E]'>Account Recovery Code</span>
                 <input
                   placeholder='**********'
                   name='recoveryCode'
@@ -175,9 +145,7 @@ const EmailCodeAccountRecovery = () => {
                   type='password'
                 />
                 {formik.errors.recoveryCode || formik.touched.recoveryCode ? (
-                  <span className='text-sm text-[#D21B34]'>
-                    {formik.errors.recoveryCode}
-                  </span>
+                  <span className='text-sm text-[#D21B34]'>{formik.errors.recoveryCode}</span>
                 ) : null}
               </label>
 
