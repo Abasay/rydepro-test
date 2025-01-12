@@ -13,7 +13,7 @@ const Section3 = () => {
         <article className='min-h-[400px] max-md:max-w-[700px] max-md:min-h-[450px] max-md:max-h-[450px] max-480:min-h-[350px] max-480:max-h-[400px] max-sm:min-w-[400px] max-430:min-w-[200px] max-360:max-h-[300px] rounded-3xl lg:min-w-[424px] md:w-full max-md:w-full w-[335px] mx-auto mb-10 lg:mb-0'>
           <Image
             src={img}
-            alt='Illustration of RYDEPRO drivers providing professional transportation services'
+            alt='Driver Operator Responsibilities'
             width={400}
             height={500}
             priority
@@ -35,17 +35,17 @@ const Section3 = () => {
             </p>
             <ul className='pl-2 lg:pl-6 flex flex-col gap-3 mt-3 text-[#3C3C3C] font-medium'>
               <li className='flex items-center gap-4'>
-                <Image src={userIcon} alt='Icon representing customer service' width={20} height={20} />
+                <Image src={userIcon} alt='Icon representing customer service' width={20} height={20} aria-hidden />
                 <span className='text-base font-medium'>Exceptional customer service skills.</span>
               </li>
               <li className='flex items-center gap-4'>
-                <Image src={trafficIcon} alt='Icon representing traffic knowledge' width={20} height={20} />
+                <Image src={trafficIcon} alt='Icon representing traffic knowledge' width={20} height={20} aria-hidden />
                 <span className='text-base font-medium'>
                   Extensive familiarity with local roads and traffic regulations.
                 </span>
               </li>
               <li className='flex items-center gap-4'>
-                <Image src={carIcon} alt='Icon representing vehicle maintenance' width={20} height={20} />
+                <Image src={carIcon} alt='Icon representing vehicle maintenance' width={20} height={20} aria-hidden />
                 <span className='text-base font-medium'>
                   An unwavering commitment to maintaining an immaculate and well-maintained vehicle.
                 </span>

@@ -68,7 +68,7 @@ const Section1 = () => {
               src={img}
               width={500}
               height={700}
-              alt='Descriptive alt text for the image'
+              alt='Why Choose Us, Rydepro'
               className='rounded-xl h-full w-full object-cover object-center'
               priority
               placeholder='blur'
