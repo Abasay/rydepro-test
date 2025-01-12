@@ -6,7 +6,7 @@ import Image from 'next/image';
 const Section2 = () => {
   return (
     <section className='container mx-auto lg:py-10 px-5 md:px-8 lg:px-10 mt-40'>
-      <article className='min-h-[400px] bg-opacity-85 rounded-3xl relative flex justify-center'>
+      <article className='min-h-[400px] bg-black bg-opacity-85 rounded-3xl relative flex justify-center'>
         <Image
           src={img}
           alt='A background image depicting professional drivers'
@@ -20,11 +20,11 @@ const Section2 = () => {
         />
 
         <div
-          className='z-10 w-full rounded-3xl h-full absolute top-0 bg-black bg-opacity-85'
+          className='z-10 w-full rounded-3xl h-full absolute top-0 bg-black bg-opacity-65'
           role='presentation'
           aria-hidden='true'
         ></div>
-        <div className='absolute container grid z-20 py-8 max-430:py-10 px-24 lg:px-32 max-md:px-16 place-content-center items-start md:items-center justify-center gap-[8px]'>
+        <div className='absolute top-0 bg-black bg-opacity-65 h-full  rounded-3xl container grid z-20 py-8 max-430:py-10 px-24 lg:px-32 max-md:px-16 place-content-center items-start md:items-center justify-center gap-[8px]'>
           <header className='flex flex-col text-[#F7F7F7] gap-2 justify-center items-center'>
             <span className='text-center text-base font-normal'>Why Choose Us</span>
             <h2 className='text-[24px] md:text-[40px] md:leading-[48px] font-medium max-430:text-lg text-center'>
@@ -32,12 +32,12 @@ const Section2 = () => {
             </h2>
           </header>
 
-          <div className='flex sm:flex-row flex-col gap-6 mt-5 sm:mt-10 lg:mt-16 min-w-[250px] max-w-[874px]'>
+          <div className='flex sm:flex-row flex-col gap-6 mt-5 sm:mt-10 lg:mt-16 min-w-[220px] max-w-[874px]'>
             <article className='w-full flex flex-col gap-2'>
               <h3 className='text-lg md:text-2xl font-bold max-430:text-base text-[#FCFCFC]'>
                 Independent Driver Operators
               </h3>
-              <p className='text-[#D0D0D0] text-base max-430:text-sm font-medium'>
+              <p className='text-[#D0D0D0]  text-base max-430:text-sm font-medium'>
                 If you&apos;re self-employed and take pride in offering top-tier service, we want you.
               </p>
             </article>

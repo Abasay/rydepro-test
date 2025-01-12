@@ -3,14 +3,14 @@
 import Image from 'next/image';
 import React from 'react';
 
-type ButtonProps = {
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   text: string;
   className?: string;
   icon?: any;
   iconClassName?: string;
   disabled?: boolean;
   onClick: (type: any) => void; // Fixed typo: onCLick -> onClick
-};
+}
 
 const PageButton = ({ text, onClick, className, icon, iconClassName, disabled }: ButtonProps) => {
   return (

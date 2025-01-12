@@ -293,6 +293,7 @@ const HeaderComponent = () => {
                 onClick={() => {}}
                 className='px-4 w-full lg:grid py-2 font-medium hover:bg-[#0E0E0E] hover:text-[#FAF6F6]  bg-[#F5F5F5] border border-[#D0D0D0] text-base text-[#0E0E0E] rounded-lg focus:ring-[#0E0E0E] focus:ring-offset-2'
                 text='Login'
+                id='login-button'
               />
               <PageButton
                 onClick={() => {
@@ -302,6 +303,7 @@ const HeaderComponent = () => {
                 }}
                 className='px-4 py-2 w-full lg:grid rounded-lg bg-[#0E0E0E] text-[#FAF6F6] hover:bg-[#F5F5F5] hover:text-[#0E0E0E] focus:ring-[#0E0E0E] focus:ring-offset-2'
                 text='Sign Up'
+                id='sign-up'
               />
             </div>
           </nav>
