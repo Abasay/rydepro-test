@@ -222,6 +222,7 @@ const HeaderComponent = () => {
               setIsSignedUpClicked((prev) => !prev);
             }}
             value='Sign up'
+            title='Sign up with Rydepro'
             className='bg-[#0E0E0E] text-white rounded-md px-[24px] py-[8px] text-md hidden md:flex focus:ring-[#0E0E0E] focus:ring-offset-2'
           />
           {/**bars conditional icon rendering */}
