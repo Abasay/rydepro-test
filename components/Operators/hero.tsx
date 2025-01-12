@@ -26,14 +26,14 @@ const Hero = () => {
         className='absolute top-0'
       />
       <div
-        className='z-10 w-full h-full absolute top-0 bg-black bg-opacity-75'
+        className='z-10 w-full h-full absolute top-0 bg-black bg-opacity-60'
         role='presentation'
         aria-hidden='true'
       ></div>
 
       {/* Hero Content */}
-      <div className='absolute z-20 w-full top-0 flex lg:justify-center items-center px-14 py-20 max-md:px-5 lg:px-24'>
-        <div className='container mx-auto h-full flex flex-col max-430:gap-5 gap-8'>
+      <div className='absolute z-20 w-full bg-black bg-opacity-35 h-full top-0 flex lg:justify-center items-center px-14 py-20 max-md:px-5 lg:px-24'>
+        <div className='container mx-auto  h-full flex flex-col max-430:gap-5 gap-8'>
           {/* Section Heading */}
           <h1 id='hero-heading' className='text-[#D0D0D0] text-xl max-430:text-lg font-medium md:text-2xl '>
             RYDEPRO
