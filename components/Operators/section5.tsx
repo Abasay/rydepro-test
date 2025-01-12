@@ -21,12 +21,13 @@ const Section5 = () => {
             value='Register as an Operator'
             className='bg-[#0E0E0E] py-2 rounded-2xl px-[24px] lg:w-[300px] h-[56px] text-white mt-4 md:mt-0 text-base font-medium'
             aria-label='Register as an Operator to join RYDEPRO'
+            title='Register with RYDEPRO as an Operator'
           />
         </article>
         <div className='min-h-[360px] max-h-[560px] max-md:w-full lg:max-w-[636px] md:max-w-[350px] min-w-[205px] mx-auto mb-10 lg:mb-0'>
           <Image
             src={img}
-            alt='Illustration of professional drivers working with RYDEPRO'
+            alt='Join RydePro Today'
             width={400}
             height={500}
             placeholder='blur'

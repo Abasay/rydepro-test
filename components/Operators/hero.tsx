@@ -67,6 +67,7 @@ const Hero = () => {
                 value='Sign Up Now'
                 className='text-center text-[16px] leading-[24px] font-medium text-[#0E0E0E] h-[56px] w-[294px] py-[8px] px-[24px] lg:px-8 bg-white rounded-[8px] lg:w-[300px] mt-4 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white'
                 aria-label='Sign up now to join our team of independent driver operators'
+                title='Sign Up Now to Join Our Team at Rydepro'
               />
             </div>
           </div>

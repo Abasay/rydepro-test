@@ -9,7 +9,7 @@ const Section2 = () => {
       <article className='min-h-[400px] bg-black bg-opacity-85 rounded-3xl relative flex justify-center'>
         <Image
           src={img}
-          alt='A background image depicting professional drivers'
+          alt="Who We're Looking For at RydePro"
           role='img'
           layout='fill'
           objectFit='cover'

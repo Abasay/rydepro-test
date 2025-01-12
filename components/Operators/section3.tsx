@@ -13,7 +13,7 @@ const Section3 = () => {
         <article className='min-h-[400px] max-md:max-w-[700px] max-md:min-h-[450px] max-md:max-h-[450px] max-480:min-h-[350px] max-480:max-h-[400px] max-sm:min-w-[400px] max-430:min-w-[200px] max-360:max-h-[300px] rounded-3xl lg:min-w-[424px] md:w-full max-md:w-full w-[335px] mx-auto mb-10 lg:mb-0'>
           <Image
             src={img}
-            alt='Driver Operator Responsibilities'
+            alt=''
             width={400}
             height={500}
             priority
