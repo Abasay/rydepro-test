@@ -32,23 +32,25 @@ const Hero = () => {
       ></div>
 
       {/* Hero Content */}
-      <div className='absolute z-20 w-full flex lg:justify-center items-center px-14 py-20 max-md:px-5 lg:px-24'>
+      <div className='absolute z-20 w-full top-0 flex lg:justify-center items-center px-14 py-20 max-md:px-5 lg:px-24'>
         <div className='container mx-auto h-full flex flex-col max-430:gap-5 gap-8'>
           {/* Section Heading */}
-          <h1
-            id='hero-heading'
-            aria-describedby='hero-description'
-            className='text-[#D0D0D0] text-xl max-430:text-lg font-medium md:text-2xl '
-          >
+          <h1 id='hero-heading' className='text-[#D0D0D0] text-xl max-430:text-lg font-medium md:text-2xl '>
             RYDEPRO
           </h1>
 
           {/* Hero Text */}
           <div className='flex flex-col min-w-[200px] min-h-[472px] max-h-[640px] max-w-[930px] max-md:max-w-[677px] gap-5'>
-            <h2 className='text-[32px] max-505:text-2xl font-semibold leading-10 md:text-5xl   text-[#F7F7F7]'>
+            <h2
+              className='text-[32px] max-505:text-2xl font-semibold leading-10 md:text-5xl   text-[#F7F7F7]'
+              aria-describedby='hero-description'
+            >
               Join Our Elite Teams of Independent Driver Operators
             </h2>
-            <p className='text-base max-430:text-sm text-[#D0D0D0] md:text-xl leading-[24px] font-medium w-full '>
+            <p
+              className='text-base max-430:text-sm text-[#D0D0D0] md:text-xl leading-[24px] font-medium w-full '
+              id='hero-description'
+            >
               Welcome to a new era of passenger transportation, where independence and excellence meet. At RYDEPRO,
               we&apos;re not just another rideshare service, we&apos;re a Transportation Network Provider dedicated to
               redefining the way people travel.
