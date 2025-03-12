@@ -72,8 +72,8 @@ const Section2 = dynamic(() => import('@/components/Home/Sections/Section2'));
 export default function Home() {
   return (
     <>
-      <Hero />
-      <main className={``}>
+      <main className={``} aria-label='Main content'>
+        <Hero />
         <section className='w-full flex flex-col overflow-x-hidden overflow-y-hidden'>
           <DownloadComp /> <Section1 />
           <Services />

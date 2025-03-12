@@ -8,13 +8,13 @@ import Image from 'next/image';
 const Hero = () => {
   return (
     <section
-      className={clsx('h-[370px] flex relative justify-center md:items-center transition duration-500 w-full')}
-      aria-labelledby='hero-heading'
+      className={clsx('h-[240px] flex relative justify-center md:items-center transition duration-500 w-full')}
+      aria-labelledby='hero-heading' // Associate the section with its heading
     >
       {/* Hero Image */}
       <Image
         src={hero}
-        alt='RYDEPRO®: Veteran-Owned Rideshare App' // Descriptive alt text
+        alt='Rydepro About Page Hero Section' // Descriptive alt text
         objectFit='cover'
         objectPosition='center'
         layout='fill'
@@ -25,24 +25,23 @@ const Hero = () => {
           }
         }
         priority
-        loading='eager'
         placeholder='blur'
-        aria-hidden='true' // Hid the image from screen readers (since it's decorative)
+        aria-hidden='true' // Hide the image from screen readers (since it's decorative)
       />
 
       {/* Overlay */}
       <div
         className='absolute h-full w-full top-0 bg-black bg-opacity-50'
-        aria-hidden='true' // Hid the overlay from screen readers
+        aria-hidden='true' // Hide the overlay from screen readers
       ></div>
 
       {/* Content */}
       <div className='w-full  bg-black bg-opacity-60 h-full grid place-items-center px-[6%]'>
-        <div className='flex  items-center w-full gap-2 container relative max-h-[188px] min-h-[125px] h-[104px] max-430:h-[148px] max-360:h-[168px]'>
+        <div className='flex  items-center w-full gap-2 container relative max-[430px]:h-[148px] max-[360px]:h-[168px] max-h-[188px] min-h-[125px] h-[104px] '>
           {/* Decorative Border */}
           <div
             className='h-full border-l-[7px] rounded-tl-[7px] rounded-bl-[7px] rounded-tr-[1px] rounded-br-[1px] border-gray-100'
-            aria-hidden='true'
+            aria-hidden='true' // Hide the decorative border from screen readers
           ></div>
 
           {/* Text Content */}

@@ -1,69 +1,65 @@
-/** @format */
-
 'use client';
-import React, { useEffect, useState } from 'react';
-import img from '@/public/assets/OperatorWebPage/section2Image.jpeg';
+import React from 'react';
+import img from '@/public/assets/operators/section2Image.jpeg';
+import Image from 'next/image';
 
 const Section2 = () => {
-  const [isLoaded, setIsLoaded] = useState(false);
-
-  useEffect(() => {
-    // Preload image
-    const image = new window.Image();
-    image.src = img.src;
-    image.onload = () => setIsLoaded(true); // Once image is loaded, update state
-  }, []); // Run when the image source changes
-
-  //Image section styles
-  const section2Image = {
-    backgroundImage: isLoaded ? `url(${img.src})` : 'none', // Only apply background image when it's loaded
-    backgroundSize: 'cover',
-    backgroundPosition: 'top',
-    filter: 'brightness(15%)',
-  };
   return (
-    <section className='min-h-[500px] mx-auto px-3 md:w-full flex justify-center lg:py-10 md:px-8 lg:px-20 mt-10 md:mt-6 lg:mt-0'>
-      <div
-        style={section2Image}
-        className='container flex flex-col justify-center items-center h-[400px] mt-8 md:mt-0 rounded-3xl bg-black'
-      ></div>
-      <div className='absolute container mt-20 flex flex-col items-start md:items-center justify-center gap-[8px]'>
-        <p className='text-[#D0D0D0] text-center text-[16px] leading-[24px] pl-6 md:pl-0 pr-4 md:pr-0'>
-          Why Choose Us
-        </p>
-        <p className='text-[24px] md:text-[36px] text-[#F7F7F7] pl-6 md:pl-0 pr-4 md:pr-0'>
-          Who We&apos;re Looking For
-        </p>
-        <div className='w-full md:w-[650px] lg:w-[900px] h-[120px] md:p-2 mt-6 flex md:flex-row flex-col justify-between gap-1'>
-          <div className='lg:w-[490px] md:w-[310px] w-full h-[100px] flex flex-col gap-2 pl-6 md:pl-0 pr-4 md:pr-0'>
-            <h2 className='leading-[24px] font-[500px] text-lg md:text-[24px] text-[#FCFCFC]'>
-              Independent Driver Operators
-            </h2>
-            <p className='text-[#D0D0D0] text-[16px] leading-[24px] font-[400px]'>
-              If you&apos;re self-employed and take pride in offering top-tier
-              service, we want you.
-            </p>
-          </div>
-          <div className='lg:w-[490px] md:w-[310px] w-full h-[100px] flex flex-col gap-2 text-sm mt-8 md:mt-0 pl-6 md:pl-0 pr-4 md:pr-0'>
-            <h2 className='leading-[24px] font-[500px] text-lg md:text-[24px] text-[#FCFCFC]'>
-              Charter Carrier Operators
-            </h2>
-            <p className='text-[#D0D0D0] text-[16px] leading-[24px] font-[400px]'>
-              Join a network that values your expertise and offers opportunities
-              to expand your business.
-            </p>
+    <section
+      className='container mx-auto lg:py-10 px-5 md:px-8 lg:px-10 mt-40'
+      aria-labelledby='who-we-are-looking-for'
+    >
+      <article className='min-h-[400px] bg-black bg-opacity-85 rounded-3xl relative flex justify-center'>
+        <Image
+          src={img}
+          alt="Who We're Looking For at RYDEPRO"
+          role='img'
+          layout='fill'
+          objectFit='cover'
+          objectPosition='center'
+          placeholder='blur'
+          priority
+          className='absolute top-0 rounded-3xl'
+        />
+
+        <div
+          className='z-10 w-full rounded-3xl h-full absolute top-0 bg-black bg-opacity-65'
+          role='presentation'
+          aria-hidden='true'
+        ></div>
+        <div className='absolute top-0 bg-black bg-opacity-65 h-full  rounded-3xl container grid z-20 py-8 max-[430px]:py-10 px-24 lg:px-32 max-md:px-16 place-content-center items-start md:items-center justify-center gap-[8px]'>
+          <header
+            className='flex flex-col text-[#F7F7F7] gap-2 justify-center items-center'
+            id='who-we-are-looking-for'
+          >
+            <h2 className='text-center text-base font-normal'>Why Choose Us</h2>
+            <h3 className='text-[24px] md:text-[40px] md:leading-[48px] font-medium max-[430px]:text-lg text-center'>
+              Who We&apos;re Looking For
+            </h3>
+          </header>
+
+          <div className='flex sm:flex-row flex-col gap-6 mt-5 sm:mt-10 lg:mt-16 min-w-[220px] max-w-[874px]'>
+            <article className='w-full flex flex-col gap-2'>
+              <h4 className='text-lg md:text-2xl font-bold max-[430px]:text-base text-[#FCFCFC]'>
+                Independent Driver Operators
+              </h4>
+              <p className='text-[#D0D0D0]  text-base max-[430px]:text-sm font-medium'>
+                If you&apos;re self-employed and take pride in offering top-tier service, we want you.
+              </p>
+            </article>
+            <article className='w-full flex flex-col gap-2'>
+              <h4 className='text-lg md:text-2xl font-bold max-[430px]:text-base text-[#FCFCFC]'>
+                Charter Carrier Operators
+              </h4>
+              <p className='text-[#D0D0D0] text-base max-[430px]:text-sm font-medium'>
+                Join a network that values your expertise and offers opportunities to expand your business.
+              </p>
+            </article>
           </div>
         </div>
-      </div>
+      </article>
     </section>
   );
 };
-
-// const section2Image = {
-//   background: `url(${img.src})`,
-//   backgroundSize: 'cover',
-//   backgroundPosition: 'top',
-//   filter: 'brightness(15%)',
-// };
 
 export default Section2;

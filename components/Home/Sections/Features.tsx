@@ -37,10 +37,12 @@ const Features = () => {
     };
   }, []);
   return (
-    <div
+    <section
       className={clsx(
-        'w-full relative px-2 bg-black  min-h-[800px] max-md:min-h-[1350px] max-[430px]:min-h-[1400px] max-[350px]:min-h-[1450px]    flex justify-center pt-40 '
+        'w-full relative px-2 bg-black  min-h-[800px] max-md:min-h-[1350px] max-[430px]:min-h-[1400px] max-sm:min-h-[1500px] max-[350px]:min-h-[1450px]    flex justify-center pt-40 '
       )}
+      aria-label='Features'
+      aria-labelledby='features'
     >
       <Image
         src={bg}
@@ -53,9 +55,14 @@ const Features = () => {
       />
       <div className=' md:pb-20 absolute top-20 max-md:top-72 max-[515px]:top-80 max-[345px]:top-[350px]'>
         <div className='container flex flex-col items-center md:gap-4 gap-2'>
-          <span className='text-lg md:text-sm text-[#F7F7F7]'>Features</span>
-          <h2 className='text-2xl md:text-3xl text-[#F7F7F7] font-medium'>Innovative Features</h2>
-          <h2 className='text-2xl md:text-3xl text-[#F7F7F7] font-medium'>Blockchain - Integration</h2>
+          <div className=' flex flex-col gap-2 justify-start  lg:w-[72%] w-full'>
+            <p className='text-lg md:text-sm text-[#F7F7F7]' id='features'>
+              Features
+            </p>
+            <h2 className='text-2xl md:text-3xl text-[#F7F7F7] font-medium'>Innovative Features</h2>
+            <h2 className='text-2xl md:text-3xl text-[#F7F7F7] font-medium'>Blockchain - Integration</h2>
+          </div>
+
           <div className=' w-full mt-4 flex md:flex-row flex-col justify-between items-center lg:px-[160px] px-4 gap-4'>
             <div className='flex flex-col border-l-[3px] border-[#FFFFFF4D] pl-[30px]  gap-6'>
               {features.map((item, idx) => {
@@ -94,7 +101,7 @@ const Features = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

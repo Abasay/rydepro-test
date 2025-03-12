@@ -13,7 +13,7 @@ const Hero = () => {
   return (
     <section className='h-auto relative w-full flex flex-col items-center bg-black'>
       <video
-        className='w-full h-[900px] max-md:h-[800px] max-[550px]:h-[850px] max-[505px]:h-[920px] max-[410px]:h-[1000px] max-[345px]:h-[1100px] max-[310px]:h-[1200px] max-[282px]:h-[1300px] max-[262px]:h-[1400px]:'
+        className='w-full h-[900px] max-md:h-[800px] max-[550px]:h-[850px] max-[505px]:h-[920px] max-[410px]:h-[1000px] max-[345px]:h-[1100px] max-[310px]:h-[1200px] max-[282px]:h-[1300px] max-[262px]:h-[1400px]'
         autoPlay
         disablePictureInPicture
         muted

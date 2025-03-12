@@ -5,7 +5,7 @@ import map from '@/public/assets/sections/map.webp';
 
 const Section1 = () => {
   return (
-    <section className='relative  w-full h-64 bg-black'>
+    <section className='relative  w-full h-64 bg-black' aria-label='Rydepro Expansion' aria-labelledby='expansion'>
       {/* First Background Image */}
       <Image
         src={mapBg}
@@ -35,7 +35,10 @@ const Section1 = () => {
       {/* Content Overlay */}
       {/* <div className='relative w-full h-full bg-opacity-5'> */}
       <div className='w-full h-full z-40  absolute top-0 bg-black bg-opacity-30 flex flex-col gap-4 items-center justify-center px-1'>
-        <h2 className=' text-base sm:text-lg md:text-2xl lg:text-2xl text-[#FCFCFC] text-center font-bold'>
+        <h2
+          className=' text-base sm:text-lg md:text-2xl lg:text-2xl text-[#FCFCFC] text-center font-bold'
+          id='expansion'
+        >
           RYDEPRO®: Expanding Nationwide & Globally
         </h2>
         <p className='text-[#F7F7F7] container flex flex-col gap-1 text-sm sm:text-base md:text-lg text-center font-medium'>

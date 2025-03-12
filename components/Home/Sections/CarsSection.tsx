@@ -485,6 +485,8 @@ const CarsSection = () => {
       //   backgroundRepeat: 'no-repeat',
       //   minHeight: '700px',
       // }}
+      aria-label='Fleet'
+      aria-labelledby='fleet'
     >
       <Image
         src={bgImage}
@@ -501,7 +503,9 @@ const CarsSection = () => {
       >
         <div className=' w-full py-12  flex flex-col gap-7 items-center  bg-black bg-opacity-80'>
           <div className=' flex flex-col gap-4 items-start  justify-start w-[80%]'>
-            <h2 className='text-[#F7F7F7] font-medium  text-4xl max-md:text-2xl'>Fleet</h2>
+            <h2 className='text-[#F7F7F7] font-medium  text-4xl max-md:text-2xl' id='fleet'>
+              Fleet
+            </h2>
             <h3 className=' text-md leading-6 text-[#F7F7F7] font-light max-sm:text-sm'>Scheduled Booking</h3>
           </div>
 
@@ -554,12 +558,12 @@ const CarsSection = () => {
               </div>
             </div>
 
-            <h2 className='text-4xl  max-md:text-2xl font-bold py-2 w-full text-white md:mt-4'>
+            <h4 className='text-4xl  max-md:text-2xl font-bold py-2 w-full text-white md:mt-4'>
               {/* {car.normalize()} {car ? type.normalize() : ''} */}
               {car.startsWith('Commercial')
                 ? `${car.split(' ')[1]} ${car.split(' ')[2] ? car.split(' ')[2] : ''}`
                 : car}
-            </h2>
+            </h4>
           </div>
           <div className=' bg-black  bg-opacity-30 w-full h-[20px]'></div>
           <div className=' bg-black  bg-opacity-20 w-full h-20'></div>
@@ -578,7 +582,7 @@ const CarsSection = () => {
                     onClick={() => {
                       // setTracker(false);
                     }}
-                    alt=''
+                    alt={car}
                     width={335}
                     height={400}
                     className={`cursor-pointer max-md:max-w-[420px] max-md:w-[420px] max-md:max-h-[400px] max-[400px]:max-w-[350px] max-[350px]:max-w-[280px]   ${styles[animateClass]}`}
@@ -720,10 +724,10 @@ const CarsSection = () => {
                     onClick={() => {
                       // setTracker(false);
                     }}
-                    alt=''
+                    alt={car}
                     width={550}
                     height={400}
-                    className={`cursor-pointer max-w-[854.69px] max-[985px]:hidden  max-h-[465.62px] md:h-[initial]  ${styles[animateClass]}`}
+                    className={`cursor-pointer max-w-[854.69px] max-lg:hidden  max-h-[465.62px] md:h-[initial]  ${styles[animateClass]}`}
                   />
                   <Image
                     title='Click on to focus'
@@ -731,10 +735,10 @@ const CarsSection = () => {
                     onClick={() => {
                       // setTracker(false);
                     }}
-                    alt=''
+                    alt={car}
                     width={400}
                     height={300}
-                    className={`cursor-pointer max-[985px]:max-w-[600px] min-[985px]:hidden  max-h-[465.62px] md:h-[initial]  ${styles[animateClass]}`}
+                    className={`cursor-pointer  max-lg:block max-[985px]:max-w-[600px] hidden   max-h-[465.62px]  ${styles[animateClass]}`}
                   />
                 </div>
                 <div className='flex max-md:hidden min-w-[170px] min-h-[250px]   flex-col  transition-all delay-0 duration-400 md:text-right justify-center items-center md:items-end '>

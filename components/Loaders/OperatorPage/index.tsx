@@ -10,14 +10,14 @@ const Hero = dynamic(() => import('./hero'));
 
 const Operator = () => {
   return (
-    <main className='min-h-fit  flex flex-col w-full  bg-[#FCFCFC]'>
+    <>
       <Hero />
       <Section1 />
       <Section2 />
       <Section3 />
       <Section4 />
       <Section5 />
-    </main>
+    </>
   );
 };
 

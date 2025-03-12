@@ -1,7 +1,7 @@
-import headPhoneSvg from './svgs/headphone.svg';
-import securitySvg from './svgs/security.svg';
-import meetingsSvg from './svgs/meetings.svg';
-import guardSvg from './svgs/defend.svg';
+import headPhoneSvg from '@/components/OperatorPage/svgs/headphone.svg';
+import securitySvg from '@/components/OperatorPage/svgs/security.svg';
+import meetingsSvg from '@/components/OperatorPage/svgs/meetings.svg';
+import guardSvg from '@/components/OperatorPage/svgs/defend.svg';
 
 export const data1: { heading: string; text: string }[] = [
   // {

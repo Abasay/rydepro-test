@@ -5,12 +5,14 @@ import clsx from 'clsx';
 import Image from 'next/image';
 import AmericanEagle from '@/public/assets/about/eagle.webp';
 import AmericanEagle2 from '@/public/assets/about/eagle2.webp';
-// import USA from '@/public/assets/USA.png';
+import USA from '@/public/assets/USA.png';
 import DOMPurify from 'dompurify';
 import styles from '@/styles/stylish.module.css';
+import { usePageContext } from '@/contexts/PageContext';
 import { SidebarData, sidebarData } from './aboutSidebar';
 
 const AboutSection = ({ className }: { className?: string }) => {
+  const { animate, displayMission, textAnimate, visibleSubIds } = usePageContext();
   const getSectionRef = useRef<HTMLDivElement>(null);
 
   const [options, setOptions] = useState<SidebarData[]>(sidebarData);
@@ -43,14 +45,14 @@ const AboutSection = ({ className }: { className?: string }) => {
       setSubTitlesActive(sidebarData?.subTitle);
     }
 
-    // console.log(sidebarData);
+    console.log(sidebarData);
   }, [actives, options]);
 
-  // console.log(titleActive, subTitlesActive);
+  console.log(titleActive, subTitlesActive);
 
-  // useEffect(() => {
-  //   // console.warn(getSectionRef?.current);
-  // }, [getSectionRef]);
+  useEffect(() => {
+    console.warn(getSectionRef?.current);
+  }, [getSectionRef]);
 
   return (
     <section
@@ -146,7 +148,7 @@ const AboutSection = ({ className }: { className?: string }) => {
                       <div className='flex flex-col mt-5 gap-2 font-normal tracking-wide'>
                         {headText && <span>{headText}</span>}
                         <ul className='pl-3 mt-2 flex flex-col gap-6 list-disc list-inside'>
-                          {list.map((listItem: string, index: number) => (
+                          {list.map((listItem: any, index: number) => (
                             <li
                               key={index}
                               dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(listItem) }}

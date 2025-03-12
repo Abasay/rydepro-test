@@ -67,15 +67,14 @@ const Services = () => {
         />
 
         {/* Content Section */}
-        <div className='w-full container border mx-auto flex justify-center z-10 flex-col gap-10'>
-          <div className='max-sm:w-full lg:w-[70%] w-full border mx-auto lg:justify-center text-[#F7F7F7] flex flex-col gap-2'>
-            <p className='text-md leading-6 font-normal'>Services</p>
-            <h2
-              className='leading-[48px] text-lg sm:text-xl md:text-2xl lg:text-4xl max-md:leading-8 text-[#F7F7F7]'
-              id='services'
-            >
-              Dynamic Scheduling & On-Demand Travels
+        <div className='w-full container  mx-auto flex justify-center z-10 flex-col gap-10'>
+          <div className='max-sm:w-full lg:w-[70%] w-full  mx-auto lg:justify-center text-[#F7F7F7] flex flex-col gap-2'>
+            <h2 className='text-md leading-6 font-normal' id='services'>
+              Services
             </h2>
+            <h3 className='leading-[48px] text-lg sm:text-xl md:text-2xl lg:text-4xl max-md:leading-8 text-[#F7F7F7]'>
+              Dynamic Scheduling & On-Demand Travels
+            </h3>
           </div>
         </div>
 
@@ -111,7 +110,7 @@ const Services = () => {
                         borderBottom: `${index === services1Lg.length - 1 ? '1px solid #FFFFFF' : 'none'}`,
                       }}
                     >
-                      <h3 className='text-2xl tracking-wider font-medium text-[#FCFCFC]'>{title}</h3>
+                      <h4 className='text-2xl tracking-wider font-medium text-[#FCFCFC]'>{title}</h4>
                       <p className='text-[#D0D0D0] font-normal'>{description}</p>
                     </div>
                   );
@@ -131,7 +130,7 @@ const Services = () => {
                         borderBottom: `${index === services2Lg.length - 1 ? '1px solid #FFFFFF' : 'none'}`,
                       }}
                     >
-                      <h3 className='text-2xl tracking-wider font-medium text-[#FCFCFC]'>{title}</h3>
+                      <h4 className='text-2xl tracking-wider font-medium text-[#FCFCFC]'>{title}</h4>
                       <p className='text-[#D0D0D0] font-light'>{description}</p>
                     </div>
                   );
@@ -159,9 +158,9 @@ const Services = () => {
                         borderBottom: `${index === 2 || index === 3 ? '1px solid #FFFFFF' : 'none'}`,
                       }}
                     >
-                      <h3 className='max-sm:text-base text-lg leading-6 tracking-wider font-medium text-[#FCFCFC]'>
+                      <h4 className='max-sm:text-base text-lg leading-6 tracking-wider font-medium text-[#FCFCFC]'>
                         {title}
-                      </h3>
+                      </h4>
                       <p className='text-[#D0D0D0] max-sm:text-sm text-md leading-6 font-normal'>{description}</p>
                     </div>
                   );
@@ -173,16 +172,16 @@ const Services = () => {
                 width={500}
                 height={500}
                 priority
-                className='max-w-[356px] max-[400px]:hidden min-[400px]:block h-[540px]'
+                className='max-w-[356px] max-[400px]:max-w-[200px] min-[400px]:block h-[540px]'
               />
-              <Image
+              {/* <Image
                 src={phone}
                 alt='Rydepro app interface showcasing unique services'
                 width={400}
                 height={500}
                 priority
                 className='max-w-[276px] max-[400px]:block min-[400px]:hidden h-[540px]'
-              />
+              /> */}
               <div className='grid grid-cols-2 px-1 gap-6'>
                 {services2Md.map((service, index) => {
                   const { title, description } = service;
@@ -197,7 +196,7 @@ const Services = () => {
                         borderBottom: `${index === 2 || index === 3 ? '1px solid #FFFFFF' : 'none'}`,
                       }}
                     >
-                      <h3 className='max-sm:text-base text-lg tracking-wider font-medium text-[#FCFCFC]'>{title}</h3>
+                      <h4 className='max-sm:text-base text-lg tracking-wider font-medium text-[#FCFCFC]'>{title}</h4>
                       <p className='text-[#D0D0D0] max-sm:text-sm text-md leading-6 font-normal'>{description}</p>
                     </div>
                   );

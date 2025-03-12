@@ -131,7 +131,12 @@ export default function RootLayout({
     <GeneralWebProvider>
       <PageContext>
         <html lang='en'>
-          <body className={` font-satoshi overflow-x-hidden text-zinc-800 bg-white`}>
+          <body
+            className={` font-satoshi overflow-x-hidden scrollbar-hide text-zinc-800 bg-white`}
+            style={{
+              scrollbarWidth: 'none',
+            }}
+          >
             <ConditionalHeader />
             {children}
             <div className=' mx-auto bg-[#070707]  flex justify-center items-center w-full m'>

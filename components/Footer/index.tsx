@@ -9,6 +9,7 @@ const Footer = () => {
     <footer
       // style={footerStyling}
       className={'w-full max-h-[700px] px-5 md:px-4 lg:px-20 py-12 pb-8 bg-[#070707]'}
+      aria-label='RYDEPRO Site footer'
     >
       <section className='container mx-auto  max-md:px-4 flex flex-col gap-6'>
         <div className='flex w-full justify-between md:flex-row flex-col gap-6'>
@@ -91,9 +92,9 @@ const Footer = () => {
               <Link href='/service-areas' className='py-2 px-2'>
                 Service Area
               </Link>
-              <Link href='#' aria-hidden className='py-3 px-2'>
-                {' '}
-              </Link>
+              <span className='text-[#F7F7F7]' aria-hidden='true'>
+                &nbsp; {/* Non-breaking space to maintain height */}
+              </span>
               <Link href='/terms' className='py-2 px-2'>
                 Terms
               </Link>

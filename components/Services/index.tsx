@@ -3,12 +3,12 @@ import Hero from './Hero';
 import Info from './Info';
 
 const Services = () => {
-    return (
-        <div className=' bg-[#FCFCFC]'>
-            <Hero />
-            <Info />
-        </div>
-    );
+  return (
+    <main className='    flex flex-col w-full  bg-[#F7F7F7] '>
+      <Hero />
+      <Info />
+    </main>
+  );
 };
 
 export default Services;
