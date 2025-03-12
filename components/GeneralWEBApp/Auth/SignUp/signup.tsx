@@ -19,8 +19,8 @@ import { useSignUpContext } from '@/contexts/signupContext';
 //import { encryptPassword } from '@/utils/encrypt';
 import SubOption from '@/components/GeneralWEBApp/SubOption/index';
 import styles from '@/styles/stylish.module.css';
-import { postRequest } from '@/app/utils/requests';
-import { URLS } from '@/app/utils/URLS';
+import { postRequest } from '@/utils/requests';
+import { URLS } from '@/utils/URLS';
 
 const SignUp = () => {
   const { signUp, setSignUp, setIsHomePageActive } = useSignUpContext();
@@ -28,17 +28,12 @@ const SignUp = () => {
 
   // Define the validation schema
   const validationSchema = Yup.object({
-    email: Yup.string()
-      .email('Invalid email format')
-      .required('Email is required'),
+    email: Yup.string().email('Invalid email format').required('Email is required'),
     password: Yup.string()
       .min(8, 'Password should be at least 8 characters')
       .matches(/[A-Z]/, 'Password should contain at least one uppercase letter')
       .matches(/[a-z]/, 'Password should contain at least one lowercase letter')
-      .matches(
-        /[@$!%*?&#]/,
-        'Password should contain at least one special character'
-      )
+      .matches(/[@$!%*?&#]/, 'Password should contain at least one special character')
       .required('Password is required'),
     confirmPassword: Yup.string()
       .oneOf([Yup.ref('password')], 'Passwords must match')
@@ -68,28 +63,33 @@ const SignUp = () => {
         password: values.password,
         confirmPassword: values.confirmPassword,
       });
-      try {
-        const response = await postRequest({
-          url: URLS.signup,
-          token: '', // No token required for signup
-          data: payload,
-        });
+      // try {
+      //   const response = await postRequest({
+      //     url: URLS.signup,
+      //     token: '', // No token required for signup
+      //     data: payload,
+      //   });
 
-        if (response.success) {
-          setSignUp({
-            ...signUp,
-            isOTPVerificationPageActive: true,
-            isSignUpButtonClicked: false,
-          });
-          //console.log(response);
-        } else {
-          // toast.error(response?.message || 'Sign-up failed. Please try again.');
-          console.log(response);
-        }
-      } catch (error) {
-        console.error('Error:', error);
-      }
+      //   if (response.success) {
+      //     setSignUp({
+      //       ...signUp,
+      //       isOTPVerificationPageActive: true,
+      //       isSignUpButtonClicked: false,
+      //     });
+      //     //console.log(response);
+      //   } else {
+      //     // toast.error(response?.message || 'Sign-up failed. Please try again.');
+      //     console.log(response);
+      //   }
+      // } catch (error) {
+      //   console.error('Error:', error);
+      // }
       //transitioning between pages to be fixed after success submitting of form - (waiting for api)
+      setSignUp({
+        ...signUp,
+        isOTPVerificationPageActive: true,
+        isSignUpButtonClicked: false,
+      });
     },
   });
 
@@ -124,9 +124,7 @@ const SignUp = () => {
           className='md:hidden absolute right-10 top-[56px]'
         />
       </header>
-      <main
-        className={`w-full flex justify-center items-center ${styles['slide-from-bottom']}`}
-      >
+      <main className={`w-full flex justify-center items-center ${styles['slide-from-bottom']}`}>
         <form
           onSubmit={formik.handleSubmit}
           className='container md:w-[614px] mt-10 md:mt-0 min-h-[896px] rounded-[24px] md:p-[48px] flex flex-col gap-[24px] md:bg-[#FFFFFF] md:shadow-sm'
@@ -145,13 +143,8 @@ const SignUp = () => {
 
           {/** Inputs fields */}
           <div className='flex flex-col md:w-[518px] gap-[24px]'>
-            <label
-              htmlFor='email'
-              className='flex flex-col gap-[8px] w-[inherit]'
-            >
-              <span className='text-[14px] leading-[20px] font-medium text-[#0E0E0E]'>
-                Email Address
-              </span>
+            <label htmlFor='email' className='flex flex-col gap-[8px] w-[inherit]'>
+              <span className='text-[14px] leading-[20px] font-medium text-[#0E0E0E]'>Email Address</span>
               <input
                 name='email'
                 id='email'
@@ -164,19 +157,12 @@ const SignUp = () => {
                 onBlur={formik.handleBlur}
               />
               {formik.touched.email && formik.errors.email ? (
-                <div className='text-red-600 text-sm'>
-                  {formik.errors.email}
-                </div>
+                <div className='text-red-600 text-sm'>{formik.errors.email}</div>
               ) : null}
             </label>
 
-            <label
-              htmlFor='password'
-              className='flex flex-col gap-[8px] w-[inherit]'
-            >
-              <span className='text-[14px] leading-[20px] font-medium text-[#0E0E0E]'>
-                Password
-              </span>
+            <label htmlFor='password' className='flex flex-col gap-[8px] w-[inherit]'>
+              <span className='text-[14px] leading-[20px] font-medium text-[#0E0E0E]'>Password</span>
               <input
                 type='password'
                 id='password'
@@ -202,24 +188,17 @@ const SignUp = () => {
                   />
                 </svg>
                 <span className='text-[12px] leading-[16px] font-normal text-[#3C3C3C]'>
-                  Password should be at least 8 characters long, contain at
-                  least 1 uppercase, 1 lowercase, & 1 special character
+                  Password should be at least 8 characters long, contain at least 1 uppercase, 1 lowercase, & 1 special
+                  character
                 </span>
               </span>
               {formik.touched.password && formik.errors.password ? (
-                <div className='text-red-600 text-sm'>
-                  {formik.errors.password}
-                </div>
+                <div className='text-red-600 text-sm'>{formik.errors.password}</div>
               ) : null}
             </label>
 
-            <label
-              htmlFor='confirmPassword'
-              className='flex flex-col gap-[8px] w-[inherit]'
-            >
-              <span className='text-[14px] leading-[20px] font-medium text-[#0E0E0E]'>
-                Confirm Password
-              </span>
+            <label htmlFor='confirmPassword' className='flex flex-col gap-[8px] w-[inherit]'>
+              <span className='text-[14px] leading-[20px] font-medium text-[#0E0E0E]'>Confirm Password</span>
               <input
                 type='password'
                 id='confirmPassword'
@@ -230,11 +209,8 @@ const SignUp = () => {
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
               />
-              {formik.touched.confirmPassword &&
-              formik.errors.confirmPassword ? (
-                <div className='text-red-600 text-sm'>
-                  {formik.errors.confirmPassword}
-                </div>
+              {formik.touched.confirmPassword && formik.errors.confirmPassword ? (
+                <div className='text-red-600 text-sm'>{formik.errors.confirmPassword}</div>
               ) : null}
             </label>
           </div>
@@ -250,9 +226,7 @@ const SignUp = () => {
 
           <div className='w-[inherit] h-[24px] flex gap-[24px] items-center'>
             <hr className='w-[226px] border-[1px]' />
-            <span className='text-base leading-[24px] font-normal text-[#AAAAAA]'>
-              Or
-            </span>
+            <span className='text-base leading-[24px] font-normal text-[#AAAAAA]'>Or</span>
             <hr className='w-[226px] border-[1px]' />
           </div>
 
@@ -275,28 +249,12 @@ const SignUp = () => {
 
           <div className='md:hidden flex h-[92px] justify-evenly'>
             <div className='flex flex-col gap-[4px]'>
-              <Image
-                src={googleRoundIcon}
-                alt=''
-                width={64}
-                height={64}
-                className='w-[64px] h-[64px]'
-              />
-              <span className='font-bold text-base text-[#0E0E0E] leading-[24px] text-center'>
-                Google
-              </span>
+              <Image src={googleRoundIcon} alt='' width={64} height={64} className='w-[64px] h-[64px]' />
+              <span className='font-bold text-base text-[#0E0E0E] leading-[24px] text-center'>Google</span>
             </div>
             <div className='flex flex-col gap-[4px]'>
-              <Image
-                src={appleRoundIcon}
-                alt=''
-                width={64}
-                height={64}
-                className='w-[64px] h-[64px]'
-              />
-              <span className='font-bold text-base text-[#0E0E0E] leading-[24px] text-center'>
-                Apple
-              </span>
+              <Image src={appleRoundIcon} alt='' width={64} height={64} className='w-[64px] h-[64px]' />
+              <span className='font-bold text-base text-[#0E0E0E] leading-[24px] text-center'>Apple</span>
             </div>
           </div>
 
@@ -329,9 +287,7 @@ const SignUp = () => {
                     //   setIsHomePageActive(false);
                     // }
                   }}
-                  className={`text-[18px] text-[#0E0E0E] ${
-                    idx === 1 && 'hidden'
-                  } ${
+                  className={`text-[18px] text-[#0E0E0E] ${idx === 1 && 'hidden'} ${
                     idx !== 0 && 'border-l-[1px]'
                   } border-[#D0D0D0] px-3 leading-[24px] font-medium text-center`}
                   href={url}

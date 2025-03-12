@@ -1,33 +1,26 @@
 'use client';
 import Image from 'next/image';
-import React, { useEffect, useState } from 'react';
-import arrowDownIcon from '@/public/assets/svgs/arrowDown.svg';
-import logo from '@/public/assets/svgs/logo_black.svg';
+import React, { JSX, useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import { headerdata } from './headerdata';
-// import Button from '@/components/AboutUs/button';
-import Button from '../Common/Button';
-import PageButton from '../Common/PageButton';
+import Button from './Button';
+import PageButton from './PageButton';
 import { Hamburger, CancelIcon } from '@/components/icons/icons';
-import HeadPhone from '@/public/assets/svgs/headphones.svg';
-import globe from '@/public/assets/svgs/globe.svg';
-import { usePathname, useSearchParams } from 'next/navigation';
-import SignAs from '../Signup/Options';
-import ChatBot from '../Contact';
-
-interface HeaderComponentProps {
-  className?: string;
-}
+import { usePathname } from 'next/navigation';
+import SignAs from './SignupOptions';
+import logo from '@/public/assets/svgs/logo_black.svg';
 
 const HeaderComponent = () => {
   /**active pages */
   const [currentPage, setCurrentPage] = useState<string>('');
   const [isClicked, setIsClicked] = useState<boolean>(false);
   const pathName = usePathname();
+  const ref = useRef<HTMLDivElement>(null);
+  const hamburgerRef = useRef<HTMLDivElement>(null);
   /**handling or setting pages to display */
 
   const [toggle, setToggle] = useState<{
-    icon: any;
+    icon: JSX.Element;
     isBarClicked: boolean;
     overlayVisible: boolean;
   }>({
@@ -57,6 +50,109 @@ const HeaderComponent = () => {
     }
   };
   const [isSignedUpClicked, setIsSignedUpClicked] = useState<boolean>(false);
+  const [isLoginClicked, setIsLoginClicked] = useState<boolean>(false);
+
+  const handleCloseNavBar = () => {
+    setToggle((prev) => ({
+      ...prev,
+      isBarClicked: false,
+    }));
+  };
+
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (hamburgerRef.current && !hamburgerRef.current.contains(e.target as Node)) {
+        handleCloseNavBar();
+      }
+    };
+
+    if (toggle.isBarClicked) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [toggle.isBarClicked]);
+
+  // Move focus to the nav when it opens
+  useEffect(() => {
+    if (toggle.isBarClicked) {
+      const nav = document.getElementById('hamburger-menu');
+      if (nav) {
+        const firstFocusableElement = nav.querySelector('a, button, [tabindex]:not([tabindex="-1"])');
+        (firstFocusableElement as HTMLElement)?.focus();
+      }
+    }
+  }, [toggle]);
+
+  // Trap focus inside the nav
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      const innerWidth = window.innerWidth;
+      if (toggle.isBarClicked) {
+        const nav = document.getElementById('hamburger-menu');
+        if (nav) {
+          console.log('nav', nav);
+          const focusableElements =
+            innerWidth < 768
+              ? nav.querySelectorAll('a, button, [tabindex]:not([tabindex="-1"])') // Get all focusable elements in the nav when the auth buttons are inside
+              : nav.querySelectorAll('a, [tabindex]:not([tabindex="-1"])'); // Get all focusable elements in the nav when the auth buttons are not inside
+
+          const firstFocusableElement = focusableElements[0];
+          const lastFocusableElement = focusableElements[focusableElements.length - 1];
+
+          if (event.key === 'Tab') {
+            console.log('event', event);
+            if (event.shiftKey) {
+              if (document.activeElement === firstFocusableElement) {
+                (lastFocusableElement as HTMLElement).focus();
+                event.preventDefault();
+              }
+            } else {
+              console.log('lastFocusableElement', lastFocusableElement);
+
+              console.log('document.activeElement', document.activeElement);
+              if (document.activeElement === lastFocusableElement) {
+                (firstFocusableElement as HTMLElement).focus();
+                event.preventDefault();
+              }
+            }
+          }
+        }
+      }
+    };
+
+    document.addEventListener('keydown', handleKeyDown);
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [toggle.isBarClicked]);
+
+  // Close the nav on Esc
+  useEffect(() => {
+    const handleEscape = (event: KeyboardEvent) => {
+      if (event.key === 'Escape' && toggle.isBarClicked) {
+        setToggle({
+          ...toggle,
+          isBarClicked: false,
+        });
+      }
+    };
+
+    document.addEventListener('keydown', handleEscape);
+    return () => {
+      document.removeEventListener('keydown', handleEscape);
+    };
+  }, [toggle.isBarClicked, toggle]);
+
+  // Restore focus when the nav closes
+  useEffect(() => {
+    if (!toggle.isBarClicked) {
+      const openButton = document.getElementById('open-nav-button'); // Add an ID to the button that opens the nav
+      openButton?.focus();
+    }
+  }, [toggle.isBarClicked]);
 
   useEffect(() => {
     setCurrentPage(pathName);
@@ -64,164 +160,208 @@ const HeaderComponent = () => {
 
   return (
     <header
-      className={`w-full shadow flex py-4 lg:h-[80px] h-auto flex-col px-5 md:px-2 lg:px-20 justify-center items-center bg-white`}
-      // style={{ boxShadow: '0px 4px 8px 0px #CFD7E2A3' }}
+      className={`w-full font-satoshi shadow flex py-4 lg:h-[120px] h-auto flex-col px-5 md:px-2 lg:px-20 justify-center items-center bg-[#F7F7F7] sticky top-0 z-50`}
+      style={{ boxShadow: '0px 4px 8px 0px #CFD7E2A3' }}
     >
       <nav
-        className={`container md:pl-5 lg:pl-0 flex justify-between items-center`}
+        className={`container md:pl-5 lg:pl-0 flex justify-between items-center transition-all duration-300 delay-0`}
+        role='navigation'
+        aria-label='Main navigation'
       >
         {/**image / logo section */}
-        <Link onClick={() => {}} className='' href='/'>
+        <Link
+          href='/'
+          title='Rydepro Homepage'
+          className='focus:outline-none focus:ring-2 focus:ring-[#0E0E0E] focus:ring-offset-2'
+          aria-label='Home' // Provide a descriptive label for the link
+        >
           <Image
             src={logo}
-            width={logo_width.width}
-            height={logo_width.height}
-            className={`${logo_width.class}`}
-            alt=''
+            // alt='Rydepro logo'
+            width='80'
+            height='80'
+            // className={`${logo_width.class}`}
+            className='hidden sm:flex'
+            alt='Rydepro Homepage'
+            title='Rydepro Logo'
+          />
+
+          <Image
+            src={logo}
+            // alt='Rydepro logo'
+            width='48'
+            height='48'
+            // className={`${logo_width.class}`}
+            className=' sm:hidden'
+            alt='Rydepro Homepage'
+            title='Rydepro Logo'
           />
         </Link>
         {/**routing links section */}
-        <div className={`hidden lg:flex lg:items-center md:gap-8`}>
-          {headerdata.map((item) => {
-            const { id, name, link } = item;
-            return (
-              <Link
-                className={`transition delay-0 relative duration-300 decoration-neutral text-base leading-6 py-1 hover:text-textPrimary hover:transition-all hover:ease-in-out hover:border-b-2 hover:border-black ${
-                  currentPage === link
-                    ? ' text-textPrimary'
-                    : 'text-textSecondary'
-                }`}
-                key={id}
-                title={name}
-                href={link}
-                onClick={() =>
-                  name === 'Contact Us' && setIsClicked(!isClicked)
-                }
-              >
-                <span>{name}</span>
-                <div
-                  className={`absolute bottom-0 left-0 h-[2px] bg-[#0E0E0E] transition-all duration-300 ease-in-out ${
-                    currentPage === link ? 'w-full' : 'hover:w-full'
-                  }`}
-                ></div>
-              </Link>
-            );
-          })}
-        </div>
-        {/**sign up or login section */}
-        <div className={`flex items-center gap-2`}>
-          <Link href={''} title='' className='flex gap-2 items-center'>
-            <Image
-              src={globe}
-              width={20}
-              height={20}
-              className='md:w-[20px] md:h-[20px] w-[24px] h-[24px]'
-              alt='globe'
-              priority
-              // placeholder='blur'
+        <ul className=' lg:flex-col list-none lg:justify-end  lg:gap-5 transition-all duration-300 delay-0 min-[1070px]:gap-8 md:gap-8'>
+          <div className={`flex items-center justify-end gap-2`}>
+            <Link href={'/language'} title='Change Language' className='flex gap-2 items-center'>
+              <Image
+                src={'/assets/svgs/globe.svg'}
+                width={20}
+                height={20}
+                className='md:w-[20px] md:h-[20px] w-[24px] h-[24px]'
+                alt='globe'
+                priority
+                // placeholder='blur'
+              />
+              <span className='text-[#212121] text-base font-medium flex gap-1 items-center'>
+                EN <Image src={'/assets/svgs/arrowDown.svg'} alt='Icon' width={15} height={15} aria-hidden='true' />
+              </span>
+            </Link>
+            <Button
+              onClick={() => {
+                setIsLoginClicked((prev) => !prev);
+              }}
+              value='Login'
+              title='Login Button'
+              className='hover:bg-gray-200 rounded-md px-6 py-2 text-base font-medium hidden md:flex focus:ring-[#0E0E0E] focus:ring-offset-2'
             />
-            <span className='text-[#212121] text-base font-medium flex gap-1 items-center'>
-              EN <Image src={arrowDownIcon} alt='' width={15} height={15} />
-            </span>
-          </Link>
-          <Button
-            value='Login'
-            className='hover:bg-gray-200 rounded-md px-[24px] py-[8px] text-md hidden md:flex'
-          />
-          <Button
-            onClick={() => {
-              setIsSignedUpClicked((prev) => !prev);
-            }}
-            value='Sign up'
-            className='bg-[#0E0E0E] text-white rounded-md px-[24px] py-[8px] text-md hidden md:flex'
-          />
-          {/**bars conditional icon rendering */}
-          <div
-            className='lg:hidden border rounded-md py-3 px-1'
-            onClick={() => {
-              //setIsBarClicked(!isBarClicked);
-              handleIsBarClicked();
-            }}
-          >
-            <Hamburger className='w-[30px]' />
+            <Button
+              onClick={() => {
+                setIsSignedUpClicked((prev) => !prev);
+              }}
+              value='Sign up'
+              title='Sign up with Rydepro'
+              className='bg-[#0E0E0E] text-white rounded-md px-6 py-2 text-base font-medium hidden md:flex focus:ring-[#0E0E0E] focus:ring-offset-2'
+            />
+            {/**bars conditional icon rendering */}
+            <button
+              className='lg:hidden border rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-[#0E0E0E] focus:ring-offset-2'
+              aria-label={toggle.isBarClicked ? 'Close menu' : 'Open menu'} // Dynamic label based on state
+              aria-expanded={toggle.isBarClicked} // Indicates whether the menu is open or closed
+              onClick={() => {
+                handleIsBarClicked(); // Toggle menu state
+              }}
+            >
+              {
+                toggle.isBarClicked ? (
+                  <CancelIcon className='w-7 h4' aria-hidden='true' /> /* Hide icon from screen readers */
+                ) : (
+                  <Hamburger className=' w-7 h-6' aria-hidden='true' />
+                ) // Hide icon from screen readers
+              }
+            </button>
           </div>
-        </div>
-      </nav>
-      {toggle.isBarClicked && (
-        <nav
-          className={`md:px-5 lg:hidden md:absolute absolute right-0 md:right-[10%] rounded-b-lg z-20  w-full md:w-[400px] top-20 px-4 py-7 flex flex-col gap-8 transition-opacity ${
-            toggle.overlayVisible ? 'opacity-100' : 'opacity-0'
-          } duration-500 ease-in-out bg-white`}
-        >
-          <div className='flex flex-col items-center gap-5 '>
+          <div className='hidden mt-3 lg:flex lg:flex-wrap  gap-5 items-center' ref={hamburgerRef}>
             {headerdata.map((item) => {
               const { id, name, link } = item;
+              const isActive = currentPage === link;
+
               return (
-                <Link
-                  className={`transition delay-0 relative duration-300 decoration-neutral text-base leading-6 py-1 hover:text-textPrimary hover:transition-all hover:ease-in-out hover:border-b-2 hover:border-black ${
-                    currentPage === link
-                      ? ' text-textPrimary'
-                      : 'text-textSecondary'
-                  }`}
-                  key={id}
-                  title={name}
-                  href={link}
-                  onClick={() => {
-                    {
-                      name === 'Contact Us' && setIsClicked(!isClicked);
-                    }
-                    setToggle({
-                      ...toggle,
-                      isBarClicked: false,
-                    });
-                  }}
-                >
-                  <span>{name}</span>
-                  <div
-                    className={`absolute bottom-0 left-0 h-[2px] bg-[#0E0E0E] transition-all duration-300 ease-in-out ${
-                      currentPage === link ? 'w-full' : 'hover:w-full'
-                    }`}
-                  ></div>
-                </Link>
+                <li key={id}>
+                  <Link
+                    href={link}
+                    title={name + ' page'}
+                    className={`
+            relative text-header leading-6 py-1 transition-all duration-300 ease-in-out
+            ${isActive ? 'text-header-active' : ' hover:text-textPrimary'}
+            hover:border-b-2 hover:border-black focus:border-b-2 focus:border-black
+          `}
+                    aria-current={isActive ? 'page' : undefined}
+                    tabIndex={0}
+                    onClick={() => name === 'Contact Us' && setIsClicked(!isClicked)}
+                  >
+                    <span>{name}</span>
+                    {isActive && (
+                      <div
+                        className='absolute bottom-0 left-0 h-[2px] w-full bg-[#0E0E0E] transition-all duration-300 ease-in-out'
+                        aria-hidden='true'
+                      ></div>
+                    )}
+                  </Link>
+                </li>
               );
             })}
           </div>
-          <div className='flex flex-col-reverse md:hidden gap-3'>
-            <PageButton
-              onCLick={() => {
-                setIsSignedUpClicked((prev) => !prev);
-              }}
-              className='px-4 py-2 w-full lg:grid rounded-lg bg-neutral-800 text-blue-50'
-              text='Sign Up'
-            />
-            <PageButton
-              onCLick={() => {
-                // setAuth({
-                //     ...auth,
-                //     isPageContrast: !auth.isPageContrast,
-                //     isClicked: !auth.isClicked,
-                // });
-              }}
-              className='px-4 w-full lg:grid py-2 font-medium bg-gray-100 border text-base text-black rounded-lg'
-              text='Login'
-            />
-          </div>
-        </nav>
+        </ul>
+        {/**sign up or login section */}
+      </nav>
+      <>
+        {toggle.isBarClicked && (
+          <nav
+            className={`md:px-5 lg:hidden md:absolute absolute right-0 md:right-[10%] rounded-b-lg z-20 w-full md:w-[400px] top-20 px-4 py-7 flex flex-col gap-8 transition-opacity ${
+              toggle.overlayVisible ? 'opacity-100' : 'opacity-0'
+            } duration-500 ease-in-out bg-[#FCFCFC]`}
+            id='hamburger-menu'
+          >
+            <ul
+              className='flex flex-col list-none items-center gap-6'
+              role='navigation'
+              aria-label='Hamburger navigation'
+            >
+              {headerdata.map((item) => {
+                const { id, name, link } = item;
+                return (
+                  <li key={id}>
+                    <Link
+                      className={`transition delay-0 relative duration-300 focus:ring-[#0E0E0E] focus:ring-offset-2 decoration-neutral text-base leading-6 py-1 hover:text-textPrimary hover:transition-all hover:ease-in-out hover:border-b-2 hover:border-black ${
+                        currentPage === link ? 'text-header-active border-b-2 border-[#0E0E0E]' : 'text-header'
+                      }`}
+                      title={name}
+                      href={link}
+                      onClick={() => {
+                        if (name === 'Contact Us') {
+                          setIsClicked(!isClicked);
+                        }
+                        setToggle({
+                          ...toggle,
+                          isBarClicked: false,
+                        });
+                      }}
+                    >
+                      <span>{name}</span>
+                      {/* <div
+                        className={`absolute bottom-0 left-0 h-[4px] bg-[#0E0E0E]  transition-all duration-300 ease-in-out ${
+                          currentPage === link ? 'w-full' : 'hover:w-full'
+                        }`}
+                        aria-hidden='true'
+                      ></div> */}
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
+            <div className='flex flex-col md:hidden gap-2' ref={ref}>
+              <PageButton
+                onClick={() => {
+                  // toggleAuthModal();
+                  if (isLoginClicked) {
+                    setIsLoginClicked(false);
+                  }
+                }}
+                className='px-4 w-full lg:grid py-2 font-medium hover:bg-[#0E0E0E] hover:text-[#FAF6F6]  bg-[#F5F5F5] border border-[#D0D0D0] text-base text-text-primary rounded-lg focus:ring-[#0E0E0E] focus:ring-offset-2'
+                text='Login'
+                id='login-button'
+              />
+              <PageButton
+                onClick={() => {
+                  // toggleAuthModal();
+                  if (isSignedUpClicked) {
+                    setIsSignedUpClicked(false);
+                  }
+                }}
+                className='px-4 py-2 w-full lg:grid rounded-lg bg-[#0E0E0E] text-[#FAF6F6] hover:bg-[#F5F5F5] hover:text-text-primary focus:ring-[#0E0E0E] focus:ring-offset-2'
+                text='Sign Up'
+                id='sign-up'
+              />
+            </div>
+          </nav>
+        )}
+      </>
+      {isSignedUpClicked && (
+        <SignAs setIsAuthClicked={setIsSignedUpClicked} isAuthClicked={isSignedUpClicked} ref={ref} type='signup' />
       )}
-      <SignAs
-        setIsSignedUpClicked={setIsSignedUpClicked}
-        isSignedUpClicked={isSignedUpClicked}
-      />
-      <ChatBot isClicked={isClicked} setIsClicked={setIsClicked} />
+      {isLoginClicked && (
+        <SignAs setIsAuthClicked={setIsLoginClicked} isAuthClicked={isLoginClicked} ref={ref} type='login' />
+      )}
     </header>
   );
-};
-
-// const Header = React.memo(HeaderComponent);
-const logo_width = {
-  width: 100,
-  height: 100,
-  class: 'w-[68px] h-[50px]',
 };
 
 export default HeaderComponent;

@@ -4,7 +4,7 @@ import Component from './component';
 
 const Time = () => {
   const calculateTimeLeft = () => {
-    const targetDate = new Date('December 1, 2024 00:00:00').getTime();
+    const targetDate = new Date('January 31, 2025 00:00:00').getTime();
     const now = new Date().getTime();
     const difference = targetDate - now;
 

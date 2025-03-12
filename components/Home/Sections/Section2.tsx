@@ -14,8 +14,7 @@ const Section2 = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sectionTop: number | undefined | any =
-        imageRef.current?.getBoundingClientRect()?.top;
+      const sectionTop: number | undefined | any = imageRef.current?.getBoundingClientRect()?.top;
       const windowHeight = window.innerHeight;
 
       if (sectionTop < windowHeight) {
@@ -59,30 +58,30 @@ const Section2 = () => {
         className={`w-full absolute top-12 z-20 flex flex-col max-md:px-6 max-sm:px-4 justify-center items-center gap-10 py-6 md:px-4 lg:px-20`}
       >
         <div className='flex flex-col items-center gap-2 md:hidden'>
-          <h2 className='text-base text-[#D0D0D0]'>Why Choose Us</h2>
-          <h3 className='text-2xl text-[#F7F7F7] text-center'>
-            Why Choose Rydepro?
+          <h2 className=' md:text-base text-[#D0D0D0]'>Why Choose Us</h2>
+          <h3 className=' text-lg md:text-xl lg:text-2xl text-[#F7F7F7] text-center'>
+            Join Thousands of Riders Who Trust RYDEPRO
           </h3>
+          <p className=' text-sm md:text-base text-[#D0D0D0] font-normal'>
+            Driven by Cutting-Edge Technology and Sustainable Innovation: Redefining Your Commute
+          </p>
         </div>
         <div className='container flex md:flex-row flex-col-reverse items-center row-gap-5 justify-between'>
           <div className='flex flex-col gap-5 max-md:max-w-[90%] max-lg:max-w-[60%] lg:max-w-[70%]'>
-            <h2 className='text-md leading-6 tracking-wider text-[#F7F7F7] hidden md:flex'>
-              Why Choose Us
-            </h2>
-            <h3 className='text-3xl max-md:text-2xl font-medium tracking-wider text-[#F7F7F7] mt-4 hidden md:flex'>
-              Why Choose Rydepro?
+            <h2 className='text-md leading-6  text-[#F7F7F7] hidden md:flex'>Why Choose Us</h2>
+            <h3 className='text-3xl max-md:text-2xl font-medium  text-[#F7F7F7] mt-4 hidden md:flex'>
+              Join Thousands of Riders Who Trust RYDEPRO
             </h3>
-            <div className='grid grid-cols-2 md:grid-rows-3 gap-8 md:gap-6 md:mt-0 mt-4'>
+            <p className='text-[#D0D0D0] text-sm md:text-base  font-normal hidden md:flex'>
+              Driven by Cutting-Edge Technology and Sustainable Innovation: Redefining Your Commute
+            </p>
+            <div className='grid grid-cols-2 md:pl-10 md:grid-rows-3 gap-8 md:gap-6  mt-4'>
               {reasons.map((item: any, index: number) => {
                 const { title, descripton } = item;
                 return (
                   <div key={index} className='flex flex-col gap-2'>
-                    <h4 className='text-[#FCFCFC] font-medium tracking-wider text-lg'>
-                      {title}
-                    </h4>
-                    <p className='text-[#D0D0D0] tracking-wider text-sm'>
-                      {descripton}
-                    </p>
+                    <h4 className='text-[#FCFCFC] font-medium  text-lg'>{title}</h4>
+                    <p className='text-[#D0D0D0]  text-sm'>{descripton}</p>
                   </div>
                 );
               })}
@@ -100,9 +99,7 @@ const Section2 = () => {
               height={600}
               className={clsx(
                 'transition-all duration-700 ease-in-out transform max-w-[301px] h-[534px]',
-                isVisible
-                  ? 'opacity-100 translate-x-0'
-                  : 'opacity-0 translate-x-full'
+                isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-full'
               )}
             />
           </div>

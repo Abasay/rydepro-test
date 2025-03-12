@@ -97,48 +97,20 @@
 
 .border-animation {
   border: 3px solid;
-  border-image: linear-gradient(
-    90deg,
-    #f4c542,
-    #333333,
-    #f28d35,
-    #5644b3,
-    #1e3c72
-  );
+  border-image: linear-gradient(90deg, #f4c542, #333333, #f28d35, #5644b3, #1e3c72);
   border-image-slice: 1;
   animation: border-animation 1.5s linear infinite;
 }
 
 @keyframes border-animation {
   0% {
-    border-image-source: linear-gradient(
-      90deg,
-      #f4c542,
-      #333333,
-      #f28d35,
-      #5644b3,
-      #1e3c72
-    );
+    border-image-source: linear-gradient(90deg, #f4c542, #333333, #f28d35, #5644b3, #1e3c72);
   }
   50% {
-    border-image-source: linear-gradient(
-      90deg,
-      #1e3c72,
-      #5644b3,
-      #f28d35,
-      #333333,
-      #f4c542
-    );
+    border-image-source: linear-gradient(90deg, #1e3c72, #5644b3, #f28d35, #333333, #f4c542);
   }
   100% {
-    border-image-source: linear-gradient(
-      90deg,
-      #f4c542,
-      #333333,
-      #f28d35,
-      #5644b3,
-      #1e3c72
-    );
+    border-image-source: linear-gradient(90deg, #f4c542, #333333, #f28d35, #5644b3, #1e3c72);
   }
 }
 
@@ -228,5 +200,5 @@
   animation: border-rotation 3s linear infinite;
   border-radius: 30px;
   transition: all 0.3s ease;
-  box-shadow: 0 0 10px #e7c501ab;
+  /* box-shadow: 0 0 10px #e7c501ab; */
 }

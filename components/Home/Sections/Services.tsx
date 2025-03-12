@@ -3,13 +3,7 @@ import Image from 'next/image';
 import React, { useEffect, useRef, useState } from 'react';
 // import phone from '@/public/assets/sections/qualityPhone1.png';
 import phone from '@/public/assets/sections/Our Services - Desktop.png';
-import {
-  services,
-  services1Lg,
-  services1Md,
-  services2Lg,
-  services2Md,
-} from './servicesData';
+import { services, services1Lg, services1Md, services2Lg, services2Md } from './servicesData';
 import clsx from 'clsx';
 import Wallpaper from '@/public/assets/sections/newBgImage.png';
 import styles from './index.module.css';
@@ -23,8 +17,7 @@ const Services = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sectionTop: number | undefined | any =
-        ref.current?.getBoundingClientRect()?.top;
+      const sectionTop: number | undefined | any = ref.current?.getBoundingClientRect()?.top;
       const windowHeight = window.innerHeight;
 
       if (sectionTop < windowHeight) {
@@ -34,8 +27,7 @@ const Services = () => {
       }
     };
     const handleScroll2 = () => {
-      const sectionTop: number | undefined | any =
-        ref2.current?.getBoundingClientRect()?.top;
+      const sectionTop: number | undefined | any = ref2.current?.getBoundingClientRect()?.top;
       const windowHeight = window.innerHeight;
 
       if (sectionTop < windowHeight) {
@@ -57,168 +49,156 @@ const Services = () => {
   return (
     <>
       {' '}
-      <div
-        className={`bg-black px-0 relative py-10 flex items-end flex-col min-h-[900px] max-[470px]:min-h-[2100px] max-md:min-h-[1500px]   max-[970px]:min-h-[1050px]  max-[1060px]:min-h-[1000px]`}
+      <section
+        className={`bg-black px-0 relative py-10 flex flex-col min-h-[900px] max-md:min-h-[1300px]`}
+        aria-label='Services'
+        aria-labelledby='services'
       >
+        {/* Background Image */}
         <Image
           src={bg}
-          alt='Rydepro Services'
+          alt='Background image for Rydepro Services section'
           layout='fill'
           objectFit='cover'
           objectPosition='center'
           priority
-          className=' absolute top-0'
+          className='absolute top-0'
+          aria-hidden='true' // Decorative image, hidden from screen readers
         />
 
-        {/* <div className={`bg-black min-h-[920px] bg-opacity-35 `}></div> */}
-        <div className='w-full flex z-10 flex-col max-md:px-6 max-sm:px-4 justify-center gap-10'>
-          <div className=' items-center justify-center mx-auto max-lg:w-[70%] max-md:w-[90%] max-sm:w-full text-[#F7F7F7] flex flex-col gap-2 lg:min-h-[80px]'>
-            <p className=' text-md leading-6 text-center font-light'>
-              Our Services
-            </p>
-            <h3 className=' text-center text-[40px] leading-[48px] text-xl lg:text-4xl max-md:leading-8 text-[#F7F7F7]'>
+        {/* Content Section */}
+        <div className='w-full container border mx-auto flex justify-center z-10 flex-col gap-10'>
+          <div className='max-sm:w-full lg:w-[70%] w-full border mx-auto lg:justify-center text-[#F7F7F7] flex flex-col gap-2'>
+            <p className='text-md leading-6 font-normal'>Services</p>
+            <h2
+              className='leading-[48px] text-lg sm:text-xl md:text-2xl lg:text-4xl max-md:leading-8 text-[#F7F7F7]'
+              id='services'
+            >
               Dynamic Scheduling & On-Demand Travels
-            </h3>
+            </h2>
           </div>
-
-          {/* <div className=' flex flex-col gap-'></div> */}
         </div>
-        <div className='w-full h-[50%] z-10 absolute bottom-0 bg-gradient-to-t to-black via-black/70 from-transparent'></div>
-        {/* <div className='w-full h-20 z-10 absolute bottom-[0] bg-gradient-to-t from-black via-black/50 to-transparent'></div> */}
-        <div className='w-full h-40 z-10 absolute bottom-[50%] bg-gradient-to-t from-black via-black/35 to-transparent'></div>
 
-        <div className=' max-md:hidden w-full absolute top-40 z-20'>
-          <div className='flex gap-12 justify-center max-[920px]:w-[90%] max-[800px]:w-[95%] max-md:w-[90%] w-[80%]  mx-auto py-16'>
-            <div className=' flex flex-col gap-2 -mt-5'>
-              <Image
-                src={phone}
-                alt='Rydepro Unique Services'
-                width={400}
-                height={500}
-                priority
-                className=' max-w-[301.1px] h-[470px]'
-              />
-              <div
-                className='w-auto flex flex-col py-4 gap-4 max-w-[400px] border-t border-[#FFFFFF]'
-                style={{
-                  borderTop: '1px solid #FFFFFF',
-                  borderImageSource: `linear-gradient(90deg, #FFFFFF 0%, rgba(153, 153, 153, 0.25) 102.64%)`,
-                  borderImageSlice: 1,
-                }}
-              >
-                <h1 className='text-2xl tracking-wider font-medium text-[#FCFCFC]'>
-                  Multi-Stop
-                </h1>
-                <p className='text-[#D0D0D0] font-light'>
-                  Over 1,000 vehicles available for any event.
-                </p>
+        {/* <div className='w-full h-[50%] z-10 absolute bottom-0 bg-gradient-to-t to-black via-black/70 from-transparent'></div> */}
+        {/* <div className='w-full h-20 z-10 absolute bottom-[0] bg-gradient-to-t from-black via-black/50 to-transparent'></div> */}
+        {/* <div className='w-full h-40 z-10 absolute bottom-[50%] bg-gradient-to-t from-black via-black/35 to-transparent'></div> */}
+
+        {/* Desktop Layout */}
+        <div className='max-md:hidden w-full absolute top-40 z-20'>
+          <div className='w-full mx-auto lg:container max-lg:px-6'>
+            <div className='gap-12 w-full flex justify-center py-16'>
+              <div className='flex flex-col gap-2 mt-5'>
+                <Image
+                  src={phone}
+                  alt='Rydepro app interface showcasing unique services'
+                  width={400}
+                  height={500}
+                  priority
+                  className='min-w-[300px] w-full h-full max-w-[401.1px] max-h-[480px]'
+                />
+              </div>
+              <div className='flex flex-col gap-8'>
+                {services1Lg.map((service, index) => {
+                  const { title, description } = service;
+                  return (
+                    <div
+                      key={index}
+                      className='w-auto flex flex-col py-4 gap-4 max-w-[300px] min-h-[136px] border-t border-[#FFFFFF]'
+                      style={{
+                        borderTop: '1px solid #FFFFFF',
+                        borderImageSource: `linear-gradient(90deg, #FFFFFF 0%, rgba(153, 153, 153, 0.25) 102.64%)`,
+                        borderImageSlice: 1,
+                        borderBottom: `${index === services1Lg.length - 1 ? '1px solid #FFFFFF' : 'none'}`,
+                      }}
+                    >
+                      <h3 className='text-2xl tracking-wider font-medium text-[#FCFCFC]'>{title}</h3>
+                      <p className='text-[#D0D0D0] font-normal'>{description}</p>
+                    </div>
+                  );
+                })}
+              </div>
+              <div className='flex flex-col gap-8'>
+                {services2Lg.map((service, index) => {
+                  const { title, description } = service;
+                  return (
+                    <div
+                      key={index}
+                      className='w-auto flex flex-col py-4 gap-4 max-w-[300px] min-h-[136px] border-t border-[#FFFFFF]'
+                      style={{
+                        borderTop: '1px solid #FFFFFF',
+                        borderImageSource: `linear-gradient(90deg, #FFFFFF 0%, rgba(153, 153, 153, 0.25) 102.64%)`,
+                        borderImageSlice: 1,
+                        borderBottom: `${index === services2Lg.length - 1 ? '1px solid #FFFFFF' : 'none'}`,
+                      }}
+                    >
+                      <h3 className='text-2xl tracking-wider font-medium text-[#FCFCFC]'>{title}</h3>
+                      <p className='text-[#D0D0D0] font-light'>{description}</p>
+                    </div>
+                  );
+                })}
               </div>
             </div>
-            <div className=' flex flex-col gap-8 mt-40'>
-              {services1Lg.map((service, index) => {
-                const { title, description } = service;
-                return (
-                  <div
-                    key={index}
-                    className='w-auto flex flex-col py-4 gap-4 max-w-[400px] border-t border-[#FFFFFF]'
-                    style={{
-                      borderTop: '1px solid #FFFFFF',
-                      borderImageSource: `linear-gradient(90deg, #FFFFFF 0%, rgba(153, 153, 153, 0.25) 102.64%)`,
-                      borderImageSlice: 1,
-                    }}
-                  >
-                    <h1 className='text-2xl tracking-wider font-medium text-[#FCFCFC]'>
-                      {title}
-                    </h1>
-                    <p className='text-[#D0D0D0] font-light'>{description}</p>
-                  </div>
-                );
-              })}
-            </div>
-            <div className=' flex flex-col gap-8 '>
-              {services2Lg.map((service, index) => {
-                const { title, description } = service;
-                return (
-                  <div
-                    key={index}
-                    className='w-auto flex flex-col py-4 gap-4 max-w-[400px] border-t border-[#FFFFFF]'
-                    style={{
-                      borderTop: '1px solid #FFFFFF',
-                      borderImageSource: `linear-gradient(90deg, #FFFFFF 0%, rgba(153, 153, 153, 0.25) 102.64%)`,
-                      borderImageSlice: 1,
-                    }}
-                  >
-                    <h1 className='text-2xl tracking-wider font-medium text-[#FCFCFC]'>
-                      {title}
-                    </h1>
-                    <p className='text-[#D0D0D0] font-light'>{description}</p>
-                  </div>
-                );
-              })}
-            </div>
           </div>
         </div>
-        <div className=' max-md:block md:hidden w-full absolute top-40 z-20'>
-          <div className=' w-[90%] mx-auto mt-6'>
-            <div className=' flex flex-col items-center justify-center gap-8'>
-              <div className=' flex flex-wrap gap-6 justify-center items-center flex-shrink'>
+
+        {/* Mobile Layout */}
+        <div className='max-md:block md:hidden w-full absolute top-40 z-20'>
+          <div className='w-[98%] mx-auto mt-6'>
+            <div className='flex flex-col items-center justify-center gap-8'>
+              <div className='grid grid-cols-2 px-1 gap-6'>
                 {services1Md.map((service, index) => {
                   const { title, description } = service;
                   return (
                     <div
                       key={index}
-                      className='w-auto flex flex-col py-4 gap-4 max-w-[40%] max-[500px]:max-w-[200px] max-[470px]:max-w-[70%] min-h-[144px] border-t border-[#FFFFFF]'
+                      className='w-full flex flex-col py-4 gap-4 max-w-[300px] min-h-[144px] border-t border-[#FFFFFF]'
                       style={{
                         borderTop: '1px solid #FFFFFF',
                         borderImageSource: `linear-gradient(90deg, #FFFFFF 0%, rgba(153, 153, 153, 0.25) 102.64%)`,
                         borderImageSlice: 1,
+                        borderBottom: `${index === 2 || index === 3 ? '1px solid #FFFFFF' : 'none'}`,
                       }}
                     >
-                      <h1 className='text-[18px] leading-6 tracking-wider font-medium text-[#FCFCFC]'>
+                      <h3 className='max-sm:text-base text-lg leading-6 tracking-wider font-medium text-[#FCFCFC]'>
                         {title}
-                      </h1>
-                      <p className='text-[#D0D0D0] text-md leading-6 font-light'>
-                        {description}
-                      </p>
+                      </h3>
+                      <p className='text-[#D0D0D0] max-sm:text-sm text-md leading-6 font-normal'>{description}</p>
                     </div>
                   );
                 })}
               </div>
               <Image
                 src={phone}
-                alt='Rydepro Unique Services'
+                alt='Rydepro app interface showcasing unique services'
                 width={500}
                 height={500}
                 priority
-                className=' max-w-[356px] max-[400px]:hidden min-[400px]:block h-[440px]'
+                className='max-w-[356px] max-[400px]:hidden min-[400px]:block h-[540px]'
               />
               <Image
                 src={phone}
-                alt='Rydepro Unique Services'
+                alt='Rydepro app interface showcasing unique services'
                 width={400}
                 height={500}
                 priority
-                className=' max-w-[276px] max-[400px]:block min-[400px]:hidden h-[440px]'
+                className='max-w-[276px] max-[400px]:block min-[400px]:hidden h-[540px]'
               />
-              <div className=' flex flex-wrap gap-6 justify-center items-center flex-shrink'>
+              <div className='grid grid-cols-2 px-1 gap-6'>
                 {services2Md.map((service, index) => {
                   const { title, description } = service;
                   return (
                     <div
                       key={index}
-                      className='w-auto flex flex-col py-4 gap-4 max-w-[40%] max-[500px]:max-w-[200px] max-[470px]:max-w-[70%] min-h-[144px] border-t border-[#FFFFFF]'
+                      className='w-full flex flex-col py-4 gap-4 max-w-[300px] min-h-[144px] border-t border-[#FFFFFF]'
                       style={{
                         borderTop: '1px solid #FFFFFF',
                         borderImageSource: `linear-gradient(90deg, #FFFFFF 0%, rgba(153, 153, 153, 0.25) 102.64%)`,
                         borderImageSlice: 1,
+                        borderBottom: `${index === 2 || index === 3 ? '1px solid #FFFFFF' : 'none'}`,
                       }}
                     >
-                      <h1 className='text-[18px] leading-6 tracking-wider font-medium text-[#FCFCFC]'>
-                        {title}
-                      </h1>
-                      <p className='text-[#D0D0D0] text-md leading-6 font-light'>
-                        {description}
-                      </p>
+                      <h3 className='max-sm:text-base text-lg tracking-wider font-medium text-[#FCFCFC]'>{title}</h3>
+                      <p className='text-[#D0D0D0] max-sm:text-sm text-md leading-6 font-normal'>{description}</p>
                     </div>
                   );
                 })}
@@ -226,7 +206,7 @@ const Services = () => {
             </div>
           </div>
         </div>
-      </div>
+      </section>
       {/* <div className={`${styles.wallpaper} h-[700px] cover`}></div> */}
     </>
   );

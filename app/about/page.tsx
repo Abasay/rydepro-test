@@ -4,22 +4,22 @@ import { Metadata } from 'next';
 
 // app/about/page.tsx
 
-export const metadata = {
-  title: 'About Us | RydePro',
+export const metadata: Metadata = {
+  title: 'About Us',
   description:
-    'Learn more about RydePro, our mission to provide reliable and flexible ride options, and our commitment to quality service.',
+    'Learn more about RYDEPRO, our mission to provide reliable and flexible ride options, and our commitment to quality service.',
   openGraph: {
-    title: 'About Us - RydePro',
+    title: 'About Us - RYDEPRO',
     description:
-      'Discover the story behind RydePro, our values, and our commitment to high-quality ride services tailored to meet every need.',
-    url: 'https://m.katabenterprises.com/about',
-    siteName: 'RydePro',
+      'Discover the story behind RYDEPRO, our values, and our commitment to high-quality ride services tailored to meet every need.',
+    url: 'https://rydepro.com/about',
+    siteName: 'RYDEPRO',
     images: [
       {
         url: '/assets/about/hero.jpg', // Custom image specific to "About Us"
         width: 800,
         height: 600,
-        alt: 'About RydePro - Company Image',
+        alt: 'About RYDEPRO',
       },
     ],
     locale: 'en_US',
@@ -27,9 +27,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'About Us - RydePro',
-    description:
-      'Meet RydePro: Dedicated to providing quality, convenience, and flexibility in every ride.',
+    title: 'About Us - RYDEPRO',
+    description: 'Meet RYDEPRO: Dedicated to providing quality, convenience, and flexibility in every ride.',
     images: ['/images/about-us-image.png'], // Image for Twitter card
   },
   icons: {
@@ -48,8 +47,8 @@ const AboutPage = () => {
             '@context': 'http://schema.org',
             '@type': 'Organization',
             name: 'RydePro',
-            url: 'https://m.katabenterprises.com',
-            logo: 'https://m.katabenterprises.com/assets/logo-rydepro-20214-1@2x.png',
+            url: 'https://rydepro.com',
+            logo: 'https://rydepro.com/assets/logo-rydepro-20214-1@2x.png',
             sameAs: [
               'https://www.facebook.com/rydepro',
               'https://twitter.com/rydepro',

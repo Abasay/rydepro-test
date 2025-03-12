@@ -1,9 +1,8 @@
 RewriteOptions inherit
 RewriteEngine On
 
-
 # Redirect root URL to /home
-RewriteCond %{HTTP_HOST} ^(m\.katabenterprises\.com)$ [NC]
+RewriteCond %{HTTP_HOST} ^(www\.rydepro\.com)$ [NC]
 RewriteCond %{REQUEST_URI} ^/$
 RewriteRule ^$ /home [R=302,L]
 
@@ -12,15 +11,15 @@ RewriteRule ^(.*)$ http://localhost:4000/$1 [P,L]
 
 # Disable caching for all requests forwarded to Node.js
 <IfModule mod_headers.c>
-    Header set Cache-Control "no-store, no-cache, must-revalidate, proxy-revalidate"
-    Header set Pragma "no-cache"
-    Header set Expires "0"
-    Header set Surrogate-Control "no-store"
+  Header set Cache-Control "no-store, no-cache, must-revalidate, proxy-revalidate"
+  Header set Pragma "no-cache"
+  Header set Expires "0"
+  Header set Surrogate-Control "no-store"
 </IfModule>
 
 # Ensure requests to specific domains go to the correct port
-RewriteCond %{HTTP_HOST} ^m\.katabenterprises\.com$ [OR]
-RewriteCond %{HTTP_HOST} ^www\.m\.katabenterprises\.com$
+RewriteCond %{HTTP_HOST} ^www\.rydepro\.com$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.www\.rydepro\.com$
 RewriteRule ^servers\/ComingSoon\-Landing$ "http\:\/\/127\.0\.0\.1\:4000\/" [R=301,L]
 
 # php -- BEGIN cPanel-generated handler, do not edit

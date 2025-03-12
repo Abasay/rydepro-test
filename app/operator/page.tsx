@@ -3,9 +3,8 @@ import { Metadata } from 'next';
 import React from 'react';
 
 export const metadata: Metadata = {
-  title: 'Rydepro | Operator Page - Become an Operator with Rydepro Today',
-  description:
-    'Rydepro is a ride-sharing service that is expanding to California, U.S. cities, and soon, the world.',
+  title: 'Operator Page',
+  description: 'Become a RYDEPRO operator and earn money driving with us.',
 };
 const OperatorPage = () => {
   return <Operator />;

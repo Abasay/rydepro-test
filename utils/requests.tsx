@@ -21,10 +21,7 @@ const makeRequest = async ({
   data?: any;
   formData?: any;
   params?: any;
-}): Promise<
-  | { message: string; success: boolean }
-  | { success: boolean; data: { message: string; token: string } }
-> => {
+}): Promise<{ message: string; success: boolean } | { success: boolean; data: { message: string; token: string } }> => {
   const headers = {
     Authorization: `Bearer ${token}`,
     'Content-Type': 'application/json',
@@ -47,22 +44,14 @@ const makeRequest = async ({
       data: formData || data,
     });
     return requestResponse.data;
-  } catch (error) {
-    console.log('Error in makeRequest', error.response);
+  } catch (error: any) {
+    // console.log('Error in makeRequest', error.response);
     return error.response.data;
   }
 };
 
 // Dynamic getRequest based on formData presence
-export const getRequest = async ({
-  url,
-  token,
-  params,
-}: {
-  url: string;
-  token: string;
-  params?: any;
-}) => {
+export const getRequest = async ({ url, token, params }: { url: string; token: string; params?: any }) => {
   return makeRequest({
     method: 'GET',
     url: url,

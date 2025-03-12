@@ -27,7 +27,7 @@ export interface AuthTypes {
       emailAddress: string;
       phoneNumber: string | any;
     };
-    isPinCodePageActive;
+    isPinCodePageActive: boolean;
     secureAccount: {
       passPhrase: string;
       pin: number | string | null | any;

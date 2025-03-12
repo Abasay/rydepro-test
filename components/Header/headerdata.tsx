@@ -2,7 +2,7 @@ export const headerdata = [
   {
     id: 1,
     name: 'Home',
-    link: '/home',
+    link: '/',
   },
   {
     id: 2,
@@ -12,12 +12,12 @@ export const headerdata = [
   {
     id: 3,
     name: 'Promotions',
-    link: '/promotions',
+    link: '#',
   },
   {
     id: 4,
     name: 'Service Area',
-    link: '/service_areas',
+    link: '/service-areas',
   },
   {
     id: 5,

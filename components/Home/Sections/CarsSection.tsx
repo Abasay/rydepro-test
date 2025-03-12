@@ -6,10 +6,10 @@ import { dummy, fleet, getRandomElement } from './servicesData';
 //premium
 import premiumSedan from '@/public/assets/new-car-models/cars/Premium Sedan.png';
 import premiumMinivan from '@/public/assets/new-car-models/cars/Premium Minivan.png';
-import premiumElectricSedan from '@/public/assets/new-car-models/cars/Premium Electric Sedan.png';
+import premiumElectricSedan from '@/public/assets/new-car-models/cars/Premium Electric Sedan.jpg';
 //Luxury
 import luxurySedan from '@/public/assets/new-car-models/cars/Luxury Sedan.png';
-import luxurySUV from '@/public/assets/new-car-models/cars/Luxury SUV.png';
+import luxurySUV from '@/public/assets/new-car-models/cars/Luxury SUV.jpg';
 import luxuryElectricSedan from '@/public/assets/new-car-models/cars/Luxury Electric Sedan.png';
 //Executive
 import executiveSedan from '@/public/assets/new-car-models/cars/Executive Sedan.png';
@@ -23,19 +23,16 @@ import buses from '@/public/assets/new-car-models/cars/Buses.png';
 import shadow from '@/public/assets/new-car-models/shadow.png';
 import Image from 'next/image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faPlaneDeparture,
-  faPlaneLock,
-} from '@fortawesome/free-solid-svg-icons';
+import { faPlaneDeparture, faPlaneLock } from '@fortawesome/free-solid-svg-icons';
 
 import bgImage from '@/public/assets/sections/carsInfoBg.png';
 import bgCars from '@/public/assets/sections/carsBg.png';
 import Link from 'next/link';
 
 const carImages = [
-  { name: 'Premium Sedan', path: premiumSedan },
-  { name: 'Premium Minivan', path: premiumMinivan },
-  { name: 'Premium Electric Sedan', path: premiumElectricSedan },
+  { name: 'Economy Sedan', path: premiumSedan },
+  { name: 'Economy Minivan', path: premiumMinivan },
+  { name: 'Economy Electric Sedan', path: premiumElectricSedan },
   { name: 'Luxury Sedan', path: luxurySedan },
   { name: 'Luxury SUV', path: luxurySUV },
   { name: 'Luxury Electric Sedan', path: luxuryElectricSedan },
@@ -48,7 +45,7 @@ const carImages = [
 ];
 
 const fleetDetails = {
-  'Premium Sedan': {
+  'Economy Sedan': {
     details: {
       passengers: 3,
       luggages: 'Varies',
@@ -65,7 +62,7 @@ const fleetDetails = {
       },
     },
   },
-  'Premium Electric Sedan': {
+  'Economy Electric Sedan': {
     details: {
       passengers: 3,
       luggages: 'Varies',
@@ -82,7 +79,7 @@ const fleetDetails = {
       },
     },
   },
-  'Premium Minivan': {
+  'Economy Minivan': {
     details: {
       passengers: 5,
       luggages: 'Varies',
@@ -274,7 +271,7 @@ const fleetDetails = {
 const CarsSection = () => {
   const carRef = useRef<HTMLDivElement>(null);
   const [getTop, setGetTop] = useState<number>(0);
-  const [car, setCar] = useState<string>('Premium Sedan');
+  const [car, setCar] = useState<string>('Economy Sedan');
   const [type, setType] = useState<string>('');
   const [image, setImage] = useState<any>(premiumSedan);
   const [subArray, setSubArray] = useState<any[]>(dummy);
@@ -284,7 +281,7 @@ const CarsSection = () => {
     height: typeof window !== 'undefined' ? window.innerHeight : 0,
   });
 
-  const [activeCarFamily, setActiveCarFamily] = useState<string>('Premium');
+  const [activeCarFamily, setActiveCarFamily] = useState<string>('Economy');
   const [activeCarType, setActiveCarType] = useState<string>('Sedan');
 
   const [activeDetails, setActiveDetails] = useState<{
@@ -318,7 +315,6 @@ const CarsSection = () => {
     const randomType = getRandomElement(randomFleet.types);
     setSubArray(randomFleet.types);
     setActiveCarType(randomType.car);
-    console.log(randomFleet, randomType.car);
     return `${randomFleet.head} ${randomType.car}`;
   };
 
@@ -360,9 +356,7 @@ const CarsSection = () => {
     // Trigger the current slide-out animation
     setAnimationClass(slideDirection ? 'slide-out-left' : 'slide-out-right');
 
-    const searchFamily = fleet.find(
-      (fleetFamily) => fleetFamily.head === carFamily
-    );
+    const searchFamily = fleet.find((fleetFamily) => fleetFamily.head === carFamily);
 
     setSubArray((searchFamily as any)?.types);
     setActiveCarType((searchFamily as any)?.types[0].car);
@@ -454,8 +448,7 @@ const CarsSection = () => {
   /**useEffects */
   useEffect(() => {
     const handleScroll = () => {
-      const sectionTop: number | undefined | any =
-        carRef.current?.getBoundingClientRect()?.top;
+      const sectionTop: number | undefined | any = carRef.current?.getBoundingClientRect()?.top;
       setGetTop(sectionTop);
     };
     window.addEventListener('scroll', handleScroll);
@@ -484,9 +477,7 @@ const CarsSection = () => {
 
   return (
     <section
-      className={clsx(
-        `w-full min-h-[800px] bg-black  max-h-[1150px] relative flex justify-center `
-      )}
+      className={clsx(`w-full min-h-[800px] bg-black  max-h-[1150px] relative flex justify-center `)}
       // style={{
       //   backgroundImage: `url(${bgImage.src})`,
       //   backgroundSize: 'cover',
@@ -509,27 +500,21 @@ const CarsSection = () => {
         className='w-full relative  flex flex-col items-center'
       >
         <div className=' w-full py-12  flex flex-col gap-7 items-center  bg-black bg-opacity-80'>
-          <div className=' flex flex-col gap-4 items-center'>
-            <h2 className='text-[#F7F7F7] font-medium tracking-wider text-4xl max-md:text-2xl'>
-              Fleet
-            </h2>
-            <h3 className=' text-md leading-6 text-[#F7F7F7] font-light max-sm:text-sm'>
-              Scheduled Booking
-            </h3>
+          <div className=' flex flex-col gap-4 items-start  justify-start w-[80%]'>
+            <h2 className='text-[#F7F7F7] font-medium  text-4xl max-md:text-2xl'>Fleet</h2>
+            <h3 className=' text-md leading-6 text-[#F7F7F7] font-light max-sm:text-sm'>Scheduled Booking</h3>
           </div>
 
-          <div className='flex flex-col max-w-[1540px] md:mt-4  w-[80%]  mx-auto gap-4  tracking-wider'>
+          <div className='flex flex-col max-w-[1540px] md:mt-4  w-[80%]  mx-auto gap-4  '>
             <div className=' w-full'>
-              <span className=' text-[#8A8A8A] text-md -mb-[4px] leading-6'>
-                Vehicle Tier
-              </span>
+              <span className=' text-[#8A8A8A] text-md -mb-[4px] leading-6'>Vehicle Tier</span>
               <div className='grid grid-cols-2 md:flex md:flex-row transition flex-wrap w-full'>
                 {fleet.map((item, idx: number) => {
                   const { head, types } = item;
                   return (
                     <>
                       <div
-                        className={`md:py-2 text-center md:px-4 py-2 px-4 border-l border-gray-700 max-w-[250px]  min-w-[167.5px] max-md:min-w-[120px] lg:w-1/4 cursor-pointer filter  hover:bg-[#FFFFFF1A]  transition ease-in-out text-[18px] leading-6 tracking-wider font-medium max-md:text-base text-[#F7F7F7] ${
+                        className={`md:py-2 text-center md:px-4 py-2 px-4 border-l border-gray-700 max-w-[250px]  min-w-[167.5px] max-md:min-w-[120px] lg:w-1/4 cursor-pointer filter  hover:bg-[#FFFFFF1A]  transition ease-in-out text-[18px] leading-6  font-medium max-md:text-base text-[#F7F7F7] ${
                           activeCarFamily === head && ' bg-[#FFFFFF1A]'
                         }`}
                         onClick={() => {
@@ -537,9 +522,7 @@ const CarsSection = () => {
                         }}
                         key={idx}
                       >
-                        {head.toLowerCase() === 'commercial'
-                          ? head.toUpperCase() + ' BUSES'
-                          : head.toUpperCase()}
+                        {head.toLowerCase() === 'commercial' ? head.toUpperCase() + ' BUSES' : head.toUpperCase()}
                       </div>
                       {/* <span className='text-white text-lg absolute'>{head}</span> */}
                     </>
@@ -549,20 +532,15 @@ const CarsSection = () => {
             </div>
 
             <div className=' w-full'>
-              <span className=' text-[#8A8A8A] text-md -mb-[4px] leading-6'>
-                Vehicle Type
-              </span>
-              <div
-                className={`flex gap-0   md:flex md:flex-row transition flex-wrap w-full mx-auto`}
-              >
+              <span className=' text-[#8A8A8A] text-md -mb-[4px] leading-6'>Vehicle Type</span>
+              <div className={`flex gap-0   md:flex md:flex-row transition flex-wrap w-full mx-auto`}>
                 {' '}
                 {subArray?.map((item, idx: number) => {
                   const { car } = item;
                   return (
                     <div
                       className={`md:py-2 text-center px-2 py-2 border-l border-gray-700 max-w-[300px]  min-w-[30%] cursor-pointer filter hover:bg-[#FFFFFF1A] transition tracking-wide font-light text-md leading-6 ease-in-out text-[#FCFCFC] ${
-                        activeCarType.toLowerCase() === car.toLowerCase() &&
-                        'bg-[#FFFFFF1A]'
+                        activeCarType.toLowerCase() === car.toLowerCase() && 'bg-[#FFFFFF1A]'
                       } ${styles['slide-in']} `}
                       onClick={() => {
                         handleClick(car);
@@ -579,9 +557,7 @@ const CarsSection = () => {
             <h2 className='text-4xl  max-md:text-2xl font-bold py-2 w-full text-white md:mt-4'>
               {/* {car.normalize()} {car ? type.normalize() : ''} */}
               {car.startsWith('Commercial')
-                ? `${car.split(' ')[1]} ${
-                    car.split(' ')[2] ? car.split(' ')[2] : ''
-                  }`
+                ? `${car.split(' ')[1]} ${car.split(' ')[2] ? car.split(' ')[2] : ''}`
                 : car}
             </h2>
           </div>
@@ -592,13 +568,9 @@ const CarsSection = () => {
         <div className='relative w-full  flex justify-center'>
           <div className=' absolute bottom-[40%] max-w-[1540px]  max-h-[470px] max-md:bottom-0 max-md:-top-28 z-10 md:w-[80%] max-md:w-full mx-auto'>
             <div className={`flex gap-3 items-end w-full`}>
-              <div
-                className={`flex md:flex-row flex-col items-center justify-between w-full`}
-              >
+              <div className={`flex md:flex-row flex-col items-center justify-between w-full`}>
                 {/**car details */}
-                <div
-                  className={` mt-[150px] md:hidden max-md:mt-2 min-h-[300px] `}
-                >
+                <div className={` mt-[150px] md:hidden max-md:mt-2 min-h-[300px] `}>
                   {' '}
                   <Image
                     title='Click on to focus'
@@ -622,9 +594,7 @@ const CarsSection = () => {
                     )}
                   >
                     <span className='flex flex-col'>
-                      <span className='text-xl font-bold text-[#FFFFFF]'>
-                        {activeDetails.passengers}
-                      </span>
+                      <span className='text-xl font-bold text-[#FFFFFF]'>{activeDetails.passengers}</span>
                       <span className='text-[#8A8A8A] text-sm'>Passengers</span>
                     </span>
                     <span className='flex flex-col'>
@@ -667,40 +637,30 @@ const CarsSection = () => {
                             <span className='text-white text-md leading-6 font-bold'>
                               {activeDetails.waitingTimes.airportDomestic}
                             </span>
-                            <span className='text-sm text-[#8A8A8A]'>
-                              ✈️ Airport Domestic{' '}
-                            </span>
+                            <span className='text-sm text-[#8A8A8A]'>✈️ Airport Domestic </span>
                           </div>
                           <div className='flex flex-col items-center mt-4'>
                             <span className='text-white text-md leading-6 font-bold'>
                               {activeDetails.waitingTimes.airportInternational}
                             </span>
-                            <span className='text-md leading-6 text-[#8A8A8A]'>
-                              🌐 Airport International
-                            </span>
+                            <span className='text-md leading-6 text-[#8A8A8A]'>🌐 Airport International</span>
                           </div>
                           <div className='flex flex-col items-center mt-4'>
                             <span className='text-white text-md leading-6 font-bold'>
                               {activeDetails.waitingTimes.cruises}
                             </span>
-                            <span className='text-sm text-[#8A8A8A]'>
-                              🚢 Cruises
-                            </span>
+                            <span className='text-sm text-[#8A8A8A]'>🚢 Cruises</span>
                           </div>
                           <div className='flex flex-col items-center mt-4'>
                             <span className='text-white text-md leading-6 font-bold'>
                               {activeDetails.waitingTimes.intercity}
                             </span>
-                            <span className='text-sm text-[#8A8A8A]'>
-                              🏙️ Intercity
-                            </span>
+                            <span className='text-sm text-[#8A8A8A]'>🏙️ Intercity</span>
                           </div>
                         </div>
                       ) : (
                         <div className='grid transition-all delay-0 duration-400 ease-in grid-cols-2 grid-rows-2 md:flex md:flex-col gap-x-4 md:gap-x-0'>
-                          <span className='text-white text-sm font-bold'>
-                            Customized Offer
-                          </span>
+                          <span className='text-white text-sm font-bold'>Customized Offer</span>
                         </div>
                       )}
                       <div className=' text-center  w-full mx-auto'>
@@ -711,10 +671,7 @@ const CarsSection = () => {
                           >
                             Cancellation Policy
                           </Link>
-                          <Link
-                            href={'/luggages'}
-                            className=' underline-offset-7 underline-[#FFFFF] underline'
-                          >
+                          <Link href={'/luggages'} className=' underline-offset-7 underline-[#FFFFF] underline'>
                             Luggage Policy
                           </Link>
                         </p>
@@ -730,24 +687,20 @@ const CarsSection = () => {
                     <span
                       className={clsx(
                         ' font-bold text-[#FFFFFF]',
-                        activeDetails.passengers === 'Customized' ||
-                          activeDetails.passengers === 'Varies'
+                        activeDetails.passengers === 'Customized' || activeDetails.passengers === 'Varies'
                           ? 'text-xl'
                           : 'text-6xl md:text-5xl'
                       )}
                     >
                       {activeDetails.passengers}
                     </span>
-                    <span className='text-[#8A8A8A] text-md leading-6'>
-                      Passengers
-                    </span>
+                    <span className='text-[#8A8A8A] text-md leading-6'>Passengers</span>
                   </span>
                   <span className='flex flex-col'>
                     <span
                       className={clsx(
                         '  font-bold text-[#FFFFFF]',
-                        activeDetails.luggages === 'Customized' ||
-                          activeDetails.luggages === 'Varies'
+                        activeDetails.luggages === 'Customized' || activeDetails.luggages === 'Varies'
                           ? 'text-xl'
                           : 'text-6xl md:text-5xl'
                       )}
@@ -786,9 +739,7 @@ const CarsSection = () => {
                 </div>
                 <div className='flex max-md:hidden min-w-[170px] min-h-[250px]   flex-col  transition-all delay-0 duration-400 md:text-right justify-center items-center md:items-end '>
                   <span className='flex justify-end items-center text-right gap-1'>
-                    <span className='max-md:text-md max-md:leading-6 text-xl text-[#D0D0D0]'>
-                      Free Waiting Times
-                    </span>
+                    <span className='max-md:text-md max-md:leading-6 text-xl text-[#D0D0D0]'>Free Waiting Times</span>
                     <svg
                       width='20'
                       height='20'
@@ -805,36 +756,22 @@ const CarsSection = () => {
                   </span>
                   <div className='grid transition-all delay-0 duration-400 ease-in grid-cols-2 grid-rows-2 md:flex md:flex-col gap-x-4 md:gap-x-0'>
                     <div className='flex flex-col mt-4'>
-                      <span className='text-white text-xl font-bold'>
-                        {activeDetails.waitingTimes.airportDomestic}
-                      </span>
-                      <span className='text-md leading-6 text-[#8A8A8A]'>
-                        ✈️ Airport Domestic{' '}
-                      </span>
+                      <span className='text-white text-xl font-bold'>{activeDetails.waitingTimes.airportDomestic}</span>
+                      <span className='text-md leading-6 text-[#8A8A8A]'>✈️ Airport Domestic </span>
                     </div>
                     <div className='flex flex-col mt-4'>
                       <span className='text-white text-xl font-bold'>
                         {activeDetails.waitingTimes.airportInternational}
                       </span>
-                      <span className='text-md leading-6 text-[#8A8A8A]'>
-                        🌐 Airport International
-                      </span>
+                      <span className='text-md leading-6 text-[#8A8A8A]'>🌐 Airport International</span>
                     </div>
                     <div className='flex flex-col mt-4'>
-                      <span className='text-white text-xl font-bold'>
-                        {activeDetails.waitingTimes.cruises}
-                      </span>
-                      <span className='text-md leading-6 text-[#8A8A8A]'>
-                        🚢 Cruises
-                      </span>
+                      <span className='text-white text-xl font-bold'>{activeDetails.waitingTimes.cruises}</span>
+                      <span className='text-md leading-6 text-[#8A8A8A]'>🚢 Cruises</span>
                     </div>
                     <div className='flex flex-col mt-4'>
-                      <span className='text-white text-xl font-bold'>
-                        {activeDetails.waitingTimes.intercity}
-                      </span>
-                      <span className='text-md leading-6 text-[#8A8A8A]'>
-                        🏙️ Intercity
-                      </span>
+                      <span className='text-white text-xl font-bold'>{activeDetails.waitingTimes.intercity}</span>
+                      <span className='text-md leading-6 text-[#8A8A8A]'>🏙️ Intercity</span>
                     </div>
                   </div>
 
@@ -855,17 +792,14 @@ const CarsSection = () => {
             }}
           >
             <div className=' absolute  bottom-[20%] max-md:min-h-[180px] max-md:bottom-[10%] w-full '>
-              <p className='text-md max-md:hidden leading-6 flex gap-4 justify-center items-center font-[500] w-[80%] mx-auto text-center tracking-widest text-[#F7F7F7] md:mt-0  '>
+              <p className='text-md max-md:hidden font-medium leading-6 flex gap-4 justify-center items-center  w-[80%] mx-auto text-center tracking-widest text-[#F7F7F7] md:mt-0  '>
                 <Link
                   href={'/cancellation'}
                   className=' border-r px-4 underline-offset-7 underline-[#FFFFF] underline border-[#8A8A8A]'
                 >
                   Cancellation Policy
                 </Link>
-                <Link
-                  href={'/luggages'}
-                  className=' underline-offset-7 underline-[#FFFFF] underline'
-                >
+                <Link href={'/luggages'} className=' underline-offset-7 underline-[#FFFFF] underline'>
                   Luggage Policy
                 </Link>
               </p>

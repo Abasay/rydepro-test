@@ -2,11 +2,7 @@
 
 import { AuthTypes } from '@/types/Auth/CreateAccountTypes/auth';
 import { WebMenuTypes } from '@/types/WebMenu/webMenu';
-import {
-  LoginProps,
-  ResetProps,
-  SignUpProps,
-} from '@/types/GeneralTypes/index';
+import { LoginProps, ResetProps, SignUpProps } from '@/types/GeneralTypes/index';
 import { SettingsProps } from './DashboardTypes';
 
 export interface DefaultGlobalTypes {
@@ -14,13 +10,7 @@ export interface DefaultGlobalTypes {
     latitude: number;
     longitude: number;
   };
-  setLocation: ({
-    latitude,
-    longitude,
-  }: {
-    latitude: number;
-    longitude: number;
-  }) => void;
+  setLocation: ({ latitude, longitude }: { latitude: number; longitude: number }) => void;
   auth: AuthTypes;
   setAuth: ({
     isClicked,
@@ -66,14 +56,7 @@ export interface DefaultGlobalTypes {
   }: AuthTypes) => void;
   webMenu: WebMenuTypes;
   setWebMenu: ({
-    MenuSubOptions: {
-      account,
-      shareAccount,
-      bookingHistory,
-      settings,
-      rewardProgram,
-      referralProgram,
-    },
+    MenuSubOptions: { account, shareAccount, bookingHistory, settings, rewardProgram, referralProgram },
     emergency: { emergencyContact, emergencyNumber },
     ServiceOptions: { miles },
   }: WebMenuTypes) => void;
@@ -81,8 +64,8 @@ export interface DefaultGlobalTypes {
   setCurrentPage: (type: string) => void;
   animate: boolean;
   setAnimate: (type: boolean) => void;
-  options: any;
-  dispatch: (type: any) => void;
+  // options: any;
+  // dispatch: (type: any) => void;
   displayMission: boolean;
   setDisplayMission: (type: boolean) => void;
   isBarClicked: boolean;

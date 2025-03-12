@@ -1,20 +1,22 @@
-
-
 export const features: { heading: string; text: string }[] = [
   {
-    heading: `Real-Time Tracking`,
-    text: `Share your ride status with friends or family.`,
+    heading: `Stablecoin Payments`,
+    text: `Accept payments via USDC, USDT, or app-native stablecoins.`,
   },
   {
-    heading: `AI Vehicle Coming Soon`,
-    text: `Get ready for the future with our AI-powered vehicles.`,
+    heading: `Tokenized Loyalty Rewards`,
+    text: `Earn redeemable tokens for rides, upgrades, or partner perks.`,
   },
   {
-    heading: `Multi-Modal Integration`,
-    text: `Seamlessly integrate your app with other transportation services.`,
+    heading: `DAO Governance`,
+    text: `Token holders vote on app features, pricing models, or charity initiatives.`,
   },
   {
-    heading: `Innovative Payment Coming Soon `,
-    text: `Blockchain technology and SEC-approved stable coins.`,
+    heading: `Smart Contracts`,
+    text: `Automated agreements for corporate accounts, subscriptions, or event logistics.`,
+  },
+  {
+    heading: `Decentralized Identity`,
+    text: 'Users own and share data selectively via blockchain.',
   },
 ];

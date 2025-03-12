@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-// import { Inter } from 'next/font/google';
+import { Inter } from 'next/font/google';
 import './globals.css';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -7,51 +7,83 @@ import { PageContext } from '@/contexts/PageContext';
 import ConditionalFooter from '@/components/ConditionalFooter';
 import ConditionalHeader from '@/components/ConditionalHeader';
 import { GeneralWebProvider } from '@/contexts/GeneralContext';
+import localFont from 'next/font/local';
 
-// const inter = Inter({ subsets: ['latin'] });
+const inter = Inter({ subsets: ['latin'] });
 
 // app/layout.tsx
 
+// const satoshi = localFont({
+//   src: [
+//     {
+//       path: '../public/fonts/Satoshi_Complete/Fonts/WEB/fonts/Satoshi-Light.woff',
+//       weight: '300',
+//       style: 'light',
+//     },
+//     // {
+//     //   path: '/public/fonts/Satoshi_Complete/Fonts/WEB/fonts/Satoshi-Regular.woff',
+//     //   weight: '400',
+//     //   style: 'normal',
+//     // },
+
+//     {
+//       path: '/public/fonts/Satoshi_Complete/Fonts/WEB/fonts/Satoshi-Medium.woff',
+//       weight: '500',
+//       style: 'medium',
+//     },
+//     {
+//       path: '/public/fonts/Satoshi_Complete/Fonts/WEB/fonts/Satoshi-SemiBold.woff',
+//       weight: '600',
+//       style: 'semibold',
+//     },
+//     {
+//       path: '/public/fonts/Satoshi_Complete/Fonts/WEB/fonts/Satoshi-Bold.woff',
+//       weight: '700',
+//       style: 'bold',
+//     },
+//   ],
+//   display: 'swap',
+//   preload: true,
+// });
+
+import { DefaultSeo } from 'next-seo';
+
 export const metadata: Metadata = {
   title: {
-    default:
-      'RydePro - Global Rideshare & Chauffeur Services & Airport Transfer & On-Demand Transportation',
-    template:
-      '%s - Global Rideshare & Chauffeur Services & Airport Transfer & On-Demand Transportation',
+    default: 'RYDEPRO®: US Veteran-Rideshare App, Airport & City Rides',
+    template: '%s - RYDEPRO®: US Veteran-Rideshare App, Airport & City Rides',
   },
+  metadataBase: new URL('https://rydepro.com'),
   description:
-    'Experience premium to luxury with our on-demand chauffeur services, seamless airport transfers, and worldwide rideshare options.',
-  icons: {
-    icon: '/favicon.ico',
-    apple: '/apple-touch-icon.png',
-  },
-  manifest: '/site.webmanifest',
+    'Launching in California, expanding globally: DOJ-certified drivers. Choose Economy, Executive, or Luxury rides. Book one-way, round-trip, or hourly.',
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://m.katabenterprises.com',
-    siteName: 'RydePro',
-    images: [
-      {
-        url: '/images/default-ride-image.png',
-        width: 800,
-        height: 600,
-        alt: 'RydePro - Global Rideshare & Chauffeur Services & Airport Transfer & On-Demand Transportation',
-      },
-    ],
+    url: 'https://rydepro.com',
+    siteName: 'RYDEPRO',
+  },
+  manifest: '/site.webmanifest',
+  robots: {
+    index: true,
+    follow: true,
+    nocache: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      noimageindex: true,
+    },
   },
   keywords: [
-    'Rideshare',
+    'RYDEPRO',
     'Chauffeur Services',
     'Airport Transfer',
     'On-Demand Transportation',
     'Luxury Rides',
-    'Premium Transportation',
+    'Economy Transportation',
     'International chauffeur service',
     'Worldwide airport transfers',
   ],
 };
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -65,13 +97,13 @@ export default function RootLayout({
   //         '@context': 'http://schema.org',
   //         '@type': 'WebSite',
   //         name: 'RydePro',
-  //         url: 'https://m.katabenterprises.com',
+  //         url: 'https://rydepro.com',
   //         description:
-  //           'Experience premium to luxury with our on-demand chauffeur services, seamless airport transfers, and worldwide rideshare options.',
+  //           'Experience Economy to luxury with our on-demand chauffeur services, seamless airport transfers, and worldwide rideshare options.',
   //         potentialAction: {
   //           '@type': 'SearchAction',
   //           target:
-  //             'https://m.katabenterprises.com/search?q={search_term_string}',
+  //             'https://rydepro.com/search?q={search_term_string}',
   //           'query-input': 'required name=search_term_string',
   //         },
   //         inLanguage: 'en-US',
@@ -99,9 +131,7 @@ export default function RootLayout({
     <GeneralWebProvider>
       <PageContext>
         <html lang='en'>
-          <body
-            className={`font-satoshi overflow-x-hidden text-zinc-800 bg-white`}
-          >
+          <body className={` font-satoshi overflow-x-hidden text-zinc-800 bg-white`}>
             <ConditionalHeader />
             {children}
             <div className=' mx-auto bg-[#070707]  flex justify-center items-center w-full m'>

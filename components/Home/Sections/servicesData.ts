@@ -1,28 +1,20 @@
-
-
-
 export const services1Lg: { title: string; description: string }[] = [
-  {
-    title: 'Round Trip',
-    description:
-      'Convenient for round trips without the hassle of booking twice.',
-  },
-  {
-    title: 'Multi-Stop Journey',
-    description: ' Great for trips with multiple destinations.',
-  },
-  {
-    title: 'Multi-Trip Booking',
-    description:
-      'Book multiple trips with different vehicles and drop-off locations in one go.',
-  },
-]
-
-export const services2Lg: { title: string; description: string }[] = [
   {
     title: 'On-Demand Rides',
     description: 'On-demand rides at your fingertips with RYDEPRO.',
   },
+  {
+    title: 'Round Trip',
+    description: 'Convenient for round trips without the hassle of booking twice.',
+  },
+
+  {
+    title: 'Multi-Destination Trip ',
+    description: 'Book multiple trips with different vehicles and drop-off locations in one go.',
+  },
+];
+
+export const services2Lg: { title: string; description: string }[] = [
   {
     title: 'One-Way Trip',
     description: 'Perfect for getting from point A to point B.',
@@ -32,69 +24,60 @@ export const services2Lg: { title: string; description: string }[] = [
     description: ' Ideal for when you need a vehicle for a few hours.',
   },
   {
-    title: 'Clone Trip',
+    title: 'Additional Vehicle',
     description:
       'Duplicate a trip with the same or similar vehicle, choosing the same or a different drop-off location.',
   },
-]
+];
 
 export const services1Md: { title: string; description: string }[] = [
   {
     title: 'On-Demand Rides',
     description: 'On-demand rides at your fingertips with RYDEPRO.',
-  }, {
-    title: 'Round Trip',
-    description:
-      'Convenient for round trips without the hassle of booking twice.',
-  }, {
+  },
+  {
     title: 'One-Way Trip',
     description: 'Perfect for getting from point A to point B.',
   },
+  {
+    title: 'Round Trip',
+    description: 'Convenient for round trips without the hassle of booking twice.',
+  },
 
   {
-    title: 'Multi-Stop Journey',
-    description: ' Great for trips with multiple destinations.',
+    title: 'Hourly Ride',
+    description: 'Ideal for when you need a vehicle for a few hours.',
   },
-]
+];
 
 export const services2Md: { title: string; description: string }[] = [
   {
-    title: 'Hourly Ride',
-    description: ' Ideal for when you need a vehicle for a few hours.',
+    title: 'Multi-Destination Trip ',
+    description: 'Book multiple trips with different vehicles and drop-off locations in one go.',
   },
   {
-    title: 'Event Planning', description: 'Over 1,000 vehicles available for any event.'
-  },
-  {
-    title: 'Multi-Trip Booking',
-    description:
-      'Book multiple trips with different vehicles and drop-off locations in one go.',
-  },
-  {
-    title: 'Clone Trip',
+    title: 'Additional Vehicle',
     description:
       'Duplicate a trip with the same or similar vehicle, choosing the same or a different drop-off location.',
   },
-]
+];
 export const services: { title: string; description: string }[] = [
   {
     title: 'Hourly Ride',
-    description: ' Ideal for when you need a vehicle for a few hours.',
+    description: 'Ideal for when you need a vehicle for a few hours.',
   },
 
   {
     title: 'Round Trip',
-    description:
-      'Convenient for round trips without the hassle of booking twice.',
+    description: 'Convenient for round trips without the hassle of booking twice.',
   },
   {
     title: 'Multi-Stop Journey',
-    description: ' Great for trips with multiple destinations.',
+    description: 'Great for trips with multiple destinations.',
   },
   {
     title: 'Multi-Trip Booking',
-    description:
-      'Book multiple trips with different vehicles and drop-off locations in one go.',
+    description: 'Book multiple trips with different vehicles and drop-off locations in one go.',
   },
 
   {
@@ -111,12 +94,11 @@ export const services: { title: string; description: string }[] = [
 export const reasons: { title: string; descripton: string }[] = [
   {
     title: 'Safety First',
-    descripton:
-      'Real-time monitoring and emergency assistance at your fingertips.',
+    descripton: 'Real-time monitoring and emergency assistance at your fingertips.',
   },
   {
     title: 'Verified Drivers',
-    descripton: 'Rigorous DOJ background checks & fingerprint verification.',
+    descripton: 'Rigorous DOJ background checks.',
   },
   {
     title: 'Fair Pricing',
@@ -124,11 +106,11 @@ export const reasons: { title: string; descripton: string }[] = [
   },
   {
     title: 'Diverse Ride Options',
-    descripton: 'Choose from regular, eco, and electric vehicles.',
+    descripton: 'Choose from Economy, Executive, Luxury & Buses.',
   },
   {
     title: '24/7 Support',
-    descripton: 'In-app support available anytime you need it.',
+    descripton: 'Real Life support.',
   },
   {
     title: 'User-Friendly App',
@@ -138,7 +120,7 @@ export const reasons: { title: string; descripton: string }[] = [
 
 export const fleet: { head: string; types: { car: string }[] }[] = [
   {
-    head: 'Premium',
+    head: 'Economy',
     types: [
       {
         car: 'Sedan',
@@ -206,6 +188,5 @@ export const dummy = [
     car: 'Minivan',
   },
 ];
-
 
 export const getRandomElement = <T>(arr: T[]): T => arr[Math.floor(Math.random() * arr.length)];

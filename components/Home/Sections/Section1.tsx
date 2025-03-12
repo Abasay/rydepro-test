@@ -1,11 +1,11 @@
 import React from 'react';
 import Image from 'next/image';
-import mapBg from '@/public/assets/sections/map-bg.webp';
+import mapBg from '@/public/assets/sections/expanding.png';
 import map from '@/public/assets/sections/map.webp';
 
 const Section1 = () => {
   return (
-    <section className='relative w-full h-64 bg-black'>
+    <section className='relative  w-full h-64 bg-black'>
       {/* First Background Image */}
       <Image
         src={mapBg}
@@ -34,14 +34,17 @@ const Section1 = () => {
 
       {/* Content Overlay */}
       {/* <div className='relative w-full h-full bg-opacity-5'> */}
-      <div className='w-full h-full z-40 absolute top-0 bg-black bg-opacity-60 flex flex-col gap-4 items-center justify-center px-1'>
-        <h2 className='text-2xl lg:text-2xl text-[#FCFCFC] text-center font-bold'>
-          RYDEPRO is Expanding!
+      <div className='w-full h-full z-40  absolute top-0 bg-black bg-opacity-30 flex flex-col gap-4 items-center justify-center px-1'>
+        <h2 className=' text-base sm:text-lg md:text-2xl lg:text-2xl text-[#FCFCFC] text-center font-bold'>
+          RYDEPRO®: Expanding Nationwide & Globally
         </h2>
-        <p className='text-[#F7F7F7] text-xl md:text-lg text-center font-light'>
-          Starting in California, rolling out across U.S. cities, and soon, the
-          world. Get ready!
+        <p className='text-[#F7F7F7] container flex flex-col gap-1 text-sm sm:text-base md:text-lg text-center font-medium'>
+          <span>
+            Now in Southern California. Coming soon to New York, DC, Boston, Seattle, Texas, Florida, & all U.S Cities!
+            Global expansion to Canada & beyond in 2025
+          </span>
         </p>
+
         {/* </div> */}
       </div>
     </section>

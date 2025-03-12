@@ -1,19 +1,12 @@
 /** @format */
 
 'use client';
-import React, {
-  useState,
-  useContext,
-  createContext,
-  ReactNode,
-  useEffect,
-  useReducer,
-} from 'react';
+import React, { useState, useContext, createContext, ReactNode, useEffect, useReducer } from 'react';
 import { DefaultGlobalTypes } from '@/types/types';
 import { AuthTypes } from '@/types/Auth/CreateAccountTypes/auth';
 import { WebMenuTypes } from '@/types/WebMenu/webMenu';
-import reducer from '@/components/About/reducer';
-import { sidebarData } from '@/components/About/mainobj';
+// import reducer from '@/components/About/reducer';
+// import { sidebarData } from '@/components/About/mainobj';
 
 const PageContextAPI = createContext<DefaultGlobalTypes | undefined>(undefined);
 
@@ -22,7 +15,7 @@ export const PageContext = ({ children }: { children: ReactNode }) => {
   const [currentPage, setCurrentPage] = useState('Home');
   const [animate, setAnimate] = useState<boolean>(false);
   const [textAnimate, setTextAnimate] = useState<number | null>(null);
-  const [options, dispatch] = useReducer(reducer, sidebarData);
+  // const [options, dispatch] = useReducer(reducer, sidebarData);
   const [displayMission, setDisplayMission] = useState<boolean>(true);
   const [isBarClicked, setIsBarClicked] = useState<boolean>(false);
   // State to track visible sub-items
@@ -167,8 +160,8 @@ export const PageContext = ({ children }: { children: ReactNode }) => {
         setCurrentPage,
         animate,
         setAnimate,
-        options,
-        dispatch,
+        // options,
+        // dispatch,
         displayMission,
         setDisplayMission,
         isBarClicked,

@@ -4,11 +4,11 @@ import Hero from './Hero';
 
 const About = () => {
   return (
-    <section className={'min-h-screen flex flex-col w-full '}>
-      {/* <Hero className={clsx(page_padding)} /> */}
+    <main className={'min-h-fit  flex flex-col w-full '}>
+      {/* <Hero Section /> */}
       <Hero />
       <AboutSection />
-    </section>
+    </main>
   );
 };
 

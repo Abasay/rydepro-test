@@ -1,7 +1,7 @@
 /** @format */
 import { useDashboardContext } from '@/contexts/DashboardContext';
 
-export const Reducer = (state, action) => {
+export const Reducer = (state: any, action: any) => {
   const { setSettings, settings } = useDashboardContext();
   switch (action.type) {
     case 'SET_ACTIVE_LINK':

@@ -11,11 +11,5 @@ import { useEffect } from 'react';
 export default function ConditionalHeader() {
   const pathname = usePathname();
 
-  useEffect(() => {
-    console.log(pathname.includes('/general'));
-  }, [pathname]);
-  return pathname.includes('/general') ||
-    pathname.includes('/dashboard') ? null : (
-    <HeaderComponent />
-  );
+  return pathname.includes('/general') || pathname.includes('/dashboard') ? null : <HeaderComponent />;
 }

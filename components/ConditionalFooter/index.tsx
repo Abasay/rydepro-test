@@ -11,11 +11,5 @@ import { useEffect } from 'react';
 export default function ConditionalFooter() {
   const pathname = usePathname();
 
-  useEffect(() => {
-    console.log(pathname);
-  }, [pathname]);
-  return pathname.includes('/general') ||
-    pathname.includes('/dashboard') ? null : (
-    <Footer />
-  );
+  return pathname.includes('/general') || pathname.includes('/dashboard') ? null : <Footer />;
 }
